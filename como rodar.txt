@@ -1,0 +1,19 @@
+1 - Inicializar um ambiente virtual com o comando: 
+python -m venv .venv 
+
+2 - Mudar para a pasta do servidor: 
+cd server
+
+3 - Iniciar o ambiente virtual:
+source .venv/Scripts/activate (Windows)
+
+source .venv/bin/activate (Linux)
+
+4 - Instalar as bibliotecas externas 
+pip install -r requirements.txt
+
+5 - Rodar o arquivo 
+py api.py (Git Basch)
+python api.py (PowerShell)
+
+6 - Utilizar os comandos do basch comentados demonstrar a api. 
