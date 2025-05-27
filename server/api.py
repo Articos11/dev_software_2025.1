@@ -67,6 +67,12 @@ def chat():
 
 # A declaração da rota transforma toda a função abaixo em uma rota da API. Ou seja, a função só funcionará na rota proposta.
 # O método utilizado é POST, ou seja, será enviado até a API. 
+
+# Comando do terminal para execução:
+
+# curl -X POST http://127.0.0.1:5000/analyze-pdf \
+# -F "pdf=@C:/Users/vinic/Downloads/ResumeAI.pdf" \
+# -F "prompt=Qual a ideia principal deste documento?"
 @app.route('/analyze-pdf', methods=['POST'])
 def analyze_pdf():
     # checamos se realmente foi enviado algum arquivo na requisição.
