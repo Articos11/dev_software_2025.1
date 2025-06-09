@@ -2,9 +2,6 @@
 
 ResumeAI é uma aplicação web que utiliza o poder da API do Google Gemini para gerar resumos inteligentes e personalizados de documentos PDF. Faça o upload de um arquivo, insira um prompt específico se desejar, e obtenha um resumo conciso em segundos.
 
-![ResumeAI Screenshot](https://i.imgur.com/your-screenshot-url.png) 
-*(Sugestão: tire um print da tela do seu projeto em funcionamento, faça o upload em um site como o [Imgur](https://imgur.com/upload) e substitua o link acima)*
-
 ---
 
 ## 📋 Índice
