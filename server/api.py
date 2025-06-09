@@ -74,6 +74,7 @@ def chat():
 # -F "pdf=@C:/Users/vinic/Downloads/ResumeAI.pdf" \
 # -F "prompt=Qual a ideia principal deste documento?"
 @app.route('/analyze-pdf', methods=['POST'])
+
 def analyze_pdf():
     # checamos se realmente foi enviado algum arquivo na requisição.
     if 'pdf' not in request.files:
