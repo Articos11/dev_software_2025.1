@@ -1,19 +1,26 @@
 1 - Inicializar um ambiente virtual com o comando: 
 python -m venv .venv 
 
-2 - Mudar para a pasta do servidor: 
+2 - Obter a chave de acesso da API. 
+
+3 - criar um arquivo .env na pasta server. 
+
+4 - Mudar para a pasta do servidor: 
 cd server
 
-3 - Iniciar o ambiente virtual:
-source .venv/Scripts/activate (Windows)
+5 - Iniciar o ambiente virtual:
 
+source .venv/Scripts/activate (Windows)
 source .venv/bin/activate (Linux)
 
-4 - Instalar as bibliotecas externas 
+6 - Instalar as bibliotecas externas:
+
 pip install -r requirements.txt
 
-5 - Rodar o arquivo 
+7 - Rodar o arquivo o servidor
 py api.py (Git Basch)
 python api.py (PowerShell)
 
-6 - Utilizar os comandos do basch comentados demonstrar a api. 
+8 - Utilizar o live server (Exntesão) para rodar o index.html. 
+
+Tudo pronto!
