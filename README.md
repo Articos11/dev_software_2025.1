@@ -1,6 +1,7 @@
+
 # ResumeAI 📄✨
 
-ResumeAI é uma aplicação web que utiliza o poder da API do Google Gemini para gerar resumos inteligentes e personalizados de documentos PDF. Faça o upload de um arquivo, insira um prompt específico se desejar, e obtenha um resumo conciso em segundos.
+ResumeAI é uma aplicação web que utiliza o poder da **API do Google Gemini** para gerar resumos inteligentes e personalizados de documentos PDF, além de permitir conversas diretas via chat com a IA. O backend foi totalmente refatorado para seguir uma **arquitetura modular**, com **separação de responsabilidades**, **tratamento de erros** e **testes unitários**.
 
 ---
 
@@ -9,141 +10,174 @@ ResumeAI é uma aplicação web que utiliza o poder da API do Google Gemini para
 * [Sobre o Projeto](#sobre-o-projeto)
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Começando](#começando)
-    * [Pré-requisitos](#pré-requisitos)
-    * [Instalação](#instalação)
+
+  * [Pré-requisitos](#pré-requisitos)
+  * [Instalação](#instalação)
 * [Como Usar](#como-usar)
 * [Estrutura do Projeto](#estrutura-do-projeto)
+* [Testes Automatizados](#testes-automatizados)
 * [Licença](#licença)
 
 ---
 
 ## 🚀 Sobre o Projeto
 
-Este projeto consiste em uma interface de frontend (localizada na pasta `client`) que se comunica com um backend em Python/Flask (localizado na pasta `server`). O backend é responsável por:
+Este projeto é dividido em duas partes:
 
-1.  Receber um arquivo PDF e um prompt do usuário.
-2.  Extrair o texto do PDF.
-3.  Formatar uma requisição para a API do Google Gemini, combinando o texto extraído e o prompt do usuário.
-4.  Retornar a resposta gerada pela IA para o frontend, que a exibe ao usuário.
+1. **Frontend (pasta `client`):**
 
-### ✨ Funcionalidades
+   * Interface web simples e intuitiva para o usuário enviar PDFs ou mensagens ao chat.
 
-* **Upload de PDF:** Envie qualquer documento em formato PDF para análise.
-* **Prompt Personalizado:** Guie a IA com instruções específicas para obter o resumo desejado.
-* **Integração com Gemini API:** Utiliza o modelo `gemini-1.5-flash-latest` para processamento rápido e eficiente.
-* **Interface Simples:** Uma interface limpa e intuitiva para uma experiência de usuário agradável.
+2. **Backend (pasta `server`):**
+
+   * API REST desenvolvida com Flask, responsável por:
+
+     * Receber um arquivo PDF + prompt personalizado.
+     * Extrair texto do PDF.
+     * Enviar o conteúdo para a API do Google Gemini.
+     * Retornar o resumo gerado ou a resposta de chat.
+     * Tratar erros e entradas malformadas.
+     * Manter um código modular com camadas separadas (rotas, serviços, utilitários).
+
+---
+
+## ✨ Funcionalidades
+
+* **Upload de PDF e geração de resumo**
+* **Chat direto com a IA Gemini**
+* **Tratamento de erros de requisição**
+* **Arquitetura limpa com separação de responsabilidades**
+* **Testes unitários com Pytest**
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-O projeto foi construído com as seguintes tecnologias:
+### Frontend (`client`):
 
-* **Frontend (`client`):**
-    * HTML5
-    * CSS3
-    * JavaScript (com Fetch API)
+* HTML5
+* CSS3
+* JavaScript (Fetch API)
 
-* **Backend (`server`):**
-    * [Python 3](https://www.python.org/)
-    * [Flask](https://flask.palletsprojects.com/)
-    * [Flask-CORS](https://flask-cors.readthedocs.io/)
+### Backend (`server`):
 
-* **APIs e Bibliotecas Python:**
-    * [Google Generative AI for Python](https://pypi.org/project/google-generativeai/)
-    * [PyPDF2](https://pypi.org/project/PyPDF2/)
-    * [python-dotenv](https://pypi.org/project/python-dotenv/)
+* Python 3
+* Flask
+* Flask-CORS
+* Python-dotenv
+* PyPDF2
+* Google Generative AI (Gemini API)
+* Pytest (para testes)
 
 ---
 
 ## 🏁 Começando
 
-Siga estas instruções para obter uma cópia do projeto e executá-la em sua máquina local para desenvolvimento e testes.
+### ✅ Pré-requisitos:
 
-### ✅ Pré-requisitos
+* Python 3.8 ou superior
+* pip
+* Chave de API do Google Gemini (disponível no [Google AI Studio](https://aistudio.google.com/app/apikey))
 
-* **Python 3.8+** instalado.
-* **pip** (gerenciador de pacotes do Python).
-* Uma **Chave de API do Google Gemini**. Você pode obter uma no [Google AI Studio](https://aistudio.google.com/app/apikey).
+---
 
 ### ⚙️ Instalação
 
-Siga o passo a passo abaixo no seu terminal, a partir da pasta raiz do projeto.
+1. **Clone o repositório:**
 
-1.  **Clone o repositório (se ainda não o fez):**
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    cd seu-repositorio
-    ```
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
 
-2.  **Crie e configure o ambiente virtual:**
-    * Crie o ambiente na pasta raiz do projeto:
-        ```bash
-        python -m venv .venv
-        ```
-    * Ative o ambiente virtual:
-        * No **Windows** (Git Bash ou PowerShell):
-            ```bash
-            source .venv/Scripts/activate
-            ```
-        * No **Linux ou macOS**:
-            ```bash
-            source .venv/bin/activate
-            ```
+2. **Configure o ambiente virtual:**
 
-3.  **Instale as dependências do Backend:**
-    * Com o ambiente virtual ativado, instale as bibliotecas Python a partir do `requirements.txt`:
-        ```bash
-        pip install -r requirements.txt
-        ```
+```bash
+python -m venv .venv
+```
 
-4.  **Configure a Chave de API:**
-    * Navegue até a pasta do servidor:
-        ```bash
-        cd server
-        ```
-    * Crie um arquivo chamado `.env` e adicione sua chave da API do Gemini:
-        ```
-        GEMINI_API_KEY="SUA_CHAVE_API_AQUI"
-        ```
-    * Volte para a pasta raiz:
-        ```bash
-        cd ..
-        ```
+Ative o ambiente:
 
-Tudo pronto! O ambiente está configurado.
+* **Windows:**
+
+```bash
+.venv\Scripts\activate
+```
+
+* **Linux/MacOS:**
+
+```bash
+source .venv/bin/activate
+```
+
+3. **Instale as dependências do backend:**
+
+```bash
+cd server
+pip install -r requirements.txt
+```
+
+4. **Configure o arquivo `.env`:**
+
+Crie um arquivo `.env` dentro da pasta `server`:
+
+```
+GEMINI_API_KEY="SUA_CHAVE_API_AQUI"
+```
 
 ---
 
 ## 🎈 Como Usar
 
-Para rodar a aplicação, você precisa iniciar o servidor backend e o cliente frontend separadamente.
+1. **Execute o Backend:**
 
-1.  **Inicie o Servidor Backend:**
-    * Certifique-se de que seu ambiente virtual (`.venv`) está ativado.
-    * A partir da pasta **raiz** do projeto, execute o seguinte comando:
-        ```bash
-        python server/api.py
-        ```
-    * O servidor estará rodando em `http://127.0.0.1:5000`. Deixe este terminal aberto.
+A partir da pasta raiz:
 
-2.  **Inicie a Interface Frontend:**
-    * A maneira mais fácil de rodar o frontend é utilizando a extensão **Live Server** no Visual Studio Code.
-    * Clique com o botão direito no arquivo `client/src/index.html` e selecione "Open with Live Server".
-    * Seu navegador abrirá a página da aplicação.
+```bash
+python server/server.py
+```
 
-3.  **Utilize a Aplicação:**
-    * Com a página aberta, você pode escrever um prompt.
-    * Clique em "Escolher arquivo" e selecione um documento PDF.
-    * Clique em "Gerar resumo" e aguarde a resposta da IA.
+(Se estiver na pasta `server`, apenas `python server.py`)
+
+O backend estará rodando em:
+
+```
+http://127.0.0.1:5000
+```
+
+2. **Execute o Frontend:**
+
+Abra a pasta `client` com o Visual Studio Code.
+
+Utilize a extensão **Live Server** ou abra o arquivo `client/src/index.html` diretamente no navegador.
+
+3. **Consuma a API via Frontend ou Thunder Client (VS Code):**
+
+* Rota de chat:
+
+```
+POST http://127.0.0.1:5000/chat
+Body (JSON):
+{
+  "mensagem": "Olá"
+}
+```
+
+* Rota de PDF:
+
+```
+POST http://127.0.0.1:5000/analyze-pdf
+Form-Data:
+- pdf: (arquivo PDF)
+- prompt: (texto opcional)
+```
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto (atualizada)
 
 ```
 .
-├── .venv/
 ├── client/
 │   ├── public/
 │   └── src/
@@ -151,12 +185,47 @@ Para rodar a aplicação, você precisa iniciar o servidor backend e o cliente f
 │       ├── index.js
 │       └── style.css
 ├── server/
-│   ├── api.py
-│   └── .env            (a ser criado)
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── routes.py
+│   │   ├── services.py
+│   │   └── utils.py
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── test_routes.py
+│   │   └── test_services.py
+│   ├── config.py
+│   ├── server.py
+│   ├── requirements.txt
+│   └── .env
+├── .venv/
 ├── .gitignore
-├── como rodar.txt
-├── requirements.txt
 └── README.md
 ```
 
 ---
+
+## ✅ Testes Automatizados
+
+### Rodando os testes:
+
+A partir da raiz do projeto (ou da pasta `server`):
+
+```bash
+pytest
+```
+
+### Abrangência atual dos testes:
+
+* Testes unitários para o arquivo `services.py`
+* Testes das rotas principais (`/chat` e `/analyze-pdf`) com **mocks da API Gemini**
+
+---
+
+## 📜 Licença
+
+Este projeto é de uso educacional. Sinta-se livre para modificar, estudar e aprender com o código.
+
+---
+
+Se desejar, Senhor, posso também gerar um `.env.example` para que o Senhor inclua no repositório. Deseja?
