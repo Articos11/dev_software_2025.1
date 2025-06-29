@@ -4,12 +4,56 @@ const pdfFileInput = document.getElementById('pdf_file');
 const loadingDiv = document.getElementById('loading');
 const responseContainer = document.getElementById('response-container');
 
+// 1. Seleção dos Elementos do Flashcard
+const flashcardContainer = document.querySelector('.flashcard-container');
+const flashcard = document.getElementById('flashcard');
+const flashcardFrontText = document.getElementById('flashcard-front-text');
+const flashcardBackText = document.getElementById('flashcard-back-text');
+const navigationButtons = document.querySelector('.navigation');
+
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
+const flipButton = document.getElementById('flip-button');
+
+// 2. A lista de flashcards agora começa vazia e será preenchida pela API
+let flashcardData = []; 
+let currentCardIndex = 0;
+
+// 3. Função para mostrar o card na tela
+function showCard(index) {
+    // Se não houver cards, esconde a seção de flashcards
+    if (flashcardData.length === 0) {
+        flashcardContainer.classList.add('hidden');
+        navigationButtons.classList.add('hidden');
+        return;
+    }
+
+    // Mostra a seção de flashcards caso esteja escondida
+    flashcardContainer.classList.remove('hidden');
+    navigationButtons.classList.remove('hidden');
+
+    // Garante que o card esteja desvirado ao mudar
+    if (flashcard.classList.contains('is-flipped')) {
+        flashcard.classList.remove('is-flipped');
+    }
+
+    // Atualiza o texto da frente e do verso
+    const card = flashcardData[index];
+    flashcardFrontText.textContent = card.pergunta;
+    flashcardBackText.textContent = card.resposta;
+}
+
+// 4. Lógica do Formulário (MODIFICADA)
 pdfForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     loadingDiv.classList.remove('hidden');
     responseContainer.classList.add('hidden');
     responseContainer.classList.remove('error');
+
+    // Esconde os flashcards antigos enquanto gera novos
+    flashcardContainer.classList.add('hidden');
+    navigationButtons.classList.add('hidden');
 
     const formData = new FormData();
     formData.append('prompt', promptInput.value);
@@ -23,13 +67,26 @@ pdfForm.addEventListener('submit', async (event) => {
 
         const result = await response.json();
         loadingDiv.classList.add('hidden');
-        responseContainer.classList.remove('hidden');
-
+        
         if (response.ok) {
-            responseContainer.textContent = result.resposta;
+            // ATUALIZA O RESUMO
+            responseContainer.textContent = result.resumo;
+            responseContainer.classList.remove('hidden');
+
+            // ATUALIZA OS FLASHCARDS com os dados da API
+            if (result.flashcards && result.flashcards.length > 0) {
+                flashcardData = result.flashcards;
+                currentCardIndex = 0; // Reseta para o primeiro card
+                showCard(currentCardIndex); // Mostra o primeiro card novo
+            } else {
+                flashcardData = []; // Limpa os cards se a API não retornar nenhum
+                showCard(currentCardIndex); // Esconde a seção de cards
+            }
+
         } else {
             responseContainer.textContent = `Erro: ${result.erro}`;
             responseContainer.classList.add('error');
+            responseContainer.classList.remove('hidden');
         }
 
     } catch (error) {
@@ -41,63 +98,19 @@ pdfForm.addEventListener('submit', async (event) => {
     }
 });
 
-
-// 1. Dados dos Flashcards
-const flashcardData = [
-    {
-        pergunta: "O que significa a sigla 'DOM' em JavaScript?",
-        resposta: "Document Object Model. É uma interface de programação para documentos HTML e XML."
-    },
-    {
-        pergunta: "Qual a diferença entre '==' e '==='?",
-        resposta: "'==' compara apenas o valor (com coerção de tipo), enquanto '===' compara o valor E o tipo, sem coerção."
-    },
-    {
-        pergunta: "O que é 'Hoisting' em JavaScript?",
-        resposta: "É o comportamento do JavaScript de mover declarações de variáveis e funções para o topo de seu escopo antes da execução do código."
-    },
-    {
-        pergunta: "Para que serve o método 'map()' em um array?",
-        resposta: "Ele cria um novo array populado com os resultados da chamada de uma função para cada elemento do array."
-    }
-];
-
-// 2. Seleção dos Elementos do Flashcard
-const flashcard = document.getElementById('flashcard');
-const flashcardFrontText = document.getElementById('flashcard-front-text');
-const flashcardBackText = document.getElementById('flashcard-back-text');
-
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
-const flipButton = document.getElementById('flip-button');
-
-// 3. Lógica de Controle
-let currentCardIndex = 0;
-
-function showCard(index) {
-    // Garante que o card esteja desvirado ao mudar
-    if (flashcard.classList.contains('is-flipped')) {
-        flashcard.classList.remove('is-flipped');
-    }
-
-    // Atualiza o texto da frente e do verso
-    flashcardFrontText.textContent = flashcardData[index].pergunta;
-    flashcardBackText.textContent = flashcardData[index].resposta;
-}
-
-// 4. Adicionar Eventos aos Botões
+// 5. Eventos dos Botões (sem alterações na lógica)
 flipButton.addEventListener('click', () => {
     flashcard.classList.toggle('is-flipped');
 });
 
 nextButton.addEventListener('click', () => {
-    // Avança para o próximo card, voltando ao primeiro se chegar no fim
+    if (flashcardData.length === 0) return;
     currentCardIndex = (currentCardIndex + 1) % flashcardData.length;
     showCard(currentCardIndex);
 });
 
 prevButton.addEventListener('click', () => {
-    // Retorna ao card anterior, indo para o último se estiver no primeiro
+    if (flashcardData.length === 0) return;
     if (currentCardIndex === 0) {
         currentCardIndex = flashcardData.length - 1;
     } else {
@@ -106,5 +119,5 @@ prevButton.addEventListener('click', () => {
     showCard(currentCardIndex);
 });
 
-// 5. Mostrar o primeiro card ao carregar a página
+// 6. Estado inicial: esconde a seção de flashcards
 showCard(currentCardIndex);
