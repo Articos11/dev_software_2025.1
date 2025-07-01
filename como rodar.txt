@@ -1,4 +1,4 @@
-Aqui segue um passo a passo de como rodar o código: 
+## PARA RODAR O SERVIDOR ##
 
 1 - Clonar o repositório do sprint 3 
     a - Inicie o repositório git localmente (git init)
@@ -12,7 +12,8 @@ Aqui segue um passo a passo de como rodar o código:
     python -m venv .venv
 
 4 - Inicializar o ambiente virtual 
-    source .venv/Scripts/activate 
+    source .venv/Scripts/activate (Windows)
+    source .venv/bin/activate (Linux)
 
 5 - Instalar as dependências de Python no ambiente virtual
     pip install -r requirements.txt
@@ -22,3 +23,17 @@ Aqui segue um passo a passo de como rodar o código:
     py server.py (git Bash)
 
 7 - Ativar o html da pasta client com o liveserver (essa parte vai ser mudada porque estamos recriando o front com react.)
+
+
+
+## PARA RODAR A APLICAÇÃO REACT ##
+
+1 - Mudar para o diretório da aplicação
+cd resumeai-react
+
+2 - Instalar dependências
+npm install
+
+3 - Inicializar o servidor de desenvolvimento
+npm run dev
+// OBS.: Ctrl + C serve para parar o servidor
