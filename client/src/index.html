@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResumeAI</title>
+    <title>ResumeAI & Flashcards</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>ResumeAI</h1>
-        <form id="pdf-form"> <!-- tem que mudar o action depois pra /upload-pdf" com isso ele manda pra rota da api-->
+        <form id="pdf-form">
             <div class="form-group">
                 <label for="prompt">Seu Prompt:</label>
                 <textarea id="prompt" name="prompt" placeholder="Você gostaria de algo mais específico no resumo?"></textarea>
@@ -24,7 +24,27 @@
         <div id="loading" class="hidden">
             <p> Analisando o documento, por favor aguarde...</p>
         </div>
-        <div id="response-container" class="hiiden"></div>
+        <div id="response-container" class="hidden"></div>
+
+        <hr>
+        <h2>Flashcards de Estudo</h2>
+
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-front">
+                    <p id="flashcard-front-text"></p>
+                </div>
+                <div class="flashcard-back">
+                    <p id="flashcard-back-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button id="prev-button">Anterior</button>
+            <button id="flip-button">Virar</button>
+            <button id="next-button">Próximo</button>
+        </div>
     </div>
 
     <script src="index.js"></script>
