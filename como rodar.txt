@@ -18,6 +18,9 @@
 5 - Instalar as dependências de Python no ambiente virtual
     pip install -r requirements.txt
 
+6 - criar um arquivo chamado .env na pasta do servidor
+    Inserir a chave da api. Solicitar via zap pra testes!!
+
 6 - Rodar o servidor 
     python3 server.py (PowerShell)
     py server.py (git Bash)
