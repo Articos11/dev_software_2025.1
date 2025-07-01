@@ -9,7 +9,6 @@ def client():
         yield client
 
 def test_chat_route_success(client, monkeypatch):
-    # Mocka o modelo para evitar chamadas reais ao Gemini
     class MockModel:
         def start_chat(self, history=None):
             class MockChatSession:

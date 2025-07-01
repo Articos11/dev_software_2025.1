@@ -1,26 +1,24 @@
-1 - Inicializar um ambiente virtual com o comando: 
-python -m venv .venv 
+Aqui segue um passo a passo de como rodar o código: 
 
-2 - Obter a chave de acesso da API. 
+1 - Clonar o repositório do sprint 3 
+    a - Inicie o repositório git localmente (git init)
+    b - Adicione o repositório remotamente (git remote add origin https://github.com/Articos11/dev_software_2025.1)
+    c - troque para a branch sprint3 (git checkout sprint3) 
+    d - Pegue os dados do repositório (git pull)
 
-3 - criar um arquivo .env na pasta server. 
+2 - Acessar a pasta do servidor utilizando cd server no terminal
 
-4 - Mudar para a pasta do servidor: 
-cd server
+3 - Criar um ambiente virtual de python
+    python -m venv .venv
 
-5 - Iniciar o ambiente virtual:
+4 - Inicializar o ambiente virtual 
+    source .venv/Scripts/activate 
 
-source .venv/Scripts/activate (Windows)
-source .venv/bin/activate (Linux)
+5 - Instalar as dependências de Python no ambiente virtual
+    pip install -r requirements.txt
 
-6 - Instalar as bibliotecas externas:
+6 - Rodar o servidor 
+    python3 server.py (PowerShell)
+    py server.py (git Bash)
 
-pip install -r requirements.txt
-
-7 - Rodar o arquivo o servidor
-py api.py (Git Basch)
-python api.py (PowerShell)
-
-8 - Utilizar o live server (Exntesão) para rodar o index.html. 
-
-Tudo pronto!
+7 - Ativar o html da pasta client com o liveserver (essa parte vai ser mudada porque estamos recriando o front com react.)
