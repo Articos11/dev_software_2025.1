@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 # Todo o consumo da API do gemini está abaixo.
 # Chave da API gerada unicamente para teste. Ela será substituida em situações futuras. 
+# Essa chave da API não funciona mais.
 genai.configure(api_key="AIzaSyBww3NdwubM8u22q1O7knDxHLFOclTjzsk")
 
 # Configurações básicas da API. Já veio assim do snipet da própria API, então eu não mexi. 
