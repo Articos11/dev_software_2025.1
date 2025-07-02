@@ -40,3 +40,14 @@ npm install
 3 - Inicializar o servidor de desenvolvimento
 npm run dev
 // OBS.: Ctrl + C serve para parar o servidor
+
+
+
+## INSTALAÇÃO DO TAILWINDCSS ##
+
+1 - Mudar para o diretório da aplicação
+cd resumeai-react
+
+2 - Instalar dependências
+npm install -D tailwindcss postcss autoprefixer
+
