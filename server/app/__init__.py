@@ -41,7 +41,7 @@ def create_app():
     
     # -- Registrar as rotas (Blueprints) --
     from .routes import api_bp
-    app.register_blueprint(api_bp)
+    app.register_blueprint(api_bp, url_prefix='/api')
 
     # -- Fim do registro das rostas (Blueprints) -- 
 

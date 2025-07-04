@@ -22,30 +22,47 @@
         </form>
 
         <div id="loading" class="hidden">
-            <p> Analisando o documento, por favor aguarde...</p>
+            <p>Analisando o documento, por favor aguarde...</p>
         </div>
         <div id="response-container" class="hidden"></div>
+        
+        <hr id="pdf-flashcard-separator" class="hidden"> <div id="flashcard-quantity-group" class="form-group hidden" style="text-align: center;">
+            <label for="flashcard-quantity">Quantidade de Flashcards (1-10):</label>
+            <input type="number" id="flashcard-quantity" value="3" min="1" max="10">
+        </div>
+        
+        <div class="form-group" style="text-align: center; margin-top: 20px;">
+            <button id="generate-from-summary-button" class="action-button hidden">Gerar Flashcards do Resumo do PDF</button>
+        </div>
 
-        <hr>
-        <h2>Flashcards de Estudo</h2>
+        <div id="loading-flashcard" class="hidden">
+            <p>Gerando flashcards, por favor aguarde...</p>
+        </div>
+        <div id="response-flashcard-error" class="hidden error"></div>
 
-        <div class="flashcard-container">
-            <div class="flashcard" id="flashcard">
-                <div class="flashcard-front">
-                    <p id="flashcard-front-text"></p>
-                </div>
-                <div class="flashcard-back">
-                    <p id="flashcard-back-text"></p>
+        <div id="flashcard-display-section" class="hidden">
+            <hr> <h2>Flashcards de Estudo</h2>
+
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-inner"> 
+                        <div class="flashcard-front">
+                            <p id="flashcard-front-text"></p>
+                        </div>
+                        <div class="flashcard-back">
+                            <p id="flashcard-back-text"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="navigation">
-            <button id="prev-button">Anterior</button>
-            <button id="flip-button">Virar</button>
-            <button id="next-button">Próximo</button>
+            <div class="navigation">
+                <button id="prev-button">Anterior</button>
+                <button id="flip-button">Virar</button>
+                <button id="next-button">Próximo</button>
+            </div>
         </div>
-    </div>
+        </div>
 
     <script src="index.js"></script>
 </body>

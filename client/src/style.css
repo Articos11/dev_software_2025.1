@@ -4,8 +4,7 @@ body {
     padding: 20px;
     background-color: #f4f4f4;
     color: #333;
-    /* Alterado para permitir scroll caso o conteúdo seja grande */
-    display: block; 
+    display: block;
 }
 
 .container {
@@ -16,13 +15,19 @@ body {
     width: 100%;
     max-width: 600px;
     text-align: center;
-    /* Adicionado para centralizar o container na página */
-    margin: 40px auto; 
+    margin: 40px auto;
 }
 
 h1 {
-    color: #4CAF50; 
+    color: #4CAF50;
     margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .form-group {
@@ -36,16 +41,18 @@ label {
     font-weight: bold;
 }
 
-textarea, input[type="file"] {
+textarea,
+input[type="file"],
+input[type="text"] {
     width: calc(100% - 20px);
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 textarea {
-    resize: vertical; 
+    resize: vertical;
     min-height: 100px;
 }
 
@@ -65,7 +72,7 @@ input[type="submit"]:hover {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #response-container {
@@ -88,9 +95,10 @@ input[type="submit"]:hover {
     margin-top: 20px;
     font-weight: bold;
     color: #4CAF50;
+    text-align: center;
 }
 
-/* --- NOVOS ESTILOS PARA FLASHCARDS --- */
+/* --- SEÇÃO DE FLASHCARDS --- */
 
 hr {
     border: none;
@@ -98,38 +106,65 @@ hr {
     margin: 40px 0;
 }
 
-h2 {
-    color: #333;
-    margin-bottom: 20px;
+#loading-flashcard {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: center;
+}
+
+#response-flashcard-error {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #FFD2D2;
+    color: #D8000C;
+    border: 1px solid #D8000C;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .flashcard-container {
     width: 350px;
     height: 220px;
     perspective: 1000px;
-    margin: 20px auto; /* Centraliza o card */
+    margin: 20px auto;
 }
 
 .flashcard {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: transform 0.7s;
-    transform-style: preserve-3d;
     cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.flashcard.is-flipped {
+/* NOVO ELEMENTO: O flashcard-inner é que fará o giro */
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+}
+
+/* quando o .flashcard tem a classe .is-flipped, o .flashcard-inner gira */
+.flashcard.is-flipped .flashcard-inner {
     transform: rotateY(180deg);
 }
 
+/* as faces frontal e traseira */
 .flashcard-front, .flashcard-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; 
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,16 +178,31 @@ h2 {
     background-color: #ffffff;
     border: 1px solid #ddd;
     color: #333;
+    z-index: 2;
 }
 
 .flashcard-back {
     background-color: #4a90e2;
     color: white;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); 
 }
 
+/* Estilos para o texto dentro dos flashcards */
+.flashcard-front p, .flashcard-back p {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-y: auto;
+    max-height: 100%;
+    width: 100%;
+}
+
+/* Estilos para os botões de navegação dos flashcards */
 .navigation {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .navigation button {
@@ -163,10 +213,23 @@ h2 {
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    margin: 0 10px;
     transition: background-color 0.3s;
 }
 
 .navigation button:hover {
     background-color: #555;
+}
+
+.action-button {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+.action-button:hover {
+    background-color: #0056b3;
 }
