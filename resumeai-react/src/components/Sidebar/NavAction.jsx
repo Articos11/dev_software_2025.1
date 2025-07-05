@@ -1,14 +1,11 @@
 // src/components/SidebarNewButton.jsx
 import React from 'react';
 
-function NavAction({ text }) {
+function NavAction({ icon, text }) {
   return (
-    <>
-        <li className="flex items-center py-2 px-5 my-0.5 cursor-pointer">
-            <span className="text-1xl w-6 text-center text-purple-600 leading-none">➕</span> 
-            <span className="text-base font-medium flex-grow ps-2">{text}</span>
-        </li>
-    </>
+    <button class="w-full pl-4 flex items-center space-x-2 mb-1 py-1 rounded-md hover:bg-gray-100 transition">
+      <span>{icon}</span><span>{text}</span>
+    </button>
   )
 }
 

@@ -1,11 +1,20 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('./fonts/Sofia Pro Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
   box-sizing: border-box;
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Sofia Pro", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

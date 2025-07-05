@@ -1,9 +1,17 @@
 import React from 'react';
+import SidebarHeader from './SidebarHeader';
+import NavAction from './NavAction';
 
 function Sidebar () {
 
     return (
-        <aside className="flex flex-col relative bg-gray-50 m-4 p-4 w-60 rounded-[40px]">
+        <aside className="w-64 bg-gray-50 shadow-md flex flex-col rounded-[40px] m-4">
+            <SidebarHeader/>
+
+            <nav className='flex-1 p-4 space-y-3'>
+                <NavAction icon='🆕' text='Novo...'/>
+                <NavAction icon='🔍' text='Buscar'/>
+            </nav>
 
         </aside>
     )
