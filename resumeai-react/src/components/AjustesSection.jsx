@@ -1,5 +1,6 @@
 // src/components/AjustesSection.jsx
 import React, { useRef, useState, useEffect } from "react";
+import ToggleSwitch from "./ToggleSwitch";
 
 export default function AjustesSection({ title = "Ajustes" }) {
   const [text, setText] = useState(
@@ -16,7 +17,9 @@ export default function AjustesSection({ title = "Ajustes" }) {
           {" "}
           <div className="h-2 rounded-full bg-white w-[70%]"></div>{" "}
         </div>
-        <section className="bg-white w-full h-full rounded-[25px] p-5 items-center justify-center"></section>
+        <section className="bg-white w-full h-full rounded-[25px] p-5 items-center justify-center">
+          <ToggleSwitch />
+        </section>
       </div>
     </div>
   );

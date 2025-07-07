@@ -15,7 +15,7 @@ function CheckInfosPage() {
           <AjustesSection />
           <ConferirTextoSection />
         </div>
-        <button className="self-end mr-4 bg-cyan-400 text-white font-bold px-3 py-2 rounded-full hover:bg-cyan-500 shadow-sm">
+        <button className="self-end mr-4 bg-teal-400 text-white font-bold px-3 py-2 rounded-full hover:bg-teal-500 shadow-sm">
           Prosseguir
         </button>
       </main>
