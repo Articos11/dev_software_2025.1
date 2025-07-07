@@ -4,10 +4,11 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Importe os layouts e páginas
 import AuthLayout from './layouts/AuthLayout';
-import MainPage from './components/MainPage';
-import Login from './components/Login';
+import MainPage from './pages/MainPage';
+import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
+import CheckInfosPage from './pages/CheckInfosPage';
 
 import './index.css';
 
@@ -17,6 +18,7 @@ function App() {
       {/* Rotas Públicas ou do App Principal (NÃO usam o layout de autenticação) */}
       <Route path="/home" element={<MainPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/conferir_texto" element={<CheckInfosPage />} />
 
       {/* --- Rotas de Autenticação que USAM o AuthLayout --- */}
       <Route element={<AuthLayout />}>
