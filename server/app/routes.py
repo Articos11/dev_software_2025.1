@@ -6,12 +6,8 @@ import logging # Importe o módulo logging
 # -- Fim da importação de bibliotecas e de outros arquivos. --
 
 # -- Configuração do Logging --
-# É uma boa prática configurar o logger no nível do aplicativo Flask,
-# mas para começar, podemos configurá-lo aqui.
-# Idealmente, isso estaria em um arquivo de configuração ou na inicialização do app.
 
 # Configura o logger para exibir mensagens a partir do nível INFO
-# Se você quiser mais detalhes (para debug), mude para logging.DEBUG
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[
@@ -19,7 +15,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler() # Também mostra os logs no console
                     ])
 
-# Obtém uma instância do logger para este módulo (api.py)
+# Obtém uma instância do logger para este módulo (routes.py)
 # Isso permite que o log saiba de onde a mensagem veio (ex: api.chat)
 logger = logging.getLogger(__name__)
 
