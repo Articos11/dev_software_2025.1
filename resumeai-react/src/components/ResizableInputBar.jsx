@@ -1,5 +1,5 @@
-// src/components/ResizableInputBar.jsx
 import React, { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function ResizableInputBar({
   placeholder = "Novo resumo rápido...",
@@ -9,12 +9,16 @@ function ResizableInputBar({
 }) {
   const textareaRef = useRef(null);
   const fileInputRef = useRef(null);
+  const cardsContainerRef = useRef(null);
+
   const [text, setText] = useState(initialText);
   const [files, setFiles] = useState([]);
+  const [hasOverflow, setHasOverflow] = useState(false);
 
   const lineHeight = 24;
   const calculatedMaxHeight = maxRows * lineHeight;
 
+  // Ajuste de altura do textarea
   useEffect(() => {
     if (!textareaRef.current) return;
     const ta = textareaRef.current;
@@ -22,14 +26,21 @@ function ResizableInputBar({
     ta.style.height = ta.scrollHeight + 'px';
   }, [text]);
 
+  // Verificação de overflow vertical nos cards
+  useEffect(() => {
+    const el = cardsContainerRef.current;
+    if (!el) return;
+    setHasOverflow(el.scrollHeight > el.clientHeight);
+  }, [files]);
+
   const handleAttachClick = () => fileInputRef.current?.click();
 
   const handleFileChange = e => {
     const sel = e.target.files;
     if (sel?.length) {
       const arr = Array.from(sel);
-      setFiles(arr);
-      onFilesSelected?.(arr);
+      setFiles(existing => [...existing, ...arr]);
+      onFilesSelected?.([...files, ...arr]);
       e.target.value = '';
     }
   };
@@ -43,11 +54,14 @@ function ResizableInputBar({
     <div className="w-full max-w-3xl relative">
       {files.length > 0 && (
         <div className="mb-2 relative">
-          <div className="
-            flex flex-wrap gap-2
-            max-h-[8rem] overflow-y-auto pr-1
-            no-scrollbar
-          ">
+          <div
+            ref={cardsContainerRef}
+            className="
+              flex flex-wrap gap-2
+              max-h-[8rem] overflow-y-auto pr-1
+              no-scrollbar
+            "
+          >
             {files.map((file, idx) => {
               const isImage = file.type?.startsWith('image/');
               const previewUrl = isImage ? URL.createObjectURL(file) : null;
@@ -74,35 +88,38 @@ function ResizableInputBar({
             })}
           </div>
 
-          {/* Fade na parte inferior */}
-          <div className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none
-                          bg-gradient-to-b from-transparent to-white" />
+          {/* Fade condicional */}
+          {hasOverflow && (
+            <div className="absolute bottom-0 left-0 right-0 h-2 pointer-events-none bg-gradient-to-b from-transparent to-white" />
+          )}
         </div>
       )}
 
-      <div className="flex items-center bg-gray-50 rounded-[40px] shadow-sm px-2 py-1
-                      transition-[max-height] duration-300 ease-in-out mb-6">
-        <button type="button" onClick={handleAttachClick}
+      <div className="flex items-center bg-gray-50 rounded-[40px] shadow-sm px-2 py-1 transition-[max-height] duration-300 ease-in-out mb-6">
+        <button
+          type="button"
+          onClick={handleAttachClick}
           className="text-gray-400 text-2xl hover:bg-gray-100 rounded-full cursor-pointer"
         >📎</button>
 
-        <input ref={fileInputRef} type="file" multiple hidden
-          onChange={handleFileChange}
-        />
+        <input ref={fileInputRef} type="file" multiple hidden onChange={handleFileChange} />
 
-        <textarea ref={textareaRef} value={text} onChange={handleChange}
-          placeholder={placeholder} rows={1}
-          className="flex-1 m-1 pl-3 border-l border-l-gray-400
-                     outline-none text-gray-700 placeholder-gray-400
-                     resize-none overflow-y-auto transition-[max-height]
-                     duration-300 ease-in-out scrollbar-thin
-                     scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+        <textarea
+          ref={textareaRef}
+          value={text}
+          onChange={handleChange}
+          placeholder={placeholder}
+          rows={1}
+          className="flex-1 m-1 pl-3 border-l border-l-gray-400 outline-none text-gray-700 placeholder-gray-400 resize-none overflow-y-auto transition-[max-height] duration-300 ease-in-out scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
           style={{ maxHeight: `${calculatedMaxHeight}px` }}
         />
 
-        <button type="button"
-          className="text-indigo-600 text-2xl ml-2 mb-1 hover:bg-gray-100 rounded-full cursor-pointer"
-        >⬆️</button>
+        <Link to='/ConferirTexto'>
+          <button
+            type="button"
+            className="text-indigo-600 text-2xl ml-2 mb-1 hover:bg-gray-100 rounded-full cursor-pointer"
+          >⬆️</button>
+        </Link>
       </div>
     </div>
   );
