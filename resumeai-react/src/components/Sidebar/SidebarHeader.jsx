@@ -4,7 +4,7 @@ function SidebarHeader() {
   return (
     <>
       <div className="flex justify-center my-4">
-        <div className="h-2 w-40 bg-gray-400 rounded-full"> </div>
+        <div className="h-2 w-[63%] bg-gray-400 rounded-full"> </div>
       </div>
 
       <div>
