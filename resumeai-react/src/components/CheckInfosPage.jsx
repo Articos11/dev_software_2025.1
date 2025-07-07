@@ -1,24 +1,26 @@
 import React from "react";
 import UserButton from "./UserButton";
 import Sidebar from "./Sidebar/Sidebar";
-import TextBox from "./TextBox";
+import AjustesSection from "./AjustesSection";
+import ConferirTextoSection from "./ConferirTextoSection";
 
-function CheckInfosPage () {
-
-    return (
-      <div className='bg-white text-gray-800 h-screen w-screen flex'>
-        <UserButton />
-        <Sidebar/>
-        <main className='flex-1 flex items-center relative p-6'>
-          <div className='flex-grow max-h-45'></div>
-          <div className='border flex space-between'>
-            <TextBox />
-            
-          </div>
-          <div className='flex-grow'></div>
-        </main>
-      </div>
-    )
+function CheckInfosPage() {
+  return (
+    <div className="bg-gray-50 text-gray-800 h-screen w-screen flex">
+      <UserButton />
+      <Sidebar />
+      <main className="flex-1 flex flex-col items-center p-6 pl-2 pb-12">
+        <div className="flex-grow max-h-30"></div>
+        <div className="flex flex-grow space-between gap-8 w-full p-4">
+          <AjustesSection />
+          <ConferirTextoSection />
+        </div>
+        <button className="self-end mr-4 bg-cyan-400 text-white font-bold px-3 py-2 rounded-full hover:bg-cyan-500 shadow-sm">
+          Prosseguir
+        </button>
+      </main>
+    </div>
+  );
 }
 
-export default CheckInfosPage
+export default CheckInfosPage;

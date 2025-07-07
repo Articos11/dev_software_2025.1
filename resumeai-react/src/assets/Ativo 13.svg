@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.65 91.65">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #6495ed;
+      }
+    </style>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <circle class="cls-2" cx="45.82" cy="45.82" r="45.82"/>
+    <rect class="cls-1" x="20.86" y="20.86" width="49.93" height="49.93"/>
+  </g>
+</svg>

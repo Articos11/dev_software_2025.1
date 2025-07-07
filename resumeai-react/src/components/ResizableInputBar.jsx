@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ResizableInputBar({
   placeholder = "Novo resumo rápido...",
@@ -22,8 +22,8 @@ function ResizableInputBar({
   useEffect(() => {
     if (!textareaRef.current) return;
     const ta = textareaRef.current;
-    ta.style.height = 'auto';
-    ta.style.height = ta.scrollHeight + 'px';
+    ta.style.height = "auto";
+    ta.style.height = ta.scrollHeight + "px";
   }, [text]);
 
   // Verificação de overflow vertical nos cards
@@ -35,20 +35,20 @@ function ResizableInputBar({
 
   const handleAttachClick = () => fileInputRef.current?.click();
 
-  const handleFileChange = e => {
+  const handleFileChange = (e) => {
     const sel = e.target.files;
     if (sel?.length) {
       const arr = Array.from(sel);
-      setFiles(existing => [...existing, ...arr]);
+      setFiles((existing) => [...existing, ...arr]);
       onFilesSelected?.([...files, ...arr]);
-      e.target.value = '';
+      e.target.value = "";
     }
   };
 
-  const handleChange = e => setText(e.target.value);
+  const handleChange = (e) => setText(e.target.value);
 
-  const removeFile = idx =>
-    setFiles(curr => curr.filter((_, i) => i !== idx));
+  const removeFile = (idx) =>
+    setFiles((curr) => curr.filter((_, i) => i !== idx));
 
   return (
     <div className="w-full max-w-3xl relative">
@@ -63,14 +63,17 @@ function ResizableInputBar({
             "
           >
             {files.map((file, idx) => {
-              const isImage = file.type?.startsWith('image/');
+              const isImage = file.type?.startsWith("image/");
               const previewUrl = isImage ? URL.createObjectURL(file) : null;
               return (
-                <div key={idx}
+                <div
+                  key={idx}
                   className="flex items-center bg-gray-100 rounded-lg p-2 space-x-2"
                 >
                   {isImage ? (
-                    <img src={previewUrl} alt={file.name}
+                    <img
+                      src={previewUrl}
+                      alt={file.name}
                       className="h-12 w-12 object-cover rounded"
                     />
                   ) : (
@@ -79,10 +82,13 @@ function ResizableInputBar({
                     </div>
                   )}
                   <div className="text-sm flex-1 truncate">{file.name}</div>
-                  <button onClick={() => removeFile(idx)}
+                  <button
+                    onClick={() => removeFile(idx)}
                     className="text-red-500 hover:text-red-700"
                     type="button"
-                  >❌</button>
+                  >
+                    ❌
+                  </button>
                 </div>
               );
             })}
@@ -95,14 +101,22 @@ function ResizableInputBar({
         </div>
       )}
 
-      <div className="flex items-center bg-gray-50 rounded-[40px] shadow-sm px-2 py-1 transition-[max-height] duration-300 ease-in-out mb-6">
+      <div className="flex items-center bg-white rounded-[40px] shadow-sm px-2 py-1 transition-[max-height] duration-300 ease-in-out mb-6">
         <button
           type="button"
           onClick={handleAttachClick}
-          className="text-gray-400 text-2xl hover:bg-gray-100 rounded-full cursor-pointer"
-        >📎</button>
+          className="text-gray-400 w-7 h-7 text-xl hover:bg-gray-100 rounded-full cursor-pointer justify-center flex items-center"
+        >
+          <img src="src/assets/Ativo 4pag1.svg" className="w-5 h-5"></img>
+        </button>
 
-        <input ref={fileInputRef} type="file" multiple hidden onChange={handleFileChange} />
+        <input
+          ref={fileInputRef}
+          type="file"
+          multiple
+          hidden
+          onChange={handleFileChange}
+        />
 
         <textarea
           ref={textareaRef}
@@ -114,11 +128,13 @@ function ResizableInputBar({
           style={{ maxHeight: `${calculatedMaxHeight}px` }}
         />
 
-        <Link to='/ConferirTexto'>
+        <Link to="/ConferirTexto">
           <button
             type="button"
-            className="text-indigo-600 text-2xl ml-2 mb-1 hover:bg-gray-100 rounded-full cursor-pointer"
-          >⬆️</button>
+            className="flex items-center justify-center text-2xl ml-2 h-7 w-7 hover:bg-gray-100 rounded-full cursor-pointer"
+          >
+            <img src="src/assets/Ativo 5pag1.svg" className="w-4 h-4 rounded-full"></img>
+          </button>
         </Link>
       </div>
     </div>
