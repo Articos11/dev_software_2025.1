@@ -10,7 +10,7 @@ function CheckInfosPage() {
       <UserButton />
       <Sidebar />
       <main className="flex-1 flex flex-col items-center p-6 pl-2 pb-12">
-        <div className="flex-grow max-h-30"></div>
+        <div className="flex-grow max-h-45"></div>
         <div className="flex flex-grow space-between gap-8 w-full p-4">
           <AjustesSection />
           <ConferirTextoSection />

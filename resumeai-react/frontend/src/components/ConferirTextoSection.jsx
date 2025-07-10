@@ -10,12 +10,12 @@ export default function ConferirTextoSection({
   );
 
   return (
-    <div className="flex flex-grow grow-[1.5] flex-col">
+    <div className="flex flex-grow grow-[2.3] flex-col">
       <div className="mb-3 flex justify-between items-baseline">
         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
         <span className="text-sm text-gray-500">{charactheres} caracteres</span>
       </div>
-      <div className="bg-indigo-500 rounded-[25px] shadow w-full h-full flex flex-col">
+      <div className="bg-[var(--color-resumeai-purple)] rounded-[25px] shadow w-full h-full flex flex-col">
         <div className="h-10 items-center flex justify-center">
           {" "}
           <div className="h-2 rounded-full bg-white w-[70%]"></div>{" "}

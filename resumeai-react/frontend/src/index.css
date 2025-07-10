@@ -4,8 +4,8 @@
 @plugin 'tailwind-scrollbar';
 
 @font-face {
-  font-family: 'Sofia Pro';
-  src: url('./fonts/Sofia Pro Regular.otf') format('opentype');
+  font-family: "Sofia Pro";
+  src: url("./fonts/Sofia Pro Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,7 +13,6 @@
 
 * {
   box-sizing: border-box;
-
 }
 
 :root {
@@ -24,6 +23,18 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --color-secondary: #595959;
+  --color-resumeai-purple: #7b68ee;
+  --color-resumeai-teal: #40e0d0;
+  --color-resumeai-blue: #6495ed;
+  --color-resumeai-yellow: #ffdb29;
+  --color-fundo-pagina: #CDCDCD;
+  --color-texto-claro: #e0e0e0;
+  --color-texto-escuro: #333333;
+
+  /* Cores para os toggles específicos (turquesa) */
+  --color-toggle-active-bg: #40e0d0; /* Seu turquesa para o toggle ativo */
+  --color-toggle-thumb: white; /* Cor do polegar do toggle */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,12 +43,19 @@
 }
 
 /* --- CORREÇÃO APLICADA AQUI --- */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
 }
 
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

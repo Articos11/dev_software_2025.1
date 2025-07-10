@@ -9,8 +9,8 @@ function SidebarHeader() {
 
       <div>
         <div className="flex items-center relative justify-center">
-          <h1 class="text-2xl font-bold text-indigo-500 self-center">ResumeAI</h1>
-          <img src="src/assets/Ativo 4.svg" className="h-6 w-6 right-7 absolute hover:bg-gray-100 rounded-md cursor-pointer"></img>
+          <h1 class="text-2xl font-bold text-[var(--color-resumeai-purple)] self-center">ResumeAI</h1>
+          <img src="src/assets/Ativo 4.svg" className="h-6 w-6 right-7 absolute hover:bg-indigo-400 p-1 rounded-md cursor-pointer"></img>
         </div>
       </div>
     </>
