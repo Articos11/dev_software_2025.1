@@ -7,7 +7,7 @@ function Sidebar() {
   const searchIcon = "src/assets/Ativo 24.svg";
 
   return (
-    <aside className="w-64 bg-white shadow-sm flex flex-col rounded-[40px] m-4">
+    <aside className="w-60 bg-white shadow-sm flex flex-col rounded-[40px] m-4">
       <SidebarHeader />
 
       <nav className="flex-1 p-4 space-y-3">

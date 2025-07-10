@@ -34,7 +34,7 @@ export default function AjustesSection({ title = "Ajustes" }) {
   };
 
   return (
-    <div className="flex flex-grow grow-[0.5] flex-col">
+    <div className="flex flex-grow flex-col">
       <div className="mb-3 flex justify-between items-baseline">
         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
       </div>
