@@ -1,9 +1,10 @@
 import React from "react";
 import UserButton from "../components/UserButton";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from "../components/sidebar/Sidebar";
 import AjustesSection from "../components/AjustesSection";
 import ConferirTextoSection from "../components/ConferirTextoSection";
 import PromptSection from "../components/PromptSection";
+import { Link } from "react-router-dom";
 
 function CheckInfosPage() {
   return (
@@ -15,11 +16,13 @@ function CheckInfosPage() {
         <div className="flex flex-grow space-between gap-6 w-full p-4">
           <ConferirTextoSection />
           <AjustesSection />
-          <div className="flex flex-col grow-2">
+          <div className="flex flex-col grow-[2]">
             <PromptSection />
-            <button className="bg-[var(--color-resumeai-teal)] text-white font-bold px-3 py-2 rounded-full hover:bg-teal-500 shadow-sm">
-              Prosseguir
-            </button>
+            <Link to="/salvar_resumo">
+              <button className="bg-[var(--color-resumeai-teal)] text-white font-bold px-3 py-2 w-32 rounded-full hover:bg-teal-500 shadow-sm">
+                Prosseguir
+              </button>
+            </Link>
           </div>
         </div>
       </main>

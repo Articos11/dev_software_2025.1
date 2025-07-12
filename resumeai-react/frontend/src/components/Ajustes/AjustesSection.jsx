@@ -1,8 +1,8 @@
 // src/components/AjustesSection.jsx
 import React, { useRef, useState, useEffect } from "react";
-import SettingsGroup from "./Ajustes/SettingsGroup";
-import ToggleSwitch from "./ToggleSwitch";
-import SelectDropdown from "./SelectDropdown";
+import SettingsGroup from "./SettingsGroup";
+import ToggleSwitch from "../outils/ToggleSwitch";
+import SelectDropdown from "../outils/SelectDropdown";
 
 export default function AjustesSection({ title = "Ajustes" }) {
   const [text, setText] = useState(
@@ -54,9 +54,9 @@ export default function AjustesSection({ title = "Ajustes" }) {
               options={languageOptions}
             />
             <SelectDropdown
-            label="Idioma do Resumo"
-            options={resumeLanguageOptions}>
-            </SelectDropdown>
+              label="Idioma do Resumo"
+              options={resumeLanguageOptions}
+            ></SelectDropdown>
           </SettingsGroup>
           <SettingsGroup title="Flashcards">
             <ToggleSwitch label="Gerar flashcards" initialValue={true} />

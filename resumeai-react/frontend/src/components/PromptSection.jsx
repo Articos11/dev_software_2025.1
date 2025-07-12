@@ -19,7 +19,7 @@ function PromptSection({
   };
 
   return (
-    <div className="flex flex-grow flex-col mt-8 pb-4 mb-6">
+    <div className="flex flex-col mt-8 pb-4 mb-6">
       {/* Título da seção */}
       <h3 className="text-lg font-medium text-gray-700 mb-2">
         {title}

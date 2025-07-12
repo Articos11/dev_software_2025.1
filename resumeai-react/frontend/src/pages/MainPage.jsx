@@ -1,6 +1,6 @@
 import MainLogo from "../components/MainLogo";
 import ResizableInputBar from "../components/ResizableInputBar";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from "../components/sidebar/Sidebar";
 import UserButton from "../components/UserButton";
 import SidebarTeste from "./SidebarTeste";
 import React from "react";
