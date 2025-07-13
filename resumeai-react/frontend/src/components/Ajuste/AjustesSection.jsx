@@ -1,8 +1,8 @@
 // src/components/AjustesSection.jsx
 import React, { useRef, useState, useEffect } from "react";
 import SettingsGroup from "./SettingsGroup";
-import ToggleSwitch from "../outils/ToggleSwitch";
-import SelectDropdown from "../outils/SelectDropdown";
+import ToggleSwitch from "../Uteis/ToggleSwitch";
+import SelectDropdown from "../Uteis/SelectDropdown";
 
 export default function AjustesSection({ title = "Ajustes" }) {
   const [text, setText] = useState(

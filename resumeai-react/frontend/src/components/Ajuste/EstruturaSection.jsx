@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleSwitch from "../outils/ToggleSwitch";
+import ToggleSwitch from "../Uteis/ToggleSwitch";
 
 export default function EstruturaSection() {
   return (

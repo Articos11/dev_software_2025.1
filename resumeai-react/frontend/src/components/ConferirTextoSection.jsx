@@ -1,6 +1,6 @@
 // src/components ConferirTextoSection.jsx
 import React, { useRef, useState, useEffect } from "react";
-import CardBox from "./outils/CardBox";
+import CardBox from "./Uteis/CardBox";
 
 export default function ConferirTextoSection({
   title = "Conferir texto",

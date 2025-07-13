@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { registerUser } from '../services/authService';
-import '../components/Login.css'; // O estilo do formulário ainda é necessário
+import './Login.css'; // O estilo do formulário ainda é necessário
 
 const SignUp = () => {
   const navigate = useNavigate();

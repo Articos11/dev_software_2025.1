@@ -10,7 +10,7 @@ export default function CardBox({ children, className = "", grow = 1 }) {
       <div className="h-10 items-center flex justify-center">
         <div className="h-2 rounded-full bg-white w-[70%]"></div>{" "}
       </div>
-      <section className="bg-white w-full h-full rounded-[25px] p-5 items-center justify-center">
+      <section className="bg-white w-full h-full rounded-[25px] p-5 pb-2 items-center justify-center">
         {children}
       </section>
     </div>

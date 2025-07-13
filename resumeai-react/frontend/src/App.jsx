@@ -11,7 +11,7 @@ import Dashboard from './pages/Dashboard';
 import CheckInfosPage from './pages/CheckInfosPage';
 
 import './index.css';
-import SaveSummaary from './pages/SaveSummary';
+import SaveSummaryPage from './pages/SaveSummaryPage';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <Route path="/home" element={<MainPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/conferir_texto" element={<CheckInfosPage />} />
-      <Route path="/salvar_resumo" element={<SaveSummaary />} />
+      <Route path="/salvar_resumo" element={<SaveSummaryPage />} />
 
       {/* --- Rotas de Autenticação que USAM o AuthLayout --- */}
       <Route element={<AuthLayout />}>
