@@ -1,16 +1,31 @@
 import React from "react";
 
-function SidebarHeader() {
+function SidebarHeader({ onCollapse, collapsed }) {
   return (
     <>
-      <div className="flex justify-center my-4">
+      <div className="flex justify-center my-4 mb-2">
         <div className="h-2 w-[63%] bg-gray-400 rounded-full"> </div>
       </div>
 
-      <div>
-        <div className="flex items-center relative justify-center">
-          <h1 class="text-2xl font-bold text-[var(--color-resumeai-purple)] self-center">ResumeAI</h1>
-          <img src="src/assets/Ativo 4.svg" className="h-6 w-6 right-7 absolute hover:bg-indigo-400 p-1 rounded-md cursor-pointer"></img>
+      <div style={{ minHeight: "48px", height: "48px" }}>
+        <div
+          className={`flex items-center h-full ${
+            collapsed ? "justify-center" : "relative justify-center"
+          }`}
+        >
+          {!collapsed && (
+            <h1 className="text-3xl font-bold text-[var(--color-resumeai-purple)] self-center">
+              ResumeAI
+            </h1>
+          )}
+          <img
+            src="src/assets/Ativo 4.svg"
+            className={`h-7 w-7 hover:bg-indigo-400 p-1 rounded-md cursor-pointer ${
+              collapsed ? "" : "right-4 absolute"
+            }`}
+            onClick={onCollapse}
+            alt="Colapsar Sidebar"
+          />
         </div>
       </div>
     </>

@@ -19,7 +19,7 @@ export default function ConferirTextoSection({
 
       <CardBox>
         <textarea
-          className="px-4 size-full scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200 outline-none resize-none"
+          className="px-4 size-full scrollbar-thumb-rounded-full scrollbar-h-20 scrollbar-track-rounded-full scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200 outline-none resize-none"
           value={text}
           onChange={(e) => setText(e.target.value)}
         ></textarea>

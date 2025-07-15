@@ -35,7 +35,7 @@ export default function SaveSummaryPage() {
             onChange={(e) => setText(e.target.value)}
           ></textarea>{" "}
         </div>
-        <CardBox className="max-w-[400px] flex flex-col items-center">
+        <CardBox className="max-w-[400px]">
           <SettingsGroup title="Flashcards">
             <FlashcardThumbnails />
           </SettingsGroup>
