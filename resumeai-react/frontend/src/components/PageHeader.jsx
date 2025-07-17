@@ -19,8 +19,8 @@ export default function PageHeader({
           <img src={icon} alt={title} className="w-11 h-11" />
         </div>
         <div className="flex flex-col justify-center">
-          <span className="text-lg font-light leading-tight ml-1">Meus</span>
-          <span className="text-3xl font-normal leading-none">{title}</span>
+          <span className="text-lg leading-tight ml-[1px]">Meus</span>
+          <span className="text-3xl leading-none">{title}</span>
         </div>
       </div>
       <div className="mt-4 ml-23">
@@ -34,10 +34,22 @@ export default function PageHeader({
             />
           }
         >
-          <span className="text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]">
+          <span
+            className="text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]"
+            style={{
+              fontFamily:
+                "Sofia Pro, system-ui, Avenir, Helvetica, Arial, sans-serif",
+            }}
+          >
             Início
           </span>
-          <span className="text-gray-700">
+          <span
+            className="text-gray-700 text-semibold"
+            style={{
+              fontFamily:
+                "Sofia Pro, system-ui, Avenir, Helvetica, Arial, sans-serif",
+            }}
+          >
             Coleção de Flashcards
           </span>
         </Breadcrumbs>
