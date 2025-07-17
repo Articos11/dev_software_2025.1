@@ -5,8 +5,16 @@
 
 @font-face {
   font-family: "Sofia Pro";
-  src: url("./fonts/Sofia Pro Regular.otf") format("opentype");
+  src: url("./fonts/Fontspring-DEMO-SofiaProSoftLight.otf") format("opentype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("./fonts/Fontspring-DEMO-SofiaProSoftMed.otf") format("opentype");
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -21,16 +29,16 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #222; /* Lighter black for base text */
   background-color: #242424;
   --color-secondary: #595959;
   --color-resumeai-purple: #7b68ee;
   --color-resumeai-teal: #40e0d0;
   --color-resumeai-blue: #6495ed;
   --color-resumeai-yellow: #ffdb29;
-  --color-fundo-pagina: #CDCDCD;
+  --color-fundo-pagina: #cdcdcd;
   --color-texto-claro: #e0e0e0;
-  --color-texto-escuro: #333333;
+  --color-texto-escuro: #222; /* Lighter black for dark text */
 
   /* Cores para os toggles específicos (turquesa) */
   --color-toggle-active-bg: #40e0d0; /* Seu turquesa para o toggle ativo */

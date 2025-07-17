@@ -27,7 +27,7 @@ export default function SidebarFooter() {
         </div>
       </div>
       <div className="flex flex-col items-center w-full mt-8">
-        <span className="text-md cursor-pointer">Sair</span>
+        <span className="text-md cursor-pointer hover:text-[var(--color-resumeai-blue)]">Sair</span>
       </div>
     </div>
   );

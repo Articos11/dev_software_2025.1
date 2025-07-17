@@ -15,7 +15,7 @@ export default function NewSidebar() {
   return (
     <Sidebar
       collapsed={collapsed}
-      className="w-60 bg-white shadow-sm flex flex-col rounded-[40px] m-4"
+      className="w-60 bg-white shadow-md flex flex-col rounded-[40px] m-4"
     >
       <SidebarHeader onCollapse={handleCollapse} collapsed={collapsed} />
 
@@ -33,6 +33,7 @@ export default function NewSidebar() {
                 src="src/assets/Ativo 23.svg"
                 className="w-5 h-5 mx-auto my-auto"
                 alt="Novo"
+                title="Novo"
               />
             </span>
           }
@@ -53,6 +54,7 @@ export default function NewSidebar() {
                 src={searchIcon}
                 className="w-5 h-5 mx-auto my-auto"
                 alt="Buscar"
+                title="Buscar"
               />
             </span>
           }
@@ -60,43 +62,37 @@ export default function NewSidebar() {
         >
           Buscar
         </MenuItem>
-        {!collapsed && (
-          <>
-            <MeuEspacoDivision />
-            <MenuItem
-              icon={
-                <span className="ml-2">
-                  <img
-                    src="src/assets/Ativo 28.svg"
-                    className="w-8 h-8 mx-auto my-auto"
-                    alt="Flashcards"
-                  />
-                </span>
-              }
-            >
-              Flashcards
-            </MenuItem>
-            <SubMenu
-              label="Resumos"
-              icon={
-                <span className="ml-1">
-                  <img
-                    src="src/assets/Ativo 29.svg"
-                    className="w-7 h-7 mx-auto my-auto"
-                    alt="Resumos"
-                  />
-                </span>
-              }
-            >
-              <MenuItem>
-                <Link to="/resumos/novo">Novo Resumo</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/resumos/lista">Lista de Resumos</Link>
-              </MenuItem>
-            </SubMenu>
-          </>
-        )}
+        {collapsed ? <div style={{ height: 32 }} /> : <MeuEspacoDivision />}
+        <MenuItem
+          icon={
+            <span className="flex items-center justify-center w-full h-full ml-1">
+              <img
+                src="src/assets/Ativo 28.svg"
+                className="w-7 h-7 mx-auto my-auto"
+                alt="Flashcards"
+                title="Flashcards"
+              />
+            </span>
+          }
+          component={<Link to="/flashcards"></Link>}
+        >
+          {!collapsed && "Flashcards"}
+        </MenuItem>
+        <MenuItem
+          icon={
+            <span className="flex items-center justify-center w-full h-full">
+              <img
+                src="src/assets/Ativo 29.svg"
+                className="w-7 h-7 mx-auto my-auto"
+                alt="Resumos"
+                title="Resumos"
+              />
+            </span>
+          }
+          component={<Link to="/resumos"></Link>}
+        >
+          {!collapsed && "Resumos"}
+        </MenuItem>
       </Menu>
       {!collapsed && (
         <div className="w-full absolute bottom-2 left-0">

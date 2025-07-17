@@ -12,6 +12,7 @@ import CheckInfosPage from './pages/CheckInfosPage';
 
 import './index.css';
 import SaveSummaryPage from './pages/SaveSummaryPage';
+import MySummariesPage from './pages/MyFlashcardsPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/conferir_texto" element={<CheckInfosPage />} />
       <Route path="/salvar_resumo" element={<SaveSummaryPage />} />
+      <Route path="/flashcards" element={<MySummariesPage />} />
 
       {/* --- Rotas de Autenticação que USAM o AuthLayout --- */}
       <Route element={<AuthLayout />}>

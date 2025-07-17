@@ -20,7 +20,7 @@ function SidebarHeader({ onCollapse, collapsed }) {
           )}
           <img
             src="src/assets/Ativo 4.svg"
-            className={`h-7 w-7 hover:bg-indigo-400 p-1 rounded-md cursor-pointer ${
+            className={`h-7 w-7 hover:bg-[var(--color-resumeai-purple)] p-1 rounded-md cursor-pointer ${
               collapsed ? "" : "right-4 absolute"
             }`}
             onClick={onCollapse}

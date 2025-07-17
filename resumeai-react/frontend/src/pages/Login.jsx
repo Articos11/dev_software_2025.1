@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <form className="login-form" onSubmit={handleSubmit}>
       <div className="logo-header">
-        <h1>🧠ResumeAI</h1>
+        <h1>ResumeAI</h1>
         <p>Da complexidade à clareza</p>
       </div>
       
