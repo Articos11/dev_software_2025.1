@@ -8,8 +8,8 @@ export default function MyFlashcardsPage() {
     <div>
       <PageHeaderSidebar>
         <PageHeader />
-        <div className="flex flex-grow pl-22 h-full w-full overflow-y-invisible">
-          <div className="flex grow-1 max-w-220 flex-wrap mt-20 gap-x-6">
+        <div className="flex flex-grow pl-22 h-full w-full overflow-y-hidden">
+          <div className="flex grow-1 max-w-230 flex-wrap mt-20 gap-6 overflow-y-auto overflow-x-hidden scrollbar-thumb-rounded-full scrollbar-h-20 scrollbar-track-rounded-full scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
             <FlashcardBox />
             <FlashcardBox />
             <FlashcardBox />
@@ -19,6 +19,18 @@ export default function MyFlashcardsPage() {
             <FlashcardBox />
             <FlashcardBox />
             <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+            <FlashcardBox />
+
           </div>
         </div>
       </PageHeaderSidebar>
