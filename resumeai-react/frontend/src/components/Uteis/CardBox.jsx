@@ -5,7 +5,7 @@ export default function CardBox({ children, className = "", grow = 1 }) {
   const growClass = grow === 1 ? "grow" : grow === 0 ? "" : `grow-[${grow}]`;
   return (
     <div
-      className={`bg-[var(--color-resumeai-purple)] rounded-[25px]  w-full h-full flex flex-col ${growClass} ${className}`}
+      className={`bg-[var(--color-resumeai-purple)] rounded-[25px] shadow-md w-full h-full flex flex-col ${growClass} ${className}`}
     >
       <div className="h-10 items-center flex justify-center">
         <div className="h-2 rounded-full bg-white w-[70%]"></div>{" "}

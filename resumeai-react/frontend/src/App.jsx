@@ -13,8 +13,17 @@ import CheckInfosPage from './pages/CheckInfosPage';
 import './index.css';
 import SaveSummaryPage from './pages/SaveSummaryPage';
 import MySummariesPage from './pages/MyFlashcardsPage';
+import FlashcardPage from './pages/FlashcardPage';
+import MyFlashcardsPage from './pages/MyFlashcardsPage';
 
 function App() {
+
+    const meusFlashcards = [
+    { id: '1', title: 'Matemática Discreta - Conjuntos aaaaaaaaaaaaaaaaa', date: '15/07/2025', icon: 'src/assets/Ativo 29.svg' },
+    { id: '2', title: 'SQL Básico - Comandos DML', date: '16/07/2025', icon: 'src/assets/Ativo 29.svg' },
+    { id: '3', title: 'React Hooks - useState', date: '17/07/2025', icon: 'src/assets/Ativo 29.svg' },
+  ];
+
   return (
     <Routes>
       {/* Rotas Públicas ou do App Principal (NÃO usam o layout de autenticação) */}
@@ -22,7 +31,8 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/conferir_texto" element={<CheckInfosPage />} />
       <Route path="/salvar_resumo" element={<SaveSummaryPage />} />
-      <Route path="/flashcards" element={<MySummariesPage />} />
+      <Route path="/flashcards" element={<MyFlashcardsPage flashcards={meusFlashcards} />} />
+      <Route path="/flashcards/:id" element={<FlashcardPage />} />
 
       {/* --- Rotas de Autenticação que USAM o AuthLayout --- */}
       <Route element={<AuthLayout />}>

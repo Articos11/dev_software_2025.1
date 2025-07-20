@@ -3,7 +3,10 @@ import React from "react";
 function SidebarHeader({ onCollapse, collapsed }) {
   return (
     <>
-      <div className="flex justify-center my-4 mb-2">
+      <div
+        className="flex justify-center my-4 mb-2"
+        style={{ visibility: collapsed ? "hidden" : "visible" }}
+      >
         <div className="h-2 w-[63%] bg-gray-400 rounded-full"> </div>
       </div>
 

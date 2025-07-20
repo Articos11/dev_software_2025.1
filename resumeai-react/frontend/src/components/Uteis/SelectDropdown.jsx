@@ -27,7 +27,7 @@ function SelectDropdown({ label, options, defaultValue, onChange }) {
           id={`select-${label}`}
           value={selectedValue}
           onChange={handleChange}
-          className="w-full p-2 pr-8 rounded-full bg-[var(--color-texto-claro)] text-base cursor-pointer
+          className="w-full p-2 pr-8 rounded-full bg-gray-200 text-base cursor-pointer
                      appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--color-resumeai-blue)]"
         >
           {options.map((option) => (
