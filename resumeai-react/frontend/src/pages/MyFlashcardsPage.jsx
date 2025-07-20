@@ -8,8 +8,8 @@ export default function MyFlashcardsPage({ flashcards = [] }) {
     <div>
       <PageHeaderSidebar>
         <PageHeader />
-        <div className="flex flex-grow pl-22 h-full w-full overflow-y-hidden">
-          <div className="flex grow-1 max-w-230 flex-wrap mt-15 gap-6 overflow-y-auto overflow-x-hidden scrollbar-thumb-rounded-full scrollbar-h-20 scrollbar-track-rounded-full scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+        <div className="flex flex-grow px-22 h-full w-full overflow-y-hidden">
+          <div className="flex grow-1 max-w-290 flex-wrap mt-15 gap-6 overflow-y-auto overflow-x-hidden scrollbar-thumb-rounded-full scrollbar-h-20 scrollbar-track-rounded-full scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
             {flashcards.length > 0 ? (
               flashcards.map((flashcard) => (
                 <FlashcardBox

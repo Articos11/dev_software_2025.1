@@ -15,7 +15,7 @@ function ToggleSwitch({ label, initialValue = false, onToggle, colorClass = 'pee
   return (
     <div className="flex items-center justify-between">
       <span className="text-base text-gray-700">{label}</span>
-      <label className="relative inline-block w-10 h-6 cursor-pointer mb-1">
+      <label className="relative inline-block w-10 h-6 cursor-pointer">
         <input
           type="checkbox"
           checked={isChecked}

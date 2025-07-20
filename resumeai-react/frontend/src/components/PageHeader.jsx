@@ -4,6 +4,18 @@ import { Breadcrumbs } from "@mui/material";
 export default function PageHeader({
   title = "Flashcards",
   icon = "src/assets/Ativo 28.svg",
+  breadcrumbs = [
+    {
+      label: "Início",
+      href: "/",
+      className:
+        "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]",
+    },
+    {
+      label: "Coleção de Flashcards",
+      className: "text-gray-700 text-semibold",
+    },
+  ],
 }) {
   return (
     <div className="min-h-40 w-full flex flex-col gap-4">
@@ -34,24 +46,32 @@ export default function PageHeader({
             />
           }
         >
-          <span
-            className="text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]"
-            style={{
-              fontFamily:
-                "Sofia Pro, system-ui, Avenir, Helvetica, Arial, sans-serif",
-            }}
-          >
-            Início
-          </span>
-          <span
-            className="text-gray-700 text-semibold"
-            style={{
-              fontFamily:
-                "Sofia Pro, system-ui, Avenir, Helvetica, Arial, sans-serif",
-            }}
-          >
-            Coleção de Flashcards
-          </span>
+          {breadcrumbs.map((item, idx) =>
+            item.href ? (
+              <a
+                key={idx}
+                href={item.href}
+                className={item.className}
+                style={{
+                  fontFamily:
+                    "Sofia Pro, system-ui, Avenir, Helvetica, Arial, sans-serif",
+                }}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <span
+                key={idx}
+                className={item.className}
+                style={{
+                  fontFamily:
+                    "Sofia Pro, system-ui, Avenir, Helvetica, Arial, sans-serif",
+                }}
+              >
+                {item.label}
+              </span>
+            )
+          )}
         </Breadcrumbs>
       </div>
     </div>

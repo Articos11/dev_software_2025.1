@@ -33,7 +33,7 @@ function PromptSection({
         placeholder={placeholder}
         rows="5"
         className="w-full p-4 bg-white rounded-md font-sans text-sm resize-y 
-                   min-h-[100px] max-h-[150px] outline-none focus:ring-2 focus:ring-blue-500
+                   min-h-[100px] max-h-[150px] outline-none focus:ring-2 focus:ring-[var(--color-resumeai-blue)]
                    overflow-y-auto scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200"
       ></textarea>
     </div>
