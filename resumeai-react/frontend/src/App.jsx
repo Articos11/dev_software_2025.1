@@ -39,7 +39,7 @@ function App() {
   ];
 
     const meusResumos = [
-    { id: 'r1', title: 'Resumo sobre OVNIs', date: '19/07/2025', icon: 'src/assets/Ativo 29.svg' },
+    { id: 'r1', title: 'Resumo sobre OVNIs ', date: '19/07/2025', icon: 'src/assets/Ativo 29.svg' },
     { id: 'r2', title: 'Resumo de TCC - Parte 1', date: '20/07/2025', icon: 'src/assets/Ativo 29.svg' },
     { id: 'r3', title: 'Artigo Científico', date: '20/07/2025', icon: 'src/assets/Ativo 29.svg' },
   ];
