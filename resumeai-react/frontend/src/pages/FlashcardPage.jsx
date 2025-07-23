@@ -36,7 +36,7 @@ export default function FlashcardPage() {
     // Contêiner principal da página: centraliza o conteúdo vertical e horizontalmente
     <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-100">
       {/* Botão de Voltar */}
-      <Link to="/meus-flashcards" className="self-start mb-6 inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+      <Link to="/flashcards" className="self-start mb-6 inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
         &lt; Voltar
       </Link>
 
