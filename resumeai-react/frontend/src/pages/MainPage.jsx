@@ -6,7 +6,7 @@ import PageHeaderSidebar from "../components/PageHeaderSidebar";
 function MainPage() {
   return (
     <PageHeaderSidebar>
-      <div className="flex-grow max-h-45"></div>
+      <div className="flex-grow"></div>
       <MainLogo />
       <div className="flex-grow"></div>
       <ResizableInputBar />
