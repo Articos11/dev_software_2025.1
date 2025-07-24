@@ -1,0 +1,13 @@
+// src/components/SettingsGroup.jsx
+import React from "react";
+
+function SettingsGroup({ title, children }) {
+  return (
+    <div className="pb-4 ">
+      <h3 className="text-lg font-semibold text-gray-700 mb-2">{title}</h3>
+      <div className="space-y-1">{children}</div>
+    </div>
+  );
+}
+
+export default SettingsGroup;
