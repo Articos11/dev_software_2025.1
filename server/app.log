@@ -1,0 +1,94 @@
+2025-07-23 14:19:39,883 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 14:19:39,883 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 14:19:39,886 - werkzeug - INFO -  * Restarting with stat
+2025-07-23 14:19:41,216 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 14:19:41,220 - werkzeug - INFO -  * Debugger PIN: 364-960-238
+2025-07-23 14:28:52,147 - app.routes - INFO - Processando análise de PDF com prompt: 'resume ai...'
+2025-07-23 14:28:53,401 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 14:28:53,404 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 14:28:53] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 14:29:04,079 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 14:29:04] "OPTIONS /api/generate-flashcards HTTP/1.1" 200 -
+2025-07-23 14:29:04,081 - app.routes - INFO - Gerando 3 flashcards para o texto: 'O documento é um cabeçalho simples para uma ativid...'
+2025-07-23 14:29:06,220 - app.routes - INFO - Flashcards gerados com sucesso.
+2025-07-23 14:29:06,221 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 14:29:06] "POST /api/generate-flashcards HTTP/1.1" 200 -
+2025-07-23 15:36:52,894 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 15:36:52,894 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 15:36:52,897 - werkzeug - INFO -  * Restarting with stat
+2025-07-23 15:36:54,296 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 15:36:54,302 - werkzeug - INFO -  * Debugger PIN: 364-960-238
+2025-07-23 15:37:38,257 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 15:37:38] "[33mGET /api HTTP/1.1[0m" 404 -
+2025-07-23 15:37:38,453 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 15:37:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-23 15:37:49,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 15:37:49] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-23 15:38:07,124 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 15:38:07] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-23 18:45:16,806 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 18:45:16,807 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 18:45:16,810 - werkzeug - INFO -  * Restarting with stat
+2025-07-23 18:45:18,668 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 18:45:18,678 - werkzeug - INFO -  * Debugger PIN: 364-960-238
+2025-07-23 18:45:34,281 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 18:45:34] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-23 18:54:56,571 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 18:54:56,572 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 18:54:56,574 - werkzeug - INFO -  * Restarting with stat
+2025-07-23 18:54:59,047 - werkzeug - WARNING -  * Debugger is active!
+2025-07-23 18:54:59,053 - werkzeug - INFO -  * Debugger PIN: 626-778-171
+2025-07-23 18:55:26,475 - app.routes - INFO - Processando análise de PDF com prompt: 'resume ai ...'
+2025-07-23 18:55:32,640 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 18:55:32,642 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 18:55:32] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 18:55:36,911 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 18:55:36] "OPTIONS /api/generate-flashcards HTTP/1.1" 200 -
+2025-07-23 18:55:36,916 - app.routes - INFO - Gerando 3 flashcards para o texto: 'Este relatório de desenvolvimento de conceito desc...'
+2025-07-23 18:55:39,550 - app.routes - INFO - Flashcards gerados com sucesso.
+2025-07-23 18:55:39,551 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 18:55:39] "POST /api/generate-flashcards HTTP/1.1" 200 -
+2025-07-23 19:04:49,497 - app.routes - INFO - Processando análise de PDF com prompt: 'resume ai misera...'
+2025-07-23 19:05:03,533 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 19:05:03,534 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 19:05:03] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 19:21:26,379 - app.routes - INFO - Processando análise de PDF com prompt: '...'
+2025-07-23 19:21:37,816 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 19:21:37,817 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 19:21:37] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 19:21:47,275 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 19:21:47] "OPTIONS /api/generate-flashcards HTTP/1.1" 200 -
+2025-07-23 19:21:47,279 - app.routes - INFO - Gerando 3 flashcards para o texto: 'Este documento é um relatório de desenvolvimento d...'
+2025-07-23 19:21:49,992 - app.routes - INFO - Flashcards gerados com sucesso.
+2025-07-23 19:21:49,992 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 19:21:49] "POST /api/generate-flashcards HTTP/1.1" 200 -
+2025-07-23 20:02:06,605 - app.routes - INFO - Processando análise de PDF com prompt: 'porque a minha vida é um lixo?...'
+2025-07-23 20:02:08,103 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:02:08,105 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:02:08] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 20:13:58,515 - app.routes - INFO - Processando análise de PDF com prompt: 'RESUMA...'
+2025-07-23 20:14:05,283 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:14:05,284 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:14:05] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 20:18:57,031 - app.routes - INFO - Processando análise de PDF com prompt: 'RESUMA...'
+2025-07-23 20:19:03,458 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:19:03,462 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:19:03] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 20:21:41,142 - app.routes - INFO - Processando análise de PDF com prompt: 'RESUMA...'
+2025-07-23 20:21:45,958 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:21:45,958 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:21:45] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 20:28:52,874 - app.routes - INFO - Processando análise de PDF com prompt: 'REUSMA...'
+2025-07-23 20:29:04,218 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:29:04,221 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:29:04] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 20:38:40,337 - app.routes - INFO - Processando análise de PDF com prompt: 'resuma...'
+2025-07-23 20:38:41,236 - app.routes - ERROR - Erro ao processar PDF: O conteúdo do PDF está vazio ou ilegível.
+Traceback (most recent call last):
+  File "C:\Users\barbo\OneDrive\Desktop\ds_projeto\dev_software_2025.1\server\app\routes.py", line 71, in analyze_pdf
+    resposta = process_pdf_analysis(model, pdf_file, prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\barbo\OneDrive\Desktop\ds_projeto\dev_software_2025.1\server\app\services.py", line 34, in process_pdf_analysis
+    raise ValueError("O conteúdo do PDF está vazio ou ilegível.")
+ValueError: O conteúdo do PDF está vazio ou ilegível.
+2025-07-23 20:38:41,286 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:38:41] "[35m[1mPOST /api/analyze-pdf HTTP/1.1[0m" 500 -
+2025-07-23 20:38:51,081 - app.routes - INFO - Processando análise de PDF com prompt: 'resuma...'
+2025-07-23 20:38:51,873 - app.routes - ERROR - Erro ao processar PDF: O conteúdo do PDF está vazio ou ilegível.
+Traceback (most recent call last):
+  File "C:\Users\barbo\OneDrive\Desktop\ds_projeto\dev_software_2025.1\server\app\routes.py", line 71, in analyze_pdf
+    resposta = process_pdf_analysis(model, pdf_file, prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\barbo\OneDrive\Desktop\ds_projeto\dev_software_2025.1\server\app\services.py", line 34, in process_pdf_analysis
+    raise ValueError("O conteúdo do PDF está vazio ou ilegível.")
+ValueError: O conteúdo do PDF está vazio ou ilegível.
+2025-07-23 20:38:51,914 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:38:51] "[35m[1mPOST /api/analyze-pdf HTTP/1.1[0m" 500 -
+2025-07-23 20:39:03,705 - app.routes - INFO - Processando análise de PDF com prompt: 'resuma...'
+2025-07-23 20:39:29,139 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:39:29,144 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:39:29] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-23 20:39:41,253 - app.routes - INFO - Processando análise de PDF com prompt: 'resuma, em português...'
+2025-07-23 20:40:12,919 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-23 20:40:12,923 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:40:12] "POST /api/analyze-pdf HTTP/1.1" 200 -

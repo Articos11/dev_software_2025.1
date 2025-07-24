@@ -1,144 +1,197 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// frontend/src/pages/SummariesPage.jsx
+import React, { useState, useRef } from 'react';
 
-function ResizableInputBar({
-  placeholder = "Novo resumo rápido...",
-  initialText = "",
-  maxRows = 4,
-  onFilesSelected,
-}) {
-  const textareaRef = useRef(null);
-  const fileInputRef = useRef(null);
-  const cardsContainerRef = useRef(null);
+const API_BASE_URL = 'http://127.0.0.1:5000/api';
 
-  const [text, setText] = useState(initialText);
-  const [files, setFiles] = useState([]);
-  const [hasOverflow, setHasOverflow] = useState(false);
+function SummariesPage() {
+    const fileInputRef = useRef(null);
 
-  const lineHeight = 24;
-  const calculatedMaxHeight = maxRows * lineHeight;
+    const [promptText, setPromptText] = useState('');
+    const [selectedFiles, setSelectedFiles] = useState([]);
+    const [isLoadingPdf, setIsLoadingPdf] = useState(false);
+    const [pdfError, setPdfError] = useState('');
+    const [summaryResult, setSummaryResult] = useState('');
 
-  // Ajuste de altura do textarea
-  useEffect(() => {
-    if (!textareaRef.current) return;
-    const ta = textareaRef.current;
-    ta.style.height = "auto";
-    ta.style.height = ta.scrollHeight + "px";
-  }, [text]);
+    const clearPdfFeedback = () => {
+        setPdfError('');
+        setIsLoadingPdf(false);
+        setSummaryResult(''); // Limpa o resumo anterior
+    };
 
-  // Verificação de overflow vertical nos cards
-  useEffect(() => {
-    const el = cardsContainerRef.current;
-    if (!el) return;
-    setHasOverflow(el.scrollHeight > el.clientHeight);
-  }, [files]);
+    const handleFilesSelected = (event) => {
+        const files = Array.from(event.target.files);
+        setSelectedFiles(files);
+        console.log('DEBUG: Arquivos selecionados atualizados no estado da SummariesPage:', files);
+    };
 
-  const handleAttachClick = () => fileInputRef.current?.click();
+    const handleTextChange = (event) => {
+        setPromptText(event.target.value);
+        console.log('DEBUG: Prompt atualizado no estado da SummariesPage:', event.target.value);
+    };
 
-  const handleFileChange = (e) => {
-    const sel = e.target.files;
-    if (sel?.length) {
-      const arr = Array.from(sel);
-      setFiles((existing) => [...existing, ...arr]);
-      onFilesSelected?.([...files, ...arr]);
-      e.target.value = "";
-    }
-  };
+    const handlePdfSubmit = async () => {
+        console.log('DEBUG: handlePdfSubmit acionado na SummariesPage!');
+        clearPdfFeedback();
+        setIsLoadingPdf(true);
 
-  const handleChange = (e) => setText(e.target.value);
+        const pdfFileToSend = selectedFiles.find(file =>
+            file.type === 'application/pdf' ||
+            file.name.toLowerCase().endsWith('.pdf')
+        );
 
-  const removeFile = (idx) =>
-    setFiles((curr) => curr.filter((_, i) => i !== idx));
+        if (!pdfFileToSend) {
+            setPdfError('Por favor, selecione um arquivo PDF válido.');
+            setIsLoadingPdf(false);
+            console.log('DEBUG: Erro: Nenhum PDF válido selecionado.');
+            return;
+        }
 
-  return (
-    <div className="w-full max-w-3xl relative">
-      {files.length > 0 && (
-        <div className="mb-2 relative">
-          <div
-            ref={cardsContainerRef}
-            className="
-              flex flex-wrap gap-2
-              max-h-[8rem] overflow-y-auto pr-1
-              no-scrollbar
-            "
-          >
-            {files.map((file, idx) => {
-              const isImage = file.type?.startsWith("image/");
-              const previewUrl = isImage ? URL.createObjectURL(file) : null;
-              return (
-                <div
-                  key={idx}
-                  className="flex items-center bg-gray-100 rounded-lg p-2 space-x-2"
-                >
-                  {isImage ? (
-                    <img
-                      src={previewUrl}
-                      alt={file.name}
-                      className="h-12 w-12 object-cover rounded"
-                    />
-                  ) : (
-                    <div className="h-12 w-12 flex items-center justify-center bg-gray-200 rounded">
-                      <span className="text-sm text-gray-600">📄</span>
+        const formData = new FormData();
+        formData.append('pdf', pdfFileToSend);
+        formData.append('prompt', promptText);
+
+        console.log('DEBUG: Preparando requisição fetch para /analyze-pdf...');
+        console.log('DEBUG: URL:', `${API_BASE_URL}/analyze-pdf`);
+        console.log('DEBUG: Prompt a ser enviado:', promptText);
+        console.log('DEBUG: Arquivo PDF a ser enviado:', pdfFileToSend.name);
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/analyze-pdf`, {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await response.json();
+
+            console.log('DEBUG: Resposta da API (status):', response.status);
+            console.log('DEBUG: Resposta da API (dados):', data);
+
+            if (response.ok) {
+                setSummaryResult(data.resposta);
+            } else {
+                setPdfError(data.erro || 'Erro ao analisar PDF.');
+                setSummaryResult('');
+                console.error('DEBUG: Erro da API ao gerar resumo:', data.erro);
+            }
+        } catch (error) {
+            console.error('DEBUG: Erro na comunicação com a API de PDF (catch):', error);
+            setPdfError('Não foi possível conectar ao servidor para análise de PDF. Verifique se o backend está em execução.');
+            setSummaryResult('');
+        } finally {
+            setIsLoadingPdf(false);
+            console.log('DEBUG: Finalizado handlePdfSubmit.');
+        }
+    };
+
+    const isSubmitButtonDisabled =
+        isLoadingPdf ||
+        selectedFiles.length === 0 ||
+        !selectedFiles.some(file =>
+            file.type === 'application/pdf' ||
+            file.name.toLowerCase().endsWith('.pdf')
+        );
+
+    return (
+        <div className="p-4 max-w-6xl mx-auto bg-white rounded-lg shadow-md"> {/* Aumentado max-w */}
+            <h1 className="text-3xl font-bold text-purple-700 text-center mb-6">Gerar Resumo de PDF</h1>
+
+            {/* Container principal para layout lado a lado */}
+            <div className="flex flex-col md:flex-row gap-8"> {/* flex-col para mobile, md:flex-row para desktop */}
+
+                {/* Coluna da esquerda: Inputs e Botão */}
+                <div className="flex-1 min-w-[300px]"> {/* flex-1 para ocupar espaço disponível */}
+                    {/* Input para o Prompt de Texto */}
+                    <div className="mb-4">
+                        <label htmlFor="prompt-text" className="block text-gray-700 text-sm font-bold mb-2">
+                            Digite seu prompt (opcional):
+                        </label>
+                        <textarea
+                            id="prompt-text"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y"
+                            placeholder="Você gostaria de algo mais específico no resumo? Digite aqui..."
+                            value={promptText}
+                            onChange={handleTextChange}
+                        ></textarea>
                     </div>
-                  )}
-                  <div className="text-sm flex-1 truncate">{file.name}</div>
-                  <button
-                    onClick={() => removeFile(idx)}
-                    className="text-red-500 hover:text-red-700"
-                    type="button"
-                  >
-                    ❌
-                  </button>
+
+                    {/* Input para o Arquivo PDF */}
+                    <div className="mb-6">
+                        <label htmlFor="pdf-file" className="block text-gray-700 text-sm font-bold mb-2">
+                            Selecione um arquivo PDF:
+                        </label>
+                        <input
+                            type="file"
+                            id="pdf-file"
+                            ref={fileInputRef}
+                            accept=".pdf"
+                            onChange={handleFilesSelected}
+                            className="block w-full text-sm text-gray-500
+                                       file:mr-4 file:py-2 file:px-4
+                                       file:rounded-full file:border-0
+                                       file:text-sm file:font-semibold
+                                       file:bg-purple-50 file:text-purple-700
+                                       hover:file:bg-purple-100"
+                        />
+                        {selectedFiles.length > 0 && (
+                            <p className="mt-2 text-sm text-gray-600">
+                                Arquivo selecionado: <span className="font-medium">{selectedFiles[0]?.name}</span>
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Botão de Enviar */}
+                    <button
+                        onClick={handlePdfSubmit}
+                        disabled={isSubmitButtonDisabled}
+                        className={`w-full py-3 px-4 rounded-md text-white font-semibold transition duration-300
+                                    ${isSubmitButtonDisabled
+                                        ? 'bg-gray-400 cursor-not-allowed'
+                                        : 'bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
+                                    }`}
+                    >
+                        {isLoadingPdf ? 'Gerando Resumo...' : 'Gerar Resumo do PDF'}
+                    </button>
+
+                    {/* Área para exibir erros */}
+                    {pdfError && (
+                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-center mt-4 rounded-md" role="alert">
+                            {pdfError}
+                        </div>
+                    )}
                 </div>
-              );
-            })}
-          </div>
 
-          {/* Fade condicional */}
-          {hasOverflow && (
-            <div className="absolute bottom-0 left-0 right-0 h-2 pointer-events-none bg-gradient-to-b from-transparent to-white" />
-          )}
+                {/* Coluna da direita: Área para exibir o resumo */}
+                {summaryResult && (
+                    <div className="flex-1 p-4 bg-purple-50 rounded-lg border border-purple-200 shadow-sm"> {/* flex-1 para ocupar espaço disponível */}
+                        <h2 className="text-xl font-semibold text-purple-800 mb-3">Resumo Gerado:</h2>
+                        {promptText && (
+                            <div className="mb-3 p-3 bg-gray-100 rounded-md border border-gray-200">
+                                <h3 className="text-md font-medium text-gray-700 mb-1">Seu Prompt:</h3>
+                                <p className="text-gray-600 whitespace-pre-wrap">{promptText}</p>
+                            </div>
+                        )}
+                        <div className="overflow-y-auto max-h-[calc(100vh-250px)] pr-2"> {/* Adicionado scroll e altura máxima */}
+                            <p className="text-gray-800 whitespace-pre-wrap leading-relaxed">
+                                {summaryResult}
+                            </p>
+                        </div>
+                        <button
+                            onClick={() => {
+                                clearPdfFeedback();
+                                setSelectedFiles([]);
+                                setPromptText('');
+                                if (fileInputRef.current) {
+                                    fileInputRef.current.value = '';
+                                }
+                            }}
+                            className="mt-4 w-full py-2 px-4 rounded-md text-purple-700 font-semibold border border-purple-600 hover:bg-purple-100 transition duration-300"
+                        >
+                            Fazer Novo Resumo
+                        </button>
+                    </div>
+                )}
+            </div>
         </div>
-      )}
-
-      <div className="flex items-center bg-white rounded-[40px] shadow-sm px-2 py-1 transition-[max-height] duration-300 ease-in-out mb-6">
-        <button
-          type="button"
-          onClick={handleAttachClick}
-          className="text-gray-400 w-7 h-7 text-xl hover:bg-gray-100 rounded-full cursor-pointer justify-center flex items-center"
-        >
-          <img src="src/assets/Ativo 4pag1.svg" className="w-5 h-5"></img>
-        </button>
-
-        <input
-          ref={fileInputRef}
-          type="file"
-          multiple
-          hidden
-          onChange={handleFileChange}
-        />
-
-        <textarea
-          ref={textareaRef}
-          value={text}
-          onChange={handleChange}
-          placeholder={placeholder}
-          rows={1}
-          className="flex-1 m-1 pl-3 border-l border-l-gray-400 outline-none text-gray-700 placeholder-gray-400 resize-none overflow-y-auto transition-[max-height] duration-300 ease-in-out scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
-          style={{ maxHeight: `${calculatedMaxHeight}px` }}
-        />
-
-        <Link to="/conferir_texto">
-          <button
-            type="button"
-            className="flex items-center justify-center text-2xl ml-2 h-7 w-7 hover:bg-gray-100 rounded-full cursor-pointer"
-          >
-            <img src="src/assets/Ativo 5pag1.svg" className="w-4 h-4 rounded-full"></img>
-          </button>
-        </Link>
-      </div>
-    </div>
-  );
+    );
 }
 
-export default ResizableInputBar;
+export default SummariesPage;
