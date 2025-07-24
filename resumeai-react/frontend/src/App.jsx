@@ -9,6 +9,8 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import CheckInfosPage from './pages/CheckInfosPage';
+import SummariesPage from './pages/summariesPage'; // Importe SummariesPage
+import CheckPage_PDF from './pages/CheckPage_PDF'; // Importe CheckPage_PDF
 
 import './index.css';
 import SaveSummaryPage from './pages/SaveSummaryPage';
@@ -49,8 +51,8 @@ function App() {
       {/* Rotas Públicas ou do App Principal (NÃO usam o layout de autenticação) */}
       <Route path="/home" element={<MainPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/conferir_texto" element={<CheckInfosPage />} />
-      <Route path="/salvar_resumo" element={<SaveSummaryPage />} />
+      <Route path="/conferir_texto" element={<CheckPage_PDF/>} />
+      <Route path="/salvar_resumo" element={<SummariesPage />} />
       <Route path="/flashcards" element={<MyFlashcardsPage flashcards={meusFlashcards} />} />
       <Route path="/flashcards/:id" element={<FlashcardPage />} />
       <Route path="/resumos" element={<MySummariesPage summaries={meusResumos} />} />
