@@ -20,6 +20,8 @@ import SaveSummaryPage from "./pages/SaveSummaryPage";
 import MySummariesPage from "./pages/MySummariesPage";
 import MyFlashcardsPage from "./pages/MyFlashcardsPage"; // Página que lista os TEMAS
 import FlashcardPage from "./pages/FlashcardPage"; // ✨ A PÁGINA QUE EXIBE A SEQUÊNCIA DE FLASHCARDS DE UM TEMA
+import SummariesPage from './pages/summariesPage'; // Importe SummariesPage
+import CheckPage_PDF from './pages/CheckPage_PDF'; // Importe CheckPage_PDF
 
 // Importe o CSS global
 import "./index.css";
