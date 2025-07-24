@@ -1,0 +1,35 @@
+2025-07-24 10:45:17,999 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-24 10:45:17,999 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 10:45:18,014 - werkzeug - INFO -  * Restarting with stat
+2025-07-24 10:45:18,921 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 10:45:18,926 - werkzeug - INFO -  * Debugger PIN: 771-568-893
+2025-07-24 10:45:48,222 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:45:48] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-07-24 10:45:48,491 - app.routes - INFO - Processando mensagem de chat: 'asdasdasdas...'
+2025-07-24 10:45:49,733 - app.routes - INFO - Chat processado com sucesso.
+2025-07-24 10:45:49,733 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:45:49] "POST /api/chat HTTP/1.1" 200 -
+2025-07-24 10:48:17,489 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-07-24 10:48:23,163 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-24 10:48:23,164 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:48:23] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-24 10:49:09,576 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-07-24 10:49:26,480 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-24 10:49:26,481 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:49:26] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-24 10:56:21,244 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:56:21] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-07-24 10:56:21,500 - app.routes - INFO - Processando mensagem de chat: 'Um MVP Conceitual (Produto Mínimo Viável Conceitua...'
+2025-07-24 10:56:23,446 - app.routes - INFO - Chat processado com sucesso.
+2025-07-24 10:56:23,447 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:56:23] "POST /api/chat HTTP/1.1" 200 -
+2025-07-24 10:57:07,090 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:57:07] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-07-24 10:57:07,397 - app.routes - INFO - Processando mensagem de chat: 'Um MVP Conceitual (Produto Mínimo Viável Conceitua...'
+2025-07-24 10:57:08,629 - app.routes - INFO - Chat processado com sucesso.
+2025-07-24 10:57:08,630 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:57:08] "POST /api/chat HTTP/1.1" 200 -
+2025-07-24 10:59:49,369 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:59:49] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-07-24 10:59:49,622 - app.routes - INFO - Processando mensagem de chat: 'Um MVP Conceitual (Produto Mínimo Viável Conceitua...'
+2025-07-24 10:59:51,311 - app.routes - INFO - Chat processado com sucesso.
+2025-07-24 10:59:51,312 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 10:59:51] "POST /api/chat HTTP/1.1" 200 -
+2025-07-24 11:04:20,114 - app.routes - INFO - Processando análise de PDF com prompt: 'Poderia fazer um resumo?...'
+2025-07-24 11:04:22,380 - app.routes - INFO - PDF analisado com sucesso.
+2025-07-24 11:04:22,381 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 11:04:22] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-07-24 11:04:35,127 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 11:04:35] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-07-24 11:04:35,433 - app.routes - INFO - Processando mensagem de chat: 'O documento descreve um MVP Conceitual (Minimum Vi...'
+2025-07-24 11:04:37,236 - app.routes - INFO - Chat processado com sucesso.
+2025-07-24 11:04:37,236 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 11:04:37] "POST /api/chat HTTP/1.1" 200 -
