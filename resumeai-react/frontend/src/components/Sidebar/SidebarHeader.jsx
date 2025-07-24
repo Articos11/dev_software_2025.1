@@ -1,4 +1,5 @@
 import React from "react";
+import Ativo4Icon from "../../assets/Ativo 4.svg";
 
 function SidebarHeader({ onCollapse, collapsed }) {
   return (
@@ -22,7 +23,7 @@ function SidebarHeader({ onCollapse, collapsed }) {
             </h1>
           )}
           <img
-            src="src/assets/Ativo 4.svg"
+            src={Ativo4Icon}
             className={`h-7 w-7 hover:bg-[var(--color-resumeai-purple)] p-1 rounded-md cursor-pointer ${
               collapsed ? "" : "right-4 absolute"
             }`}

@@ -1,6 +1,5 @@
 import React from "react";
 import UserButton from "./UserButton";
-import Sidebar from "./Sidebar/Sidebar";
 import NewSidebar from "./Sidebar/NewSidebar";
 
 // Componente que agrupa UserButton e Sidebar
