@@ -23,6 +23,7 @@ import FlashcardPage from "./pages/FlashcardPage"; // ✨ A PÁGINA QUE EXIBE A 
 
 // Importe o CSS global
 import "./index.css";
+import SummaryPage from "./pages/SummaryPage";
 
 function App() {
   const meusFlashcardsThemes = [
@@ -107,21 +108,37 @@ function App() {
   const meusResumos = [
     {
       id: "r1",
-      title: "Resumo sobre OVNIs ",
+      title: "Resumo sobre OVNIs",
       date: "19/07/2025",
-      icon: "src/assets/Ativo 29.svg",
+      icon: "src/assets/Ativo 29.svg", // Assumindo o mesmo ícone padrão
+      content: `Este é o conteúdo COMPLETO do resumo sobre OVNIs. Ele pode ser bem longo e conter vários parágrafos e informações detalhadas sobre avistamentos, teorias da conspiração, abduções e o impacto cultural dos fenômenos aéreos não identificados. A ideia é que o texto se expanda e tenha sua própria barra de rolagem se for necessário, sem quebrar o layout da página principal.
+
+Parágrafo 2: Muitos casos famosos, como Roswell ou o incidente de Kecksburg, contribuíram para a popularidade do tema. A falta de explicações oficiais e a natureza misteriosa dos avistamentos mantêm o debate aceso entre céticos e crentes.
+Parágrafo 2: Muitos casos famosos, como Roswell ou o incidente de Kecksburg, contribuíram para a popularidade do tema. A falta de explicações oficiais e a natureza misteriosa dos avistamentos mantêm o debate aceso entre céticos e crentes.
+Parágrafo 2: Muitos casos famosos, como Roswell ou o incidente de Kecksburg, contribuíram para a popularidade do tema. A falta de explicações oficiais e a natureza misteriosa dos avistamentos mantêm o debate aceso entre céticos e crentes.
+Parágrafo 2: Muitos casos famosos, como Roswell ou o incidente de Kecksburg, contribuíram para a popularidade do tema. A falta de explicações oficiais e a natureza misteriosa dos avistamentos mantêm o debate aceso entre céticos e crentes.
+
+Parágrafo 3: A pesquisa científica sobre OVNIs (agora UAPs - Fenômenos Aéreos Não Identificados) tem ganhado mais atenção recentemente, com governos liberando relatórios e dados para análise pública e científica.`
+
+,
     },
     {
       id: "r2",
       title: "Resumo de TCC - Parte 1",
       date: "20/07/2025",
       icon: "src/assets/Ativo 29.svg",
+      content: `A primeira parte do resumo do Trabalho de Conclusão de Curso aborda a introdução e o referencial teórico. Discute-se a relevância do tema, a formulação do problema de pesquisa e os principais objetivos a serem alcançados.
+
+O referencial teórico explora os conceitos fundamentais e as teorias que sustentam a investigação, apresentando autores e estudos relevantes que servem de base para a análise dos dados. Inclui-se também a justificativa, que ressalta a importância e as contribuições esperadas da pesquisa para a área de estudo.`,
     },
     {
       id: "r3",
       title: "Artigo Científico",
       date: "20/07/2025",
       icon: "src/assets/Ativo 29.svg",
+      content: `Este resumo de artigo científico apresenta os métodos, resultados e conclusões de um estudo experimental sobre novos materiais compósitos à base de polímeros reciclados. Foram avaliadas propriedades mecânicas (resistência à tração, flexão) e térmicas (estabilidade, condutividade).
+
+Os resultados indicaram uma melhoria significativa nas propriedades mecânicas com a adição de fibras de carbono em concentrações específicas, sem comprometer a reciclabilidade do material. Conclui-se que o uso desses compósitos pode ser uma alternativa sustentável para aplicações industriais.`,
     },
   ];
 
@@ -138,9 +155,6 @@ function App() {
         path="/flashcards"
         element={<MyFlashcardsPage flashcardThemes={meusFlashcardsThemes} />}
       />
-
-      {/* ✨ Rota para a página que exibe a sequência de flashcards de UM TEMA específico */}
-      {/* Ela recebe allFlashcardThemes para poder encontrar o tema pelo ID */}
       <Route
         path="/flashcards/:themeId"
         element={<FlashcardPage allFlashcardThemes={meusFlashcardsThemes} />}
@@ -149,6 +163,10 @@ function App() {
       <Route
         path="/resumos"
         element={<MySummariesPage summaries={meusResumos} />}
+      />
+      <Route
+        path="/resumos/:summaryId"
+        element={<SummaryPage allSummaries={meusResumos} />}
       />
 
       {/* --- Rotas de Autenticação que USAM o AuthLayout --- */}

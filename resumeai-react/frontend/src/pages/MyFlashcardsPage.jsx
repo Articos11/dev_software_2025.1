@@ -16,8 +16,8 @@ export default function MyFlashcardsPage({ flashcardThemes = [] }) {
             { label: "Coleção de Flashcards", className: "text-gray-700 text-semibold" },
           ]}
         />
-        <div className="flex flex-grow p-8 overflow-y-auto overflow-x-hidden scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
-          <div className="flex flex-wrap gap-6">
+        <div className="flex flex-grow px-22 overflow-y-auto overflow-x-hidden scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+          <div className="flex flex-wrap gap-6 mt-15">
             {flashcardThemes.length > 0 ? (
               flashcardThemes.map((theme) => (
                 <FlashcardBox

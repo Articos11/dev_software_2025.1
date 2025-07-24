@@ -11,7 +11,7 @@ export default function SummaryBox({
 }) {
   return (
     <Link
-      to={`/summaries/${id}`}
+      to={`/resumos/${id}`}
       className="flex bg-white shadow rounded-2xl flex-grow max-h-22 px-2 py-2 items-center cursor-pointer hover:bg-gray-100 transition-colors"
     >
       <img src={icon} className="size-12 flex-shrink-0" alt="Ícone do Resumo" />

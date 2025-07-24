@@ -49,7 +49,7 @@ function FlashcardPage({ allFlashcardThemes = [] }) {
           icon={Ativo28Icon}
           breadcrumbs={[
             { label: "Início", href: "/", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
-            { label: "Meus Temas", href: "/flashcards", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
+            { label: "Coleção de Flashcards", href: "/flashcards", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
             { label: currentTheme.title, className: "text-gray-700 text-semibold" },
           ]}
         />
@@ -84,7 +84,7 @@ function FlashcardPage({ allFlashcardThemes = [] }) {
         icon={Ativo28Icon}
         breadcrumbs={[
           { label: "Início", href: "/", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
-          { label: "Meus Temas", href: "/flashcards", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
+          { label: "Coleção de Flashcards", href: "/flashcards", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
           { label: currentTheme.title, className: "text-gray-700 text-semibold" },
         ]}
       />
