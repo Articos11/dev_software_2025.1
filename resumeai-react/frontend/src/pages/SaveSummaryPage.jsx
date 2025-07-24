@@ -47,9 +47,11 @@ export default function SaveSummaryPage() {
           </SettingsGroup>
           <div className="flex-1" />
           <div className="w-full flex flex-col items-center gap-2 justify-center mt-5">
-            <button className="bg-[var(--color-resumeai-teal)] text-white font-semibold px-3 py-2 w-50 rounded-full hover:bg-teal-500 shadow-sm">
-              Salvar Resumo
-            </button>
+            <Link to="/resumos" className="w-full flex justify-center">
+              <button className="bg-[var(--color-resumeai-teal)] text-white font-semibold px-3 py-2 w-50 rounded-full hover:bg-teal-500 shadow-sm">
+                Salvar Resumo
+              </button>
+            </Link>
             <Link to="/conferir_texto">
               <button className="px-4 py-1 bg-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-300">
                 Refazer

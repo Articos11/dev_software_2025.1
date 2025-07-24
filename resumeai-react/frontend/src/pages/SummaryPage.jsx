@@ -62,11 +62,12 @@ function SummaryPage({ allSummaries = [] }) {
       {/* Área principal de exibição do resumo */}
       {/* flex-grow para ocupar o espaço restante, p-8 para padding */}
       {/* overflow-y-auto para rolagem interna se o conteúdo for longo */}
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800 mt-15 ml-23 self-start">
+      <h2 className="text-2xl mb-4 text-gray-800 mt-15 ml-23 self-start">
         {currentSummary.title}
       </h2>
       <div className="flex-grow px-23 overflow-y-auto overflow-x-hidden scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         <div className="bg-white shadow-md p-7 rounded-[35px]">
+            {/*Seria uma boa ideia depois mudar essa fonte pra alguma mais confortavel pra leitura */}
           <p className="text-gray-800 text-base leading-relaxed whitespace-pre-wrap">
             {" "}
             {/* whitespace-pre-wrap para preservar quebras de linha */}

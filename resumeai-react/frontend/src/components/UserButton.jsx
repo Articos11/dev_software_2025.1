@@ -34,7 +34,7 @@ export default function UserButton({ username = "Usuário" }) {
         tabIndex={0}
       >
         <div className="flex flex-col text-end">
-          <span className="text-white text-md font-semibold">{username}</span>
+          <span className="text-white text-md">{username}</span>
           <span className="text-white text-xs">online</span>
         </div>
         <span className="flex items-center justify-center bg-white rounded-full w-10 h-10 ">

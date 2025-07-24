@@ -18,7 +18,7 @@ function SidebarHeader({ onCollapse, collapsed }) {
           }`}
         >
           {!collapsed && (
-            <h1 className="text-3xl font-bold text-[var(--color-resumeai-purple)] self-center">
+            <h1 className="font-[Qanelas] text-3xl font-bold text-[var(--color-resumeai-purple)]  tracking-wide self-center">
               ResumeAI
             </h1>
           )}

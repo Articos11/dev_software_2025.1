@@ -1,21 +1,52 @@
-/* src/index.css */
-
-@import "tailwindcss";
-@plugin 'tailwind-scrollbar';
-
 @font-face {
-  font-family: "Sofia Pro";
-  src: url("./fonts/Fontspring-DEMO-SofiaProSoftLight.otf") format("opentype");
+  font-family: "Qanelas";
+  src: url("./fonts/Qanelas-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sofia Pro";
-  src: url("./fonts/Fontspring-DEMO-SofiaProSoftMed.otf") format("opentype");
+  font-family: "Qanelas";
+  src: url("./fonts/Qanelas-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: url("./fonts/Qanelas-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+/* src/index.css */
+
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
+@font-face {
+  font-family: "Globo";
+  src: url("./fonts/Globo Rd Rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Globo";
+  src: url("./fonts/Globo Rd Bd.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Globo";
+  src: url("./fonts/Globo Rd Rg It.ttf.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -24,7 +55,7 @@
 }
 
 :root {
-  font-family: "Sofia Pro", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Globo", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -71,7 +102,7 @@ body,
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none; /* Remove a aparência padrão */
-  margin: 0;                /* Garante que não haja margem extra */
+  margin: 0; /* Garante que não haja margem extra */
 }
 
 /* Para Firefox */
