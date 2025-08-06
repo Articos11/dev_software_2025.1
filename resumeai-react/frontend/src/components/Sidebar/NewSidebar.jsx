@@ -8,7 +8,6 @@ import {
   SubMenu,
   sidebarClasses,
 } from "react-pro-sidebar";
-import NavAction from "./NavAction";
 import MeuEspacoDivision from "./MeuEspacoDivision";
 import SidebarFooter from "./SidebarFooter";
 import Ativo23Icon from "../../assets/Ativo 23.svg";
@@ -109,11 +108,13 @@ export default function NewSidebar() {
           {!collapsed && "Resumos"}
         </MenuItem>
       </Menu>
-      {!collapsed && (
+
+      {/* A footer está comentada pois não tivemos tempo de fazer as páginas de ajustes e Suporte*/}
+      {/*{!collapsed && (
         <div className="w-full absolute bottom-2 left-0">
           <SidebarFooter />
         </div>
-      )}
+      )}*/}
     </Sidebar>
   );
 }

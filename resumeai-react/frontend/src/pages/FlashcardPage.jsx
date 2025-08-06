@@ -1,6 +1,6 @@
 // src/pages/FlashcardPage.jsx
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import PageHeaderSidebar from '../components/PageHeaderSidebar';
 import PageHeader from '../components/PageHeader';
 import SingleFlashcardDisplay from '../components/SingleFlashcardDisplay';
@@ -9,7 +9,6 @@ import Ativo28Icon from '../assets/Ativo 28.svg';
 // Esta é a página que exibe a sequência de flashcards de um tema
 function FlashcardPage({ allFlashcardThemes = [] }) {
   const { themeId } = useParams(); // Pega o ID do tema da URL
-  const navigate = useNavigate(); // Para navegação programática
 
   // 1. Encontra o tema completo com base no themeId da URL
   const currentTheme = allFlashcardThemes.find(theme => {
