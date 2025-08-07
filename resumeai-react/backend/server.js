@@ -55,6 +55,12 @@ app.post('/register', (req, res) => {
     return res.status(400).json({ error: 'Por favor, preencha todos os campos.' });
   }
 
+  // Validação de força da senha
+  const senhaForteRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (!senhaForteRegex.test(password)) {
+    return res.status(400).json({ error: 'A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e caractere especial.' });
+  }
+
   // Criptografa a senha antes de salvar no banco de dados
   const saltRounds = 10; // Custo do processamento do hash
   bcrypt.hash(password, saltRounds, (err, hash) => {
