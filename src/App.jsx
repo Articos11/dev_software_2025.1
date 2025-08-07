@@ -9,7 +9,6 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import CheckInfosPage from './pages/CheckInfosPage';
-
 import './index.css';
 import SaveSummaryPage from './pages/SaveSummaryPage';
 import MySummariesPage from './pages/MySummariesPage';

@@ -4,23 +4,20 @@ export async function loginUser(email, password) {
   try {
     const response = await fetch(`${API_URL}/login`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
     });
 
-    const data = await response.json();
-
     if (!response.ok) {
-      throw new Error(data.erro || data.error || 'Falha no login');
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Erro ao realizar login.');
     }
 
-    // Retorna os dados do usuário e token (token opcional)
-    return {
-      user: data.user || data, // fallback para o objeto usuário
-      token: data.access_token || data.token || null // token opcional
-    };
+    return await response.json();
   } catch (err) {
-    throw new Error(err.message || 'Erro inesperado no login');
+    throw new Error(err.message || 'Erro inesperado no login.');
   }
 }
 
