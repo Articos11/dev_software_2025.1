@@ -92,3 +92,9 @@ ValueError: O conteúdo do PDF está vazio ou ilegível.
 2025-07-23 20:39:41,253 - app.routes - INFO - Processando análise de PDF com prompt: 'resuma, em português...'
 2025-07-23 20:40:12,919 - app.routes - INFO - PDF analisado com sucesso.
 2025-07-23 20:40:12,923 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 20:40:12] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-06 21:41:33,184 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-06 21:41:33,184 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-06 21:41:33,186 - werkzeug - INFO -  * Restarting with stat
+2025-08-06 21:41:33,541 - werkzeug - WARNING -  * Debugger is active!
+2025-08-06 21:41:33,567 - werkzeug - INFO -  * Debugger PIN: 130-651-332
