@@ -15,6 +15,7 @@ def create_app():
 
     load_dotenv()
     app = Flask(__name__)
+    __version__ = "0.1.0"
     CORS(app, resources={r"/*": {"origins": "*"}})
 
     app.config['JWT_SECRET_KEY'] = "devsoftware2025"
