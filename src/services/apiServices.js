@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Instância do axios com URL base
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api' ,
+  baseURL: import.meta.env.VITE_API_BASE_URL
 });
 
 // Interceptor: adiciona token JWT em todas as requisições

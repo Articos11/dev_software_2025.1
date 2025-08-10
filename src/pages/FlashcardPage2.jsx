@@ -1,72 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 export default function FlashcardPage() {
-  const { id } = useParams(); // Hook para pegar o 'id' da URL
-  const [isFlipped, setIsFlipped] = useState(false); // Estado para controlar o flip do flashcard
+  const { id } = useParams(); // ID do resumo ou conjunto de flashcards
+  const [flashcards, setFlashcards] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isFlipped, setIsFlipped] = useState(null); // Array de estados para flip
 
-  // --- Dados de Exemplo para Flashcards ---
-  // IMPORTANTE: Em um aplicativo real, você buscaria esses dados de uma API
-  // ou de um contexto/estado global, usando o 'id' da URL.
-  const allFlashcards = [
-    { id: '1', title: 'Matemática Discreta - Conjuntos', date: '15/07/2025', question: 'O que é um conjunto no contexto da matemática discreta?', answer: 'É uma coleção não ordenada de elementos distintos.' },
-    { id: '2', title: 'SQL Básico - Comandos DML', date: '16/07/2025', question: 'Quais comandos DML são usados para manipular dados em um banco de dados?', answer: 'INSERT, UPDATE, DELETE.' },
-    { id: '3', title: 'React Hooks - useState', date: '17/07/2025', question: 'Para que serve o hook useState no React?', answer: 'Para adicionar estado a componentes funcionais.' },
-  ];
+  useEffect(() => {
+    async function fetchFlashcards() {
+      try {
+        const response = await fetch(`http://localhost:5000/api/flashcards/${id}`);
+        if (!response.ok) throw new Error(`Erro ao carregar flashcards: ${response.statusText}`);
+        const data = await response.json();
+        setFlashcards(data.flashcards || []);
+        setIsFlipped(new Array(data.flashcards.length).fill(false)); // Estado para flip de cada flashcard
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchFlashcards();
+  }, [id]);
 
-  // Encontra o flashcard atual com base no ID da URL
-  const currentFlashcard = allFlashcards.find(card => card.id === id);
+  const handleFlip = (index) => {
+    setIsFlipped(prev => {
+      const newFlipped = [...prev];
+      newFlipped[index] = !newFlipped[index];
+      return newFlipped;
+    });
+  };
 
-  // Exibe mensagem se o flashcard não for encontrado
-  if (!currentFlashcard) {
+  if (loading) {
+    return <p>Carregando flashcards...</p>;
+  }
+
+  if (error) {
     return (
       <div className="p-8 text-center text-red-600">
-        Flashcard com ID "{id}" não encontrado.
-        <Link to="/meus-flashcards" className="block mt-4 text-blue-600 hover:underline">Voltar para a lista</Link>
+        Erro: {error}
+        <Link to="/flashcards" className="block mt-4 text-blue-600 hover:underline">Voltar para a lista</Link>
       </div>
     );
   }
 
-  // Função para virar o flashcard
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
+  if (flashcards.length === 0) {
+    return (
+      <div className="p-8 text-center text-gray-600">
+        Nenhum flashcard encontrado para este resumo.
+        <Link to="/flashcards" className="block mt-4 text-blue-600 hover:underline">Voltar para a lista</Link>
+      </div>
+    );
+  }
 
   return (
-    // Contêiner principal da página: centraliza o conteúdo vertical e horizontalmente
     <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-100">
-      {/* Botão de Voltar */}
       <Link to="/flashcards" className="self-start mb-6 inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
         &lt; Voltar
       </Link>
 
-      {/* Título da Página */}
-      <h1 className="text-3xl font-bold mb-8 text-gray-800">Flashcard: {currentFlashcard.title}</h1>
+      <h1 className="text-3xl font-bold mb-8 text-gray-800">Flashcards</h1>
 
-      {/* Área Principal do Flashcard (com animação 3D) */}
-      {/* O clique nesta div vira o flashcard */}
-      <div
-        className="relative w-96 h-64 cursor-pointer rounded-2xl perspective-[1000px] shadow-xl" // Tamanho maior para a página
-        onClick={handleFlip}
-      >
-        {/* Contêiner interno que faz a rotação 3D */}
-        <div
-          className={`absolute inset-0 w-full h-full transition-transform duration-700 preserve-3d
-            ${isFlipped ? 'rotate-y-180' : 'rotate-y-0'}
-          `}
-        >
-          {/* FACE FRONTAL (PERGUNTA) */}
-          {/* backface-hidden é essencial para esconder a parte de trás durante o flip */}
-          <div className="absolute inset-0 bg-white rounded-2xl backface-hidden flex items-center justify-center p-6 border border-gray-200">
-            <p className="text-xl font-semibold text-center text-gray-800">{currentFlashcard.question}</p>
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {flashcards.map((card, index) => (
+          <div
+            key={card.id}
+            className="relative w-96 h-64 cursor-pointer rounded-2xl perspective-[1000px] shadow-xl"
+            onClick={() => handleFlip(index)}
+          >
+            <div
+              className={`absolute inset-0 w-full h-full transition-transform duration-700 preserve-3d
+                ${isFlipped[index] ? 'rotate-y-180' : 'rotate-y-0'}
+              `}
+            >
+              <div className="absolute inset-0 bg-white rounded-2xl backface-hidden flex items-center justify-center p-6 border border-gray-200">
+                <p className="text-xl font-semibold text-center text-gray-800">{card.pergunta}</p>
+              </div>
 
-          {/* FACE TRASEIRA (RESPOSTA) */}
-          {/* backface-hidden e transform rotate-y-180 são essenciais para posicioná-la e escondê-la inicialmente */}
-          <div className="absolute inset-0 bg-white rounded-2xl backface-hidden transform rotate-y-180 flex items-center justify-center p-6 border border-gray-200">
-            <p className="text-xl text-center text-gray-700">{currentFlashcard.answer}</p>
+              <div className="absolute inset-0 bg-white rounded-2xl backface-hidden transform rotate-y-180 flex items-center justify-center p-6 border border-gray-200">
+                <p className="text-xl text-center text-gray-700">{card.resposta}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

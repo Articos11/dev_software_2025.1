@@ -109,6 +109,12 @@ export default function NewSidebar() {
         </MenuItem>
       </Menu>
 
+      {/* A footer está comentada pois não tivemos tempo de fazer as páginas de ajustes e Suporte*/}
+      {/*{!collapsed && (
+        <div className="w-full absolute bottom-2 left-0">
+          <SidebarFooter />
+        </div>
+      )}*/}
     </Sidebar>
   );
 }

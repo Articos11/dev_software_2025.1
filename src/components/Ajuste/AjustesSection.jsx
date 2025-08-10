@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import SettingsGroup from "./SettingsGroup";
 import ToggleSwitch from "../Uteis/ToggleSwitch";
 import SelectDropdown from "../Uteis/SelectDropdown";
 import CardBox from "../Uteis/CardBox";
 import QuantityInput from "../Uteis/QuantityInput";
 
-export default function AjustesSection({ title = "Ajustes", ajustes, setAjustes }) {
+export default function AjustesSection({ title = "Ajustes" }) {
+  // Estado geral "ajustes" inspirado no primeiro código
+  const [ajustes, setAjustes] = useState({
+    separarTopicos: true,
+    estruturaVisual: false,
+    nivel: "simplified",
+    linguagem: "pt-br",
+    gerarFlashcards: true,
+    qtdFlashcards: 1,
+  });
+
+  // Controle separado do flashcards (para não perder a lógica do segundo)
+  const [generateFlashcards, setGenerateFlashcards] = useState(ajustes.gerarFlashcards);
+
   const languageOptions = [
     { label: "Simplificada", value: "simplified" },
     { label: "Informal", value: "informal" },
@@ -18,12 +31,41 @@ export default function AjustesSection({ title = "Ajustes", ajustes, setAjustes 
     { label: "Español", value: "es" },
   ];
 
-  const handleToggle = (key, value) => {
-    setAjustes((prev) => ({ ...prev, [key]: value }));
+  // Atualiza ajustes mantendo o estado de gerarFlashcards sincronizado
+  const handleToggleChange = (label, newValue) => {
+    console.log(`${label} Toggled:`, newValue);
+
+    if (label === "Gerar flashcards") {
+      setGenerateFlashcards(newValue);
+      setAjustes(prev => ({ ...prev, gerarFlashcards: newValue }));
+      return;
+    }
+
+    // Mapeamento dos labels para as chaves do estado ajustes
+    const mapLabelToKey = {
+      "Separar em tópicos": "separarTopicos",
+      "Estrutura visual": "estruturaVisual",
+    };
+
+    const key = mapLabelToKey[label];
+    if (key) {
+      setAjustes(prev => ({ ...prev, [key]: newValue }));
+    }
   };
 
-  const handleSelect = (key, value) => {
-    setAjustes((prev) => ({ ...prev, [key]: value }));
+  const handleLanguageChange = (value) => {
+    console.log("Linguagem selecionada:", value);
+    setAjustes(prev => ({ ...prev, nivel: value }));
+  };
+
+  const handleResumeLanguageChange = (value) => {
+    console.log("Idioma do Resumo selecionado:", value);
+    setAjustes(prev => ({ ...prev, linguagem: value }));
+  };
+
+  const handleQuantityChange = (newValue) => {
+    console.log("Quantidade selecionada:", newValue);
+    setAjustes(prev => ({ ...prev, qtdFlashcards: newValue }));
   };
 
   return (
@@ -37,12 +79,12 @@ export default function AjustesSection({ title = "Ajustes", ajustes, setAjustes 
           <ToggleSwitch
             label="Separar em tópicos"
             initialValue={ajustes.separarTopicos}
-            onToggle={(val) => handleToggle("separarTopicos", val)}
+            onToggle={(val) => handleToggleChange("Separar em tópicos", val)}
           />
           <ToggleSwitch
             label="Estrutura visual"
             initialValue={ajustes.estruturaVisual}
-            onToggle={(val) => handleToggle("estruturaVisual", val)}
+            onToggle={(val) => handleToggleChange("Estrutura visual", val)}
           />
         </SettingsGroup>
 
@@ -51,28 +93,28 @@ export default function AjustesSection({ title = "Ajustes", ajustes, setAjustes 
             label="Padrão de escrita"
             options={languageOptions}
             value={ajustes.nivel}
-            onChange={(val) => handleSelect("nivel", val)}
+            onChange={handleLanguageChange}
           />
           <SelectDropdown
             label="Idioma do Resumo"
             options={resumeLanguageOptions}
             value={ajustes.linguagem}
-            onChange={(val) => handleSelect("linguagem", val)}
+            onChange={handleResumeLanguageChange}
           />
         </SettingsGroup>
 
         <SettingsGroup title="Flashcards">
           <ToggleSwitch
             label="Gerar flashcards"
-            initialValue={ajustes.gerarFlashcards}
-            onToggle={(val) => handleToggle("gerarFlashcards", val)}
+            initialValue={generateFlashcards}
+            onToggle={(val) => handleToggleChange("Gerar flashcards", val)}
           />
-          {ajustes.gerarFlashcards && (
+          {generateFlashcards && (
             <QuantityInput
               label="Quantidade:"
               initialValue={ajustes.qtdFlashcards}
               max={15}
-              onChange={(val) => handleSelect("qtdFlashcards", val)}
+              onChange={handleQuantityChange}
             />
           )}
         </SettingsGroup>

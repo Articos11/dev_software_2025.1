@@ -1,7 +1,9 @@
+// src/components/Login.jsx
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../services/authService';
-import './Login.css';
+import './Login.css'; // O estilo do formulário ainda é necessário
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,16 +16,10 @@ const Login = () => {
     setError('');
 
     try {
-      const { user } = await loginUser(email, password);
-
-      // Salva os dados do usuário no localStorage
-      localStorage.setItem('user', JSON.stringify(user));
-
-      // Redireciona para a página principal, passando o usuário via state
-      navigate('/home', { state: { user } });
-
+      const loggedInUser = await loginUser(email, password);
+      navigate('/home', { state: { user: loggedInUser } });
     } catch (err) {
-      setError(err.message || 'Erro ao realizar login.');
+      setError(err.message);
     }
   };
 
