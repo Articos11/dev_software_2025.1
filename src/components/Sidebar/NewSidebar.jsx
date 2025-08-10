@@ -10,10 +10,10 @@ import {
 } from "react-pro-sidebar";
 import MeuEspacoDivision from "./MeuEspacoDivision";
 import SidebarFooter from "./SidebarFooter";
-import Ativo23Icon from "../../assets/Ativo 23.svg";
-import Ativo24Icon from "../../assets/Ativo 24.svg";
-import Ativo28Icon from "../../assets/Ativo 28.svg";
-import Ativo29Icon from "../../assets/Ativo 29.svg";
+import Ativo23Icon from "../../assets/Ativo_23.svg";
+import Ativo24Icon from "../../assets/Ativo_24.svg";
+import Ativo28Icon from "../../assets/Ativo_28.svg";
+import Ativo29Icon from "../../assets/Ativo_29.svg";
 
 export default function NewSidebar() {
   const [collapsed, setCollapsed] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DefaultSummaryIcon from "../assets/Ativo 29.svg";
-import Ativo17Icon from "../assets/Ativo 17.svg";
+import DefaultSummaryIcon from "../assets/Ativo_29.svg";
+import Ativo17Icon from "../assets/Ativo_17.svg";
 
 export default function SummaryBox({
   title = "Título do Resumo",

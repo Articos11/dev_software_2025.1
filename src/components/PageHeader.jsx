@@ -1,6 +1,6 @@
 import React from "react";
 import { Breadcrumbs } from "@mui/material";
-import Ativo17Icon from "../assets/Ativo 17.svg";
+import Ativo17Icon from "../assets/Ativo_17.svg";
 
 export default function PageHeader({
   title = "Flashcards",

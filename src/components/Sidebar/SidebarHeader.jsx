@@ -1,5 +1,5 @@
 import React from "react";
-import Ativo4Icon from "../../assets/Ativo 4.svg";
+import Ativo4Icon from "../../assets/Ativo_4.svg";
 
 function SidebarHeader({ onCollapse, collapsed }) {
   return (

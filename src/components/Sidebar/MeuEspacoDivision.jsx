@@ -1,5 +1,5 @@
 import React from "react";
-import Ativo21Icon from "../../assets/Ativo 21.svg";
+import Ativo21Icon from "../../assets/Ativo_21.svg";
 
 export default function MeuEspacoDivision() {
   return (

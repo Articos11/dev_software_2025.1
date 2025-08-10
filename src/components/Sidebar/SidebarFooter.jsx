@@ -1,7 +1,7 @@
 import React from "react";
-import Ativo22Icon from "../../assets/Ativo 22.svg";
-import Ativo25Icon from "../../assets/Ativo 25.svg";
-import Ativo20Icon from "../../assets/Ativo 20.svg";
+import Ativo22Icon from "../../assets/Ativo_22.svg";
+import Ativo25Icon from "../../assets/Ativo_25.svg";
+import Ativo20Icon from "../../assets/Ativo_20.svg";
 
 export default function SidebarFooter() {
   return (
