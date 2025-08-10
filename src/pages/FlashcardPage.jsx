@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import PageHeaderSidebar from '../components/PageHeaderSidebar';
 import PageHeader from '../components/PageHeader';
 import SingleFlashcardDisplay from '../components/SingleFlashcardDisplay';
-import Ativo28Icon from '../assets/Ativo 28.svg';
+import Ativo28Icon from '../assets/Ativo_28.svg';
 
 function FlashcardPage() {
   const { themeId } = useParams();
