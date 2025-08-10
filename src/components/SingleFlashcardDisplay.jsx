@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Necessário para o botão "Voltar"
-import Ativo17Icon from "../assets/Ativo 17.svg";
+import Ativo17Icon from "../assets/Ativo_17.svg";
 
 function SingleFlashcardDisplay({
   flashcard, // Objeto do flashcard individual com (id, title, question, answer, etc.)
