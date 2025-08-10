@@ -1,10 +1,11 @@
 import React from "react";
+import Ativo2LogoExpand2 from "../assets/Ativo_2logoexpand2.svg";
 
 function MainLogo() {
   return (
-    <div class="flex flex-col items-center">
-      <div class="flex items-center justify-center">
-        <img src="src/assets/Ativo_2logoexpand2.svg" className="w-120" />
+    <div className="flex flex-col items-center">
+      <div className="flex items-center justify-center">
+        <img src={Ativo2LogoExpand2} className="w-120" alt="Logo" />
       </div>
     </div>
   );
