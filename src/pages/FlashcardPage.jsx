@@ -12,13 +12,14 @@ function FlashcardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentCardIdx, setCurrentCardIdx] = useState(0);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000/api";
 
   useEffect(() => {
     setLoading(true);
     setError(null);
     setCurrentCardIdx(0);
 
-    fetch(`http://localhost:5000/api/flashcards/${themeId}`) // Ajuste a URL conforme seu backend
+    fetch(`${baseUrl}/flashcards/${themeId}`) // Ajuste a URL conforme seu backend
       .then((res) => {
         if (!res.ok) throw new Error(`Erro ao buscar flashcards: ${res.statusText}`);
         return res.json();

@@ -8,6 +8,7 @@ export default function MyFlashcardsPage({ userId }) {
   const [isolatedFlashcards, setIsolatedFlashcards] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000/api";
 
   useEffect(() => {
     async function fetchFlashcards() {
@@ -24,7 +25,7 @@ export default function MyFlashcardsPage({ userId }) {
         }
 
         // 1. Busca temas (resumos) do usuário
-        const resThemes = await fetch(`http://localhost:5000/api/my-summaries?user_id=${uid}`);
+        const resThemes = await fetch(`${baseUrl}/my-summaries?user_id=${uid}`);
         if (!resThemes.ok) throw new Error("Falha ao buscar temas de flashcards.");
         const themesData = await resThemes.json();
 

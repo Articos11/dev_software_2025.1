@@ -7,6 +7,7 @@ export default function MySummariesPage() {
   const [summaries, setSummaries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000/api";
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -17,7 +18,7 @@ export default function MySummariesPage() {
     }
     const user = JSON.parse(storedUser);
 
-    fetch(`http://localhost:5000/api/my-summaries?user_id=${user.id}`)
+    fetch(`${baseUrl}/my-summaries?user_id=${user.id}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Erro ao carregar resumos: ${res.statusText}`);
         return res.json();

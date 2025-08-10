@@ -10,6 +10,7 @@ function SummaryPage() {
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000/api";
 
   useEffect(() => {
     async function fetchSummary() {
@@ -17,7 +18,7 @@ function SummaryPage() {
       setError(null);
 
       try {
-        const response = await fetch(`http://localhost:5000/api/summary/${summaryId}`);
+        const response = await fetch(`${baseUrl}/summary/${summaryId}`);
         if (!response.ok) throw new Error(`Erro ao carregar resumo: ${response.statusText}`);
 
         const data = await response.json();

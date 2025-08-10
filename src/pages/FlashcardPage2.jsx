@@ -7,11 +7,12 @@ export default function FlashcardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isFlipped, setIsFlipped] = useState(null); // Array de estados para flip
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000/api";
 
   useEffect(() => {
     async function fetchFlashcards() {
       try {
-        const response = await fetch(`http://localhost:5000/api/flashcards/${id}`);
+        const response = await fetch(`${baseUrl}/flashcards/${id}`);
         if (!response.ok) throw new Error(`Erro ao carregar flashcards: ${response.statusText}`);
         const data = await response.json();
         setFlashcards(data.flashcards || []);
