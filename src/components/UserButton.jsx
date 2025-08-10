@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Ativo10Icon from "../assets/Ativo_10.svg";
 
 export default function UserButton({ username = "Usuário" }) {
   const [open, setOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function UserButton({ username = "Usuário" }) {
         </div>
         <span className="flex items-center justify-center bg-white rounded-full w-10 h-10 ">
           <img
-            src="/src/assets/Ativo_10.svg"
+            src={Ativo10Icon}
             className="w-10 h-10 rounded-full"
             alt="Avatar"
           />
