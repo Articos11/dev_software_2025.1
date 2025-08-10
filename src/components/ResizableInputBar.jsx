@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
+import Ativo4Pag1 from "../assets/Ativo_4pag1.svg";
+import Ativo5Pag1 from "../assets/Ativo_5pag1.svg";
 
 function ResizableInputBar({
   placeholder = "Novo resumo rápido...",
@@ -112,7 +114,7 @@ function ResizableInputBar({
 
       <div className="flex items-center bg-white rounded-[40px] shadow-sm px-2 py-1 mb-6">
         <button type="button" onClick={handleAttachClick} className="text-gray-400 w-7 h-7">
-          <img src="src/assets/Ativo 4pag1.svg" className="w-5 h-5" />
+          <img src={Ativo4Pag1} className="w-5 h-5" alt="Anexar" />
         </button>
 
         <input
@@ -134,7 +136,7 @@ function ResizableInputBar({
         />
 
         <button type="button" onClick={handleSubmitClick} className="ml-2">
-          <img src="src/assets/Ativo 5pag1.svg" className="w-4 h-4 rounded-full" />
+          <img src={Ativo5Pag1} className="w-4 h-4 rounded-full" alt="Enviar" />
         </button>
       </div>
     </div>
