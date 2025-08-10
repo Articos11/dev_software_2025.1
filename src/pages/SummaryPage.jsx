@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import PageHeaderSidebar from "../components/PageHeaderSidebar";
 import PageHeader from "../components/PageHeader";
-import Ativo29Icon from "../assets/Ativo 29.svg";
+import Ativo29Icon from "../assets/Ativo_29.svg";
 
 function SummaryPage() {
   const { summaryId } = useParams();

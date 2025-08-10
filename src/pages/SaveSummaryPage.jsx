@@ -113,7 +113,7 @@ export default function SaveSummaryPage() {
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-2xl align-middle">Aqui está seu resumo</h2>
         <span>
-          <img src="src/assets/Ativo 4.svg" className="h-6 w-6 mt-1" alt="Ícone resumo" />
+          <img src="src/assets/Ativo_4.svg" className="h-6 w-6 mt-1" alt="Ícone resumo" />
         </span>
       </div>
 

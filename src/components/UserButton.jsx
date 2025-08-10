@@ -39,7 +39,7 @@ export default function UserButton({ username = "Usuário" }) {
         </div>
         <span className="flex items-center justify-center bg-white rounded-full w-10 h-10 ">
           <img
-            src="/src/assets/Ativo 10.svg"
+            src="/src/assets/Ativo_10.svg"
             className="w-10 h-10 rounded-full"
             alt="Avatar"
           />
