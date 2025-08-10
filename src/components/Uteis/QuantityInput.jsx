@@ -1,4 +1,4 @@
-import Ativo17Icon from "../../assets/Ativo 17.svg";
+import Ativo17Icon from "../../assets/Ativo_17.svg";
 import React, { useState } from "react";
 
 function QuantityInput({
