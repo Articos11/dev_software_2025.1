@@ -1,8 +1,8 @@
 // src/components/FlashcardBox.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import Ativo29Icon from "../assets/Ativo 29.svg";
-import Ativo17Icon from "../assets/Ativo 17.svg";
+import Ativo29Icon from "../assets/Ativo_29.svg";
+import Ativo17Icon from "../assets/Ativo_17.svg";
 
 export default function FlashcardBox({
   title = "Titulo",
