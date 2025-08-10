@@ -632,3 +632,252 @@ TypeError: 'nome_arquivo' is an invalid keyword argument for Historico
 2025-08-07 10:09:28,212 - werkzeug - INFO - 127.0.0.1 - - [07/Aug/2025 10:09:28] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
 2025-08-07 10:16:46,684 - werkzeug - INFO -  * Detected change in 'E:\\Estudos\\Faculdade\\Projeto DevSoftware\\server\\server.py', reloading
 2025-08-07 10:16:48,827 - werkzeug - INFO -  * Restarting with stat
+2025-08-09 14:35:42,253 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 14:35:42,253 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 14:42:07,077 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:42:07] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 14:43:02,842 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 14:43:02,843 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 14:43:08,643 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:43:08] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 14:43:08,908 - app.routes - WARNING - Requisição inválida para /analyze-pdf: Nenhum arquivo PDF enviado.
+2025-08-09 14:43:08,909 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:43:08] "[31m[1mPOST /api/analyze-pdf HTTP/1.1[0m" 400 -
+2025-08-09 14:43:19,607 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:43:19] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 14:43:19,921 - app.routes - WARNING - Requisição inválida para /analyze-pdf: Nenhum arquivo PDF enviado.
+2025-08-09 14:43:19,922 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:43:19] "[31m[1mPOST /api/analyze-pdf HTTP/1.1[0m" 400 -
+2025-08-09 14:46:37,830 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:46:37] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 14:46:38,086 - app.routes - WARNING - Requisição inválida para /analyze-pdf: Nenhum arquivo PDF enviado.
+2025-08-09 14:46:38,086 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:46:38] "[31m[1mPOST /api/analyze-pdf HTTP/1.1[0m" 400 -
+2025-08-09 14:47:07,032 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:47:07] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 14:47:07,337 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-09 14:47:09,655 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-09 14:47:09,749 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 14:47:09] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 15:02:19,436 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 15:02:19] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-09 15:02:19,687 - app.routes - INFO - Processando mensagem de chat: 'Vinicius Caldas é um estudante de Ciência da Compu...'
+2025-08-09 15:02:22,056 - app.routes - INFO - Chat processado com sucesso.
+2025-08-09 15:02:22,150 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 15:02:22] "POST /api/chat HTTP/1.1" 200 -
+2025-08-09 21:24:36,659 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 21:24:36,659 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 21:25:02,291 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:25:02] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 21:25:02,543 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-09 21:25:04,129 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-09 21:25:04,239 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:25:04] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 21:25:14,484 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:25:14] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-09 21:25:14,791 - app.routes - INFO - Processando mensagem de chat: 'Este é o currículo de Vinicius Caldas, um estudant...'
+2025-08-09 21:25:15,941 - app.routes - INFO - Chat processado com sucesso.
+2025-08-09 21:25:16,047 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:25:16] "POST /api/chat HTTP/1.1" 200 -
+2025-08-09 21:36:14,331 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:36:14] "[33mOPTIONS /api/save-summary-with-flashcards HTTP/1.1[0m" 404 -
+2025-08-09 21:37:16,510 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 21:37:16,511 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 21:37:18,260 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:18] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-09 21:37:18,527 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-09 21:37:18,656 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 5
+2025-08-09 21:37:18,657 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:18] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-09 21:37:32,111 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:32] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 21:37:32,421 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-09 21:37:34,744 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-09 21:37:34,854 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:34] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 21:37:37,340 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:37] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-09 21:37:37,645 - app.routes - INFO - Processando mensagem de chat: 'Este é o currículo de Vinicius Caldas, um estudant...'
+2025-08-09 21:37:39,089 - app.routes - INFO - Chat processado com sucesso.
+2025-08-09 21:37:39,204 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:39] "POST /api/chat HTTP/1.1" 200 -
+2025-08-09 21:37:40,403 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:40] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-09 21:37:40,720 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-09 21:37:40,800 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 6
+2025-08-09 21:37:40,801 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:37:40] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-09 21:39:58,475 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:39:58] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 21:39:58,725 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:39:58] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 21:40:24,561 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:40:24] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:40:27,546 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:40:27] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:40:27,811 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:40:27] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:30,166 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:30] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:30,416 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:30] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:45,999 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:45] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-09 21:42:46,433 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NDc4NjU2NiwianRpIjoiMGRkMDZkNDEtYmE4OC00OGExLTkwNzMtNzMzMjIxZDkyYTI3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU0Nzg2NTY2LCJjc3JmIjoiY2FjYmMxODctMTNjMS00M2E2LThkOWItZmYxYjEwMzQ3NGViIiwiZXhwIjoxNzU0Nzg3NDY2fQ.Dwgwxp4-b8BZQMBMAmXnPtnbSbUCDYPt3KBw-fvd5WY', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-09 21:42:46,434 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:46] "POST /api/login HTTP/1.1" 200 -
+2025-08-09 21:42:49,064 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:49] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:49,368 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:49] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:51,267 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:51] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:51,525 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:51] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:53,035 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:53] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:53,343 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:53] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:55,404 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:55] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 21:42:55,672 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:55] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 21:42:58,161 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:58] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:42:58,472 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:42:58] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:43:32,445 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:43:32] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-09 21:43:32,815 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NDc4NjYxMiwianRpIjoiNDVjOGJmOTEtNThkYy00NDcyLTk3M2EtMDUwMThkYjAwZjY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU0Nzg2NjEyLCJjc3JmIjoiN2RlZWYyNDctOWEwYS00NjYzLTkxNzgtZDg3MWRiOGZlMzVmIiwiZXhwIjoxNzU0Nzg3NTEyfQ.S8SbYbA1KYzx33nkIyiKSQxmPFhkk2nKeccI0DUXg5Y', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-09 21:43:32,816 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:43:32] "POST /api/login HTTP/1.1" 200 -
+2025-08-09 21:43:34,873 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:43:34] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:43:35,184 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:43:35] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:43:37,488 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:43:37] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:43:37,751 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:43:37] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:44:54,997 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:44:54] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:44:55,264 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:44:55] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:47:58,865 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:47:58] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:47:59,125 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:47:59] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:50:09,987 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:09] "[33mGET /api/summary/6 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:14,845 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:14] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:50:15,157 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:15] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:50:15,894 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:15] "[33mGET /api/summary/6 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:16,158 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:16] "[33mGET /api/summary/6 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:21,355 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:21] "[33mGET /api/summary/4 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:21,661 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:21] "[33mGET /api/summary/4 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:22,619 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:22] "[33mGET / HTTP/1.1[0m" 404 -
+2025-08-09 21:50:22,659 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-09 21:50:22,748 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 21:50:26,381 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:26] "[33mGET /api/summary/1 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:26,649 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:26] "[33mGET /api/summary/1 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:32,787 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:32] "[33mGET /api/summary/1 HTTP/1.1[0m" 404 -
+2025-08-09 21:50:33,091 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:50:33] "[33mGET /api/summary/1 HTTP/1.1[0m" 404 -
+2025-08-09 21:56:19,738 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 21:56:19,738 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 21:56:21,098 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:56:21] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:56:21,360 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:56:21] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 21:56:21,950 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:56:21] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 21:56:22,268 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:56:22] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 21:56:28,180 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:56:28] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 21:56:28,434 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 21:56:28] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:00:06,278 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:00:06] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:00:06,546 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:00:06] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:01:45,631 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:01:45] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:01:45,886 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:01:45] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:02:48,063 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:02:48] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:02:48,317 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:02:48] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:05:00,259 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:00] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:05:00,525 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:00] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:05:03,455 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:03] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:05:03,763 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:03] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:05:04,539 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:04] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-09 22:05:04,807 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:04] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-09 22:05:18,007 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:18] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:05:18,326 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:05:18] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:06:07,696 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:06:07] "[33mGET /api/flashcards/tema-3 HTTP/1.1[0m" 404 -
+2025-08-09 22:06:07,946 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:06:07] "[33mGET /api/flashcards/tema-3 HTTP/1.1[0m" 404 -
+2025-08-09 22:06:49,657 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 22:06:49,657 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 22:06:52,393 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:06:52] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:06:52,647 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:06:52] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:09:29,708 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 22:09:29,708 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 22:09:42,689 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:09:42] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-09 22:09:43,078 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NDc4ODE4MywianRpIjoiOWY1OTg3ZDAtNWE1NS00N2QzLTgzMDUtYTc3MTdjZmNlOTdjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU0Nzg4MTgzLCJjc3JmIjoiNjUwN2NkZDMtNTIxMi00ZjJmLWFjZDEtMDk2ZWFlZjNhZjgxIiwiZXhwIjoxNzU0Nzg5MDgzfQ.FIJCrEJ9bOmvM0a_RrNAHPijxTjB0yBFni6wNSZGPdk', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-09 22:09:43,079 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:09:43] "POST /api/login HTTP/1.1" 200 -
+2025-08-09 22:09:46,099 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:09:46] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:09:46,409 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:09:46] "[33mGET /api/flashcards/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:10:45,746 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:10:45] "[33mGET /api/summary/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:10:46,014 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:10:46] "[33mGET /api/summary/tema-1 HTTP/1.1[0m" 404 -
+2025-08-09 22:11:33,542 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-09 22:11:33,542 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 22:14:44,413 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:44] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:44,657 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:44] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:45,237 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:45] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:14:45,548 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:45] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:14:48,611 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:48] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:48,862 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:48] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:52,176 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:52] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:54,221 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:54] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:14:54,475 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:54] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:14:56,616 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:56] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:56,920 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:56] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:57,905 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:57] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:14:58,155 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:58] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:14:58,743 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:58] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:59,051 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:59] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:14:59,693 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:59] "GET /api/summary/5 HTTP/1.1" 200 -
+2025-08-09 22:14:59,956 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:14:59] "GET /api/summary/5 HTTP/1.1" 200 -
+2025-08-09 22:15:00,655 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:00] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:00,965 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:00] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:01,926 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:01] "GET /api/summary/4 HTTP/1.1" 200 -
+2025-08-09 22:15:02,176 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:02] "GET /api/summary/4 HTTP/1.1" 200 -
+2025-08-09 22:15:03,454 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:03] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:03,772 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:03] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:15,576 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:15] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:15,831 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:15] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:16,017 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:16] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:15:16,328 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:16] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-09 22:15:17,774 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:17] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:18,038 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:18] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:18,326 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:18] "GET /api/summary/5 HTTP/1.1" 200 -
+2025-08-09 22:15:18,632 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:18] "GET /api/summary/5 HTTP/1.1" 200 -
+2025-08-09 22:15:20,038 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:20] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:20,291 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:20] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:23,895 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:23] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:24,199 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:24] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:24,761 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:24] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:25,027 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:25] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:25,915 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:25] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-09 22:15:26,220 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:26] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-09 22:15:27,439 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:27] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:27,686 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:27] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:34,414 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:34] "[33mGET /api/flashcards/6 HTTP/1.1[0m" 404 -
+2025-08-09 22:15:34,728 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:34] "[33mGET /api/flashcards/6 HTTP/1.1[0m" 404 -
+2025-08-09 22:15:36,930 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:36] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:37,188 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:37] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:37,599 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:37] "[33mGET /api/flashcards/6 HTTP/1.1[0m" 404 -
+2025-08-09 22:15:37,901 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:37] "[33mGET /api/flashcards/6 HTTP/1.1[0m" 404 -
+2025-08-09 22:15:39,131 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:39] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:15:39,382 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:15:39] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:02,388 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:02] "[33mGET /api/flashcards/6 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:02,643 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:02] "[33mGET /api/flashcards/6 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:19,851 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:19] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:20,163 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:20] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:26,874 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:26] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 22:17:27,124 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-09 22:17:30,653 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-09 22:17:30,753 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:30] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-09 22:17:33,544 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:33] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-09 22:17:33,849 - app.routes - INFO - Processando mensagem de chat: 'Este desafio de programação, para a disciplina de ...'
+2025-08-09 22:17:35,625 - app.routes - INFO - Processando mensagem de chat: 'Este desafio de programação, para a disciplina de ...'
+2025-08-09 22:17:35,759 - app.routes - INFO - Chat processado com sucesso.
+2025-08-09 22:17:35,852 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:35] "POST /api/chat HTTP/1.1" 200 -
+2025-08-09 22:17:37,346 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:37] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-09 22:17:37,558 - app.routes - INFO - Chat processado com sucesso.
+2025-08-09 22:17:37,656 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:37] "POST /api/chat HTTP/1.1" 200 -
+2025-08-09 22:17:37,658 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-09 22:17:37,741 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 7
+2025-08-09 22:17:37,741 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:37] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-09 22:17:39,661 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:39] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:39,917 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:39] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:40,121 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:40] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:40,427 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:40] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:40,427 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:40] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:40,742 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:40] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:42,729 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:42] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:43,035 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:43] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:43,407 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:43] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:43,663 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:43] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:43,709 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:43] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:43,712 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:43] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:43,977 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:43] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:44,022 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:44] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:44,023 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:44] "GET /api/summary/7 HTTP/1.1" 200 -
+2025-08-09 22:17:44,264 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:44] "GET /api/summary/7 HTTP/1.1" 200 -
+2025-08-09 22:17:45,048 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:45] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:45,354 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:45] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:45,715 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:45] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:45,973 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:45] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-09 22:17:46,018 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:46] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
+2025-08-09 22:17:46,020 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:46] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -

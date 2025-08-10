@@ -103,7 +103,6 @@ def analyze_pdf():
 # -- Inicio Rota FLASHCARDS --
 @api_bp.route('/generate-flashcards', methods=['POST'])
 def flashcards():
-    # log.info('Requisição /generate-flashcards recebida.')
     data = request.get_json()
 
     if not data or 'text' not in data:
@@ -112,6 +111,8 @@ def flashcards():
 
     input_text = data['text']
     quantity = data.get('quantity', 3)
+    user_id = data.get('user_id')
+    summary_id = data.get('summary_id')
     model = current_app.config['GENAI_MODEL']
 
     try:
@@ -119,22 +120,31 @@ def flashcards():
         flashcards_list = process_flashcard_generation(model, input_text, quantity)
         logger.info("Flashcards gerados com sucesso.")
 
-        historico = Historico(
-            tipo="flashcard",
-            entrada=input_text,
-            resposta=str(flashcards_list),
-            quantidade=quantity
-        )
-        db.session.add(historico)
-        db.session.commit()
+        # Se user_id e summary_id forem informados, salve os flashcards no banco
+        if user_id and summary_id:
+            for fc in flashcards_list:
+                pergunta = fc.get('pergunta') or fc.get('question') or fc.get('front') or fc.get('q')
+                resposta = fc.get('resposta') or fc.get('answer') or fc.get('back') or fc.get('a')
+                if not pergunta or not resposta:
+                    logger.warning("Flashcard inválido encontrado e ignorado ao salvar no banco.")
+                    continue
+
+                novo_flashcard = Flashcard(
+                    pergunta=pergunta,
+                    resposta=resposta,
+                    summary_id=summary_id,
+                    user_id=user_id
+                )
+                db.session.add(novo_flashcard)
+            db.session.commit()
+            logger.info(f"Flashcards salvos no banco para summary_id {summary_id} e user_id {user_id}")
 
         return jsonify({"flashcards": flashcards_list})
 
-
-    except ValueError as ve: # erros de validação ou formatação esperada da função de serviço
+    except ValueError as ve:
         logger.warning(f"Erro de validação/formatação na geração de flashcards: {ve}")
         return jsonify({"erro": str(ve)}), 400
-    except Exception as e: # outros erros inesperados
+    except Exception as e:
         logger.error(f"Erro inesperado ao gerar flashcards: {e}", exc_info=True)
         return jsonify({"erro": "Falha ao gerar os flashcards."}), 500
 # -- Fim Rota FLASHCARDS --
@@ -248,9 +258,116 @@ def get_my_summaries():
             "id": s.id,
             "title": s.titulo,
             "date": s.data_criacao.strftime("%d/%m/%Y"),
-            "icon": "src/assets/Ativo 29.svg"  # ajuste conforme sua lógica de ícones
+            "icon": "src/assets/Ativo 29.svg"
         })
 
     return jsonify(result), 200
 
 # -- Fim da rota -- 
+
+
+# -- Início rota SAVE SUMMARY + FLASHCARDS --
+
+@api_bp.route('/save-summary-with-flashcards', methods=['POST'])
+def save_summary_with_flashcards():
+    data = request.get_json()
+
+    user_id = data.get('user_id')
+    titulo = data.get('titulo', 'Resumo sem título')
+    texto = data.get('texto')
+    flashcards = data.get('flashcards', [])  # Lista de objetos {pergunta, resposta}
+
+    if not user_id:
+        return jsonify({"erro": "ID do usuário é obrigatório."}), 400
+    if not texto:
+        return jsonify({"erro": "Texto do resumo é obrigatório."}), 400
+    if not isinstance(flashcards, list):
+        return jsonify({"erro": "O campo 'flashcards' deve ser uma lista."}), 400
+
+    try:
+        logger.info(f"Salvando resumo e {len(flashcards)} flashcards para o usuário {user_id}")
+
+        # 1. Salvar o resumo
+        novo_summary = Summary(
+            texto=texto,
+            user_id=user_id,
+            titulo=titulo,
+            data_criacao=datetime.utcnow()
+        )
+        db.session.add(novo_summary)
+        db.session.flush()  # Garante que novo_summary.id seja gerado antes do commit
+
+        # 2. Salvar os flashcards vinculados
+        for fc in flashcards:
+            pergunta = fc.get('pergunta')
+            resposta = fc.get('resposta')
+            if not pergunta or not resposta:
+                logger.warning("Flashcard inválido encontrado e ignorado (falta pergunta ou resposta).")
+                continue
+
+            novo_flashcard = Flashcard(
+                pergunta=pergunta,
+                resposta=resposta,
+                summary_id=novo_summary.id,
+                user_id=user_id
+            )
+            db.session.add(novo_flashcard)
+
+        db.session.commit()
+        logger.info(f"Resumo e flashcards salvos com sucesso. Summary ID: {novo_summary.id}")
+
+        return jsonify({
+            "msg": "Resumo e flashcards salvos com sucesso.",
+            "summary_id": novo_summary.id
+        }), 201
+
+    except Exception as e:
+        db.session.rollback()
+        logger.error(f"Erro ao salvar resumo e flashcards: {e}", exc_info=True)
+        return jsonify({"erro": "Falha ao salvar o resumo e os flashcards."}), 500
+
+# -- Fim rota SAVE SUMMARY + FLASHCARDS --
+
+
+# -- Rota de busca resumos -- 
+
+@api_bp.route('/summary/<int:summary_id>', methods=['GET'])
+def get_summary(summary_id):
+    summary = Summary.query.get(summary_id)
+    if not summary:
+        return jsonify({"erro": "Resumo não encontrado."}), 404
+
+    flashcards = [
+        {"id": f.id, "pergunta": f.pergunta, "resposta": f.resposta}
+        for f in summary.flashcards
+    ]
+
+    return jsonify({
+        "id": summary.id,
+        "titulo": summary.titulo,
+        "texto": summary.texto,
+        "data_criacao": summary.data_criacao.strftime("%d/%m/%Y"),
+        "flashcards": flashcards
+    }), 200
+
+# -- Fim da rota de busca resumos -- 
+
+
+# -- Nova Rota Flashcards -- 
+
+@api_bp.route('/flashcard/<int:flashcard_id>', methods=['GET'])
+def get_flashcard(flashcard_id):
+    flashcard = Flashcard.query.get(flashcard_id)
+    if not flashcard:
+        return jsonify({"erro": "Flashcard não encontrado."}), 404
+
+    return jsonify({
+        "id": flashcard.id,
+        "pergunta": flashcard.pergunta,
+        "resposta": flashcard.resposta,
+        "summary_id": flashcard.summary_id,
+        "user_id": flashcard.user_id
+    }), 200
+
+
+# -- Fim da rota flashcards --
