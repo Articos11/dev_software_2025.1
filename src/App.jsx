@@ -1,13 +1,12 @@
 // src/App.jsx
 
-import React, { useState } from "react";
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom"; // Removido useParams, useNavigate daqui
-import { useParams, useNavigate, Link } from "react-router-dom"; // Reimportado useParams, useNavigate para o Wrapper se ainda for usar (não vai)
 
 // Importe os layouts e páginas
 import AuthLayout from "./layouts/AuthLayout";
@@ -19,7 +18,7 @@ import CheckInfosPage from "./pages/CheckInfosPage";
 import SaveSummaryPage from "./pages/SaveSummaryPage";
 import MySummariesPage from "./pages/MySummariesPage";
 import MyFlashcardsPage from "./pages/MyFlashcardsPage"; // Página que lista os TEMAS
-import FlashcardPage from "./pages/FlashcardPage"; // ✨ A PÁGINA QUE EXIBE A SEQUÊNCIA DE FLASHCARDS DE UM TEMA
+import FlashcardPage from "./pages/FlashcardPage"; // A PÁGINA QUE EXIBE A SEQUÊNCIA DE FLASHCARDS DE UM TEMA
 
 // Importe o CSS global
 import "./index.css";
@@ -177,6 +176,7 @@ Os resultados indicaram uma melhoria significativa nas propriedades mecânicas c
 
       {/* Rota raiz que redireciona para a página de login por padrão */}
       <Route path="/" element={<Navigate to="/login" />} />
+
     </Routes>
   );
 }

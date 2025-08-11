@@ -30,11 +30,11 @@ export default function UserButton({ username = "Usuário" }) {
       ref={ref}
     >
       <div
-        className="flex items-center space-x-2 bg-[var(--color-resumeai-purple)] py-2 pl-4 pr-2 rounded-r-full rounded-bl-full shadow cursor-pointer select-none"
+        className="flex items-center space-x-2 bg-[var(--color-resumeai-purple)] py-2 pl-2 md:pl-4 pr-2 rounded-r-full rounded-bl-full shadow cursor-pointer select-none transition-all duration-300"
         onClick={() => setOpen((v) => !v)}
         tabIndex={0}
       >
-        <div className="flex flex-col text-end">
+        <div className="hidden md:flex flex-col text-end">
           <span className="text-white text-md">{username}</span>
           <span className="text-white text-xs">online</span>
         </div>

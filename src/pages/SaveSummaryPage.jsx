@@ -7,11 +7,18 @@ import FlashcardThumbnails from "../components/Salvamento/FlashcardThumbnails";
 import SelectDropdown from "../components/Uteis/SelectDropdown";
 import jsPDF from "jspdf";
 
+// Importação dos SVGs usados nesta página
+import Ativo4 from "../assets/Ativo_4.svg";
+
 export default function SaveSummaryPage() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { texto = "Nenhum resumo recebido.", ajustes = {}, promptAdicional = "" } = location.state || {};
+  const {
+    texto = "Nenhum resumo recebido.",
+    ajustes = {},
+    promptAdicional = "",
+  } = location.state || {};
 
   const [text, setText] = useState(texto);
   const [flashcards, setFlashcards] = useState([]); // Estado para flashcards reais
@@ -54,56 +61,60 @@ export default function SaveSummaryPage() {
 
   const handleSaveSummaryWithFlashcards = async () => {
     setSalvando(true);
-  setErro(null);
+    setErro(null);
 
-  try {
-    const storedUser = localStorage.getItem("user");
-    if (!storedUser) {
-      setErro("Usuário não autenticado.");
+    try {
+      const storedUser = localStorage.getItem("user");
+      if (!storedUser) {
+        setErro("Usuário não autenticado.");
+        setSalvando(false);
+        return;
+      }
+      const user = JSON.parse(storedUser);
+
+      // Prepara os flashcards para envio
+      const flashcardsParaEnviar = flashcards.map((fc) => ({
+        pergunta: fc.question || fc.pergunta || "",
+        resposta: fc.answer || fc.resposta || "",
+      }));
+
+      const response = await fetch(
+        "http://localhost:5000/api/save-summary-with-flashcards",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            user_id: user.id,
+            titulo: ajustes.titulo || "Resumo sem título",
+            texto: text,
+            flashcards: flashcardsParaEnviar,
+            projeto: ajustes.projeto || null,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.erro || "Falha ao salvar resumo e flashcards");
+      }
+
+      const pdfBase64 = gerarPdfBase64();
+      localStorage.setItem(`pdfResumo_${data.summary_id}`, pdfBase64);
+
+      // Salva summary_id para flashcards carregarem depois
+      localStorage.setItem("last_summary_id", data.summary_id);
+
+      alert(
+        "Resumo e flashcards salvos com sucesso! PDF armazenado localmente para download.\nVocê pode visualizar os flashcards na página dedicada."
+      );
+
+      navigate("/resumos");
+    } catch (error) {
+      setErro(error.message);
+    } finally {
       setSalvando(false);
-      return;
     }
-    const user = JSON.parse(storedUser);
-
-    // Prepara os flashcards para envio
-    const flashcardsParaEnviar = flashcards.map(fc => ({
-      pergunta: fc.question || fc.pergunta || "",
-      resposta: fc.answer || fc.resposta || "",
-    }));
-
-    const response = await fetch("http://localhost:5000/api/save-summary-with-flashcards", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        user_id: user.id,
-        titulo: ajustes.titulo || "Resumo sem título",
-        texto: text,
-        flashcards: flashcardsParaEnviar,
-        projeto: ajustes.projeto || null,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.erro || "Falha ao salvar resumo e flashcards");
-    }
-
-    const pdfBase64 = gerarPdfBase64();
-    localStorage.setItem(`pdfResumo_${data.summary_id}`, pdfBase64);
-
-    // Salva summary_id para flashcards carregarem depois
-    localStorage.setItem("last_summary_id", data.summary_id);
-
-    alert("Resumo e flashcards salvos com sucesso! PDF armazenado localmente para download.\nVocê pode visualizar os flashcards na página dedicada.");
-
-    navigate("/resumos");
-
-  } catch (error) {
-    setErro(error.message);
-  } finally {
-    setSalvando(false);
-  }
   };
 
   return (
@@ -113,7 +124,7 @@ export default function SaveSummaryPage() {
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-2xl align-middle">Aqui está seu resumo</h2>
         <span>
-          <img src="src/assets/Ativo_4.svg" className="h-6 w-6 mt-1" alt="Ícone resumo" />
+          <img src={Ativo4} className="h-6 w-6 mt-1" alt="Ícone resumo" />
         </span>
       </div>
 
@@ -159,7 +170,10 @@ export default function SaveSummaryPage() {
 
             {erro && <p className="text-red-600 mt-2">{erro}</p>}
 
-            <Link to="/conferir_texto" state={{ texto: text, ajustes, promptAdicional }}>
+            <Link
+              to="/conferir_texto"
+              state={{ texto: text, ajustes, promptAdicional }}
+            >
               <button className="px-4 py-1 bg-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-300 mt-2">
                 Refazer
               </button>
