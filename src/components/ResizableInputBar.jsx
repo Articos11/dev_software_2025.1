@@ -116,11 +116,15 @@ function ResizableInputBar({
         </div>
       )}
 
-      <div className="flex items-center bg-white rounded-[40px] shadow-sm px-2 py-2 mb-6">
+      {/* Contêiner da barra de input, agora responsivo */}
+      <div className="flex flex-col md:flex-row items-end md:items-center bg-white rounded-[40px] shadow-sm px-2 py-2 mb-6">
+        
+        {/* Botão de Anexar (visível em telas grandes, escondido em pequenas) */}
+        {/* O botão fica à esquerda do textarea no layout md:flex-row */}
         <button
           type="button"
           onClick={handleAttachClick}
-          className="text-gray-400 w-8 h-8 flex items-center justify-center rounded-full"
+          className="hidden md:flex text-gray-400 w-8 h-8 items-center justify-center rounded-full"
         >
           <img
             src={Ativo4Pag1}
@@ -137,32 +141,50 @@ function ResizableInputBar({
           onChange={handleFileChange}
         />
 
+        {/* Textarea: ocupa o espaço restante em ambas as direções */}
         <textarea
           ref={textareaRef}
           value={text}
           onChange={handleChange}
           placeholder={placeholder}
           rows={1}
-          className="flex-1 m-1 pl-3 border-l outline-none resize-none overflow-y-auto"
+          className="flex-1 m-1 md:pl-3 md:border-l outline-none resize-none overflow-y-auto"
           style={{ maxHeight: `${calculatedMaxHeight}px` }}
         />
 
-        <button
-          type="button"
-          onClick={handleSubmitClick}
-          className={`ml-3 rounded-full ${
-            !text.trim() && files.length === 0
-              ? "opacity-50 cursor-not-allowed"
-              : ""
-          }`}
-          disabled={!text.trim() && files.length === 0}
-        >
-          <img
-            src={Ativo5Pag1}
-            className="w-7 h-7 hover:bg-gray-100 rounded-full p-1"
-            alt="Enviar"
-          />
-        </button>
+        {/* Container para os botões (Enviar e Anexar - em telas pequenas) */}
+        {/* Este div se torna uma linha em telas pequenas (`flex justify-end`) */}
+        <div className="flex items-center justify-end w-full md:w-auto mt-2 md:mt-0 space-x-2">
+          {/* Botão de Anexar (visível apenas em telas pequenas) */}
+          <button
+            type="button"
+            onClick={handleAttachClick}
+            className="md:hidden text-gray-400 w-8 h-8 flex items-center justify-center rounded-full"
+          >
+            <img
+              src={Ativo4Pag1}
+              className="w-8 h-8 hover:bg-gray-100 rounded-full p-1"
+              alt="Anexar"
+            />
+          </button>
+          
+          {/* Botão de Enviar */}
+          <button
+            type="button"
+            onClick={handleSubmitClick}
+            className={`
+              rounded-full
+              ${!text.trim() && files.length === 0 ? "opacity-50 cursor-not-allowed" : ""}
+            `}
+            disabled={!text.trim() && files.length === 0}
+          >
+            <img
+              src={Ativo5Pag1}
+              className="w-7 h-7 hover:bg-gray-100 rounded-full p-1"
+              alt="Enviar"
+            />
+          </button>
+        </div>
       </div>
     </div>
   );
