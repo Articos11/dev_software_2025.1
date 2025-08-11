@@ -33,67 +33,74 @@ function SummariesPage() {
     };
 
     const handlePdfSubmit = async () => {
-        console.log('DEBUG: handlePdfSubmit acionado na SummariesPage!');
-        clearPdfFeedback();
-        setIsLoadingPdf(true);
+            console.log('DEBUG: handlePdfSubmit acionado na SummariesPage!');
+    clearPdfFeedback();
+    setIsLoadingPdf(true);
 
-        console.log('DEBUG: Arquivos disponíveis:', selectedFiles);
-        selectedFiles.forEach(file => {
-            console.log(`Arquivo: ${file.name}, tipo: ${file.type}`);
+    // Pega o usuário logado (assumindo que você guarda no localStorage)
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user || !user.id) {
+        setPdfError('Usuário não autenticado.');
+        setIsLoadingPdf(false);
+        return;
+    }
+
+    const pdfFileToSend = selectedFiles.find(file =>
+        file.type === 'application/pdf' ||
+        file.name.toLowerCase().endsWith('.pdf')
+    );
+
+    if (!pdfFileToSend) {
+        setPdfError('Por favor, selecione um arquivo PDF válido.');
+        setIsLoadingPdf(false);
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('pdf', pdfFileToSend);
+    formData.append('prompt', promptText);
+
+    try {
+        // Gera o resumo
+        const response = await fetch(`${API_BASE_URL}/analyze-pdf`, {
+            method: 'POST',
+            body: formData,
         });
+        const data = await response.json();
 
-        // Aprimorada a verificação do tipo de arquivo
-        const pdfFileToSend = selectedFiles.find(file =>
-            file.type === 'application/pdf' ||
-            file.name.toLowerCase().endsWith('.pdf')
-        );
-
-        if (!pdfFileToSend) {
-            setPdfError('Por favor, selecione um arquivo PDF válido.');
-            setIsLoadingPdf(false);
-            console.log('DEBUG: Erro: Nenhum PDF válido selecionado.');
+        if (!response.ok) {
+            setPdfError(data.erro || 'Erro ao analisar PDF.');
             return;
         }
 
-        const formData = new FormData();
-        formData.append('pdf', pdfFileToSend);
-        formData.append('prompt', promptText);
+        // Salva o resumo no backend
+        const saveResponse = await fetch(`${API_BASE_URL}/save-summary`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_id: user.id,
+                texto: data.resposta,
+                titulo: pdfFileToSend.name.replace('.pdf', '')
+            })
+        });
+        const saveData = await saveResponse.json();
 
-        console.log('DEBUG: Preparando requisição fetch para /analyze-pdf...');
-        console.log('DEBUG: URL:', `${API_BASE_URL}/analyze-pdf`);
-        console.log('DEBUG: Prompt a ser enviado:', promptText);
-        console.log('DEBUG: Arquivo PDF a ser enviado:', pdfFileToSend.name);
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/analyze-pdf`, {
-                method: 'POST',
-                body: formData,
-            });
-            const data = await response.json();
-
-            console.log('DEBUG: Resposta da API (status):', response.status);
-            console.log('DEBUG: Resposta da API (dados):', data);
-
-            if (response.ok) {
-                localStorage.setItem('currentPdfSummary', data.resposta);
-                localStorage.setItem('currentPdfPrompt', promptText);
-                console.log('DEBUG: Resumo salvo no localStorage ANTES DE NAVEGAR:', data.resposta);
-                navigate('/conferir_pdf');
-            } else {
-                setPdfError(data.erro || 'Erro ao analisar PDF.');
-                localStorage.removeItem('currentPdfSummary');
-                localStorage.removeItem('currentPdfPrompt');
-                console.error('DEBUG: Erro da API ao gerar resumo:', data.erro);
-            }
-        } catch (error) {
-            console.error('DEBUG: Erro na comunicação com a API de PDF (catch):', error);
-            setPdfError('Não foi possível conectar ao servidor para análise de PDF. Verifique se o backend está em execução.');
-            localStorage.removeItem('currentPdfSummary');
-            localStorage.removeItem('currentPdfPrompt');
-        } finally {
-            setIsLoadingPdf(false);
-            console.log('DEBUG: Finalizado handlePdfSubmit.');
+        if (!saveResponse.ok) {
+            setPdfError(saveData.erro || 'Erro ao salvar resumo.');
+            return;
         }
+
+        console.log('Resumo salvo no banco com ID:', saveData.summary_id);
+
+        // Redireciona para página de conferência
+        navigate(`/conferir_pdf?id=${saveData.summary_id}`);
+
+    } catch (error) {
+        console.error('Erro:', error);
+        setPdfError('Falha na comunicação com o servidor.');
+    } finally {
+        setIsLoadingPdf(false);
+    }
     };
 
     const isSubmitButtonDisabled =
