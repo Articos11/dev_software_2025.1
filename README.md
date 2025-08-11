@@ -1,4 +1,4 @@
-
+,
 # ResumeAI 📄✨
 
 ResumeAI é uma aplicação web que utiliza o poder da **API do Google Gemini** para gerar resumos inteligentes e personalizados de documentos PDF, além de permitir conversas diretas via chat com a IA. O backend foi totalmente refatorado para seguir uma **arquitetura modular**, com **separação de responsabilidades**, **tratamento de erros** e **testes unitários**.
@@ -225,7 +225,3 @@ pytest
 ## 📜 Licença
 
 Este projeto é de uso educacional. Sinta-se livre para modificar, estudar e aprender com o código.
-
----
-
-Se desejar, Senhor, posso também gerar um `.env.example` para que o Senhor inclua no repositório. Deseja?
