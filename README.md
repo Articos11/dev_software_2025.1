@@ -227,5 +227,3 @@ pytest
 Este projeto é de uso educacional. Sinta-se livre para modificar, estudar e aprender com o código.
 
 ---
-
-Se desejar, Senhor, posso também gerar um `.env.example` para que o Senhor inclua no repositório. Deseja?
