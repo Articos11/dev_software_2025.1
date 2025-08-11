@@ -17,7 +17,12 @@ const Login = () => {
 
     try {
       const loggedInUser = await loginUser(email, password);
-      navigate('/home', { state: { user: loggedInUser } });
+
+      // Salva os dados do usuário no localStorage para uso no frontend
+      localStorage.setItem('user', JSON.stringify(loggedInUser.user));
+
+      // Navega para home
+      navigate('/home', { state: { user: loggedInUser.user } });
     } catch (err) {
       setError(err.message);
     }

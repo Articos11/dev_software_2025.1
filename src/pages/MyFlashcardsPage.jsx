@@ -72,7 +72,7 @@ export default function MyFlashcardsPage({ userId }) {
       <PageHeaderSidebar>
         <PageHeader
           title="Flashcards"
-          icon="src/assets/Ativo 29.svg"
+          icon="src/assets/Ativo_29.svg"
           breadcrumbs={[
             { label: "Início", href: "/", className: "text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]" },
             { label: "Coleção de Flashcards", className: "text-gray-700 text-semibold" },
