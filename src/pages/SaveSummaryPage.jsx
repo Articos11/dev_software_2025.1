@@ -105,10 +105,6 @@ export default function SaveSummaryPage() {
       // Salva summary_id para flashcards carregarem depois
       localStorage.setItem("last_summary_id", data.summary_id);
 
-      alert(
-        "Resumo e flashcards salvos com sucesso! PDF armazenado localmente para download.\nVocê pode visualizar os flashcards na página dedicada."
-      );
-
       navigate("/resumos");
     } catch (error) {
       setErro(error.message);
