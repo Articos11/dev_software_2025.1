@@ -34,7 +34,7 @@ export default function MyFlashcardsPage({ userId }) {
         // 2. Busca flashcards isolados do último summary salvo, se houver
         const lastSummaryId = localStorage.getItem("last_summary_id");
         if (lastSummaryId) {
-          const resFlashcards = await fetch(`http://localhost:5000/api/flashcards/by-summary/${lastSummaryId}`);
+          const resFlashcards = await fetch(`${baseUrl}/flashcards/by-summary/${lastSummaryId}`);
           if (!resFlashcards.ok) throw new Error("Falha ao buscar flashcards isolados.");
           const flashcardsData = await resFlashcards.json();
           setIsolatedFlashcards(flashcardsData.flashcards || []);

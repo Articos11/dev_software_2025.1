@@ -24,6 +24,7 @@ export default function SaveSummaryPage() {
   const [flashcards, setFlashcards] = useState([]); // Estado para flashcards reais
   const [salvando, setSalvando] = useState(false);
   const [erro, setErro] = useState(null);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000/api";
 
   // Simulação: se houver ajustes.flashcards.list, atualiza flashcards
   // Caso o senhor tenha outra forma de passar os flashcards gerados, adapte aqui
@@ -79,7 +80,7 @@ export default function SaveSummaryPage() {
       }));
 
       const response = await fetch(
-        "http://localhost:5000/api/save-summary-with-flashcards",
+        `${baseUrl}/save-summary-with-flashcards`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
