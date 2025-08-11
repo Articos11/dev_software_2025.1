@@ -3,6 +3,8 @@
 
 ResumeAI é uma aplicação web que utiliza o poder da **API do Google Gemini** para gerar resumos inteligentes e personalizados de documentos PDF, além de permitir conversas diretas via chat com a IA. O backend foi totalmente refatorado para seguir uma **arquitetura modular**, com **separação de responsabilidades**, **tratamento de erros** e **testes unitários**.
 
+As informações do projeto estão documentadas no arquivo de [Documentação](https://docs.google.com/document/d/12t1htcrz0WrX57PtD127bYvFT06pZ2o-IGPseK8rGsc/edit?tab=t.0#heading=h.7qmxaezffqpj) do ResumeAI. Além disso, todo o processo de desenvolvimento está registrado no nosso [Google Drive](https://drive.google.com/drive/folders/1Y9EW4qdHHc1WM5-Myxl5D5n9lLmXP_X_?usp=sharing).
+
 ---
 
 ## 📋 Índice
@@ -58,6 +60,7 @@ Este projeto é dividido em duas partes:
 * HTML5
 * CSS3
 * JavaScript (Fetch API)
+* React.js
 
 ### Backend (`server`):
 
