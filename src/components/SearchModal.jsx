@@ -1,87 +1,127 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Para navegação nos resultados
-import SummaryBox from "./SummaryBox";
-import FlashcardBox from "./FlashcardBox";
+import React, { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
+// ✨ Importe o novo ícone SVG de fechar
+import Ativo32Icon from '../assets/Ativo_32.svg';
 
-// Este componente é o pop-up de busca
-export default function SearchModal({ isOpen, onClose, flashcardThemes = [], summaries = [] }) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+export default function SearchModal({
+  isOpen,
+  onClose,
+  flashcardThemes = [],
+  summaries = [],
+}) {
+  const [query, setQuery] = useState("");
 
-  // Combina todos os itens pesquisáveis em um único array
-  const searchableItems = [...summaries, ...flashcardThemes];
+  const searchableItems = useMemo(() => {
+    return [...summaries, ...flashcardThemes];
+  }, [summaries, flashcardThemes]);
 
-  // Use um useEffect para reagir às mudanças no campo de busca
-  useEffect(() => {
-    if (searchQuery.trim() === "") {
-      setSearchResults([]);
-      return;
-    }
-
-    const filteredResults = searchableItems.filter((item) =>
-      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const flashcardResults = useMemo(() => {
+    if (!query) return [];
+    return flashcardThemes.flatMap((theme) =>
+      theme.flashcards
+        .filter(
+          (f) =>
+            f.question.toLowerCase().includes(query.toLowerCase()) ||
+            f.answer.toLowerCase().includes(query.toLowerCase())
+        )
+        .map((f) => ({ ...f, themeTitle: theme.title, themeId: theme.id }))
     );
+  }, [query, flashcardThemes]);
 
-    setSearchResults(filteredResults);
-  }, [searchQuery, searchableItems]);
+  const summaryResults = useMemo(() => {
+    if (!query) return [];
+    return summaries.filter(
+      (s) =>
+        s.title.toLowerCase().includes(query.toLowerCase()) ||
+        (s.content && s.content.toLowerCase().includes(query.toLowerCase()))
+    );
+  }, [query, summaries]);
 
   if (!isOpen) {
-    return null; // Não renderiza nada se o modal não estiver aberto
+    return null;
   }
 
   return (
-    // Fundo escuro do pop-up
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 z-50">
-      {/* Contêiner branco do pop-up */}
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-full overflow-hidden flex flex-col relative">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-900 text-2xl font-bold"
-        >
-          &times;
-        </button>
+    <div 
+      className="fixed inset-0 z-50 bg-gray-400/15 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white rounded-[35px] shadow-xl w-full max-w-2xl max-h-full overflow-hidden flex flex-col relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex justify-between items-center px-6 pb-3 pt-5 pr-4 bg-[var(--color-resumeai-purple)] rounded-t-[35px] text-white">
+          <h2 className="text-2xl font-bold">Buscar</h2>
+          <button
+            onClick={onClose}
+            className="text-white hover:text-gray-200 text-3xl font-bold transition-colors"
+          >
+            {/* ✨ Substituído o &times; pelo novo ícone */}
+            <img src={Ativo32Icon} alt="Fechar" className="w-8 h-8 cursor-pointer" />
+          </button>
+        </div>
 
-        {/* Barra de Busca */}
         <div className="p-6 border-b border-gray-200">
           <input
             type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Pesquisar por resumos e flashcards..."
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm outline-none focus:ring-2 focus:ring-blue-500"
-            autoFocus // Foca automaticamente no input ao abrir
+            autoFocus
+            placeholder="Digite para buscar..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-[35px] shadow-sm outline-none focus:ring-2 focus:ring-[var(--color-resumeai-blue)]"
           />
         </div>
 
-        {/* Área de Resultados da Busca */}
-        <div className="flex-grow overflow-y-auto p-6 scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
-          {searchQuery.trim() === "" ? (
-            <p className="text-gray-500 text-lg text-center">Comece a digitar para ver os resultados.</p>
-          ) : searchResults.length > 0 ? (
-            <div className="flex flex-col gap-4">
-              {searchResults.map((item) => (
-                <Link key={item.id} to={item.id.startsWith('r') ? `/resumos/${item.id}` : `/flashcards/${item.id}`} onClick={onClose}>
-                  {item.id.startsWith('r') ? (
-                    <SummaryBox
-                      id={item.id}
-                      title={item.title}
-                      date={item.date}
-                      icon={item.icon}
-                    />
-                  ) : (
-                    <FlashcardBox
-                      id={item.id}
-                      title={item.title}
-                      date={item.date}
-                      icon={item.icon}
-                      flashcardCount={item.flashcards ? item.flashcards.length : 0}
-                    />
-                  )}
+        <div className="flex-grow overflow-y-auto p-6 space-y-4">
+          {query.trim() === "" ? (
+            <p className="text-gray-500 text-lg text-center">
+              Comece a digitar para ver os resultados.
+            </p>
+          ) : (
+            <>
+              <h3 className="text-lg font-semibold text-gray-700">
+                Resumos ({summaryResults.length})
+              </h3>
+              {summaryResults.length === 0 && (
+                <div className="text-gray-400 text-sm">
+                  Nenhum resumo encontrado.
+                </div>
+              )}
+              {summaryResults.map((s) => (
+                <Link
+                  key={s.id}
+                  to={`/resumos/${s.id}`}
+                  onClick={onClose}
+                  className="block py-2 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors"
+                >
+                  <strong>{s.title}</strong>
+                  <div className="text-xs text-gray-500 truncate">
+                    {s.content?.slice(0, 80)}...
+                  </div>
                 </Link>
               ))}
-            </div>
-          ) : (
-            <p className="text-red-500 text-lg text-center">Nenhum resultado encontrado para "{searchQuery}".</p>
+
+              <h3 className="text-lg font-semibold text-gray-700 mt-4">
+                Flashcards ({flashcardResults.length})
+              </h3>
+              {flashcardResults.length === 0 && (
+                <div className="text-gray-400 text-sm">
+                  Nenhum flashcard encontrado.
+                </div>
+              )}
+              {flashcardResults.map((f) => (
+                <Link
+                  key={f.id + f.themeId}
+                  to={`/flashcards/${f.themeId}`}
+                  onClick={onClose}
+                  className="block py-2 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors"
+                >
+                  <strong>{f.themeTitle}</strong>
+                  <div className="text-xs text-gray-700">Q: {f.question}</div>
+                  <div className="text-xs text-gray-500">A: {f.answer}</div>
+                </Link>
+              ))}
+            </>
           )}
         </div>
       </div>

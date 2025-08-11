@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SearchModal from "../SearchModal";
 import { Link } from "react-router-dom";
 import SidebarHeader from "./SidebarHeader";
 import {
@@ -15,10 +16,12 @@ import Ativo24Icon from "../../assets/Ativo_24.svg";
 import Ativo28Icon from "../../assets/Ativo_28.svg";
 import Ativo29Icon from "../../assets/Ativo_29.svg";
 
-export default function NewSidebar() {
+export default function NewSidebar({ flashcardThemes = [], summaries = [] }) {
   const [collapsed, setCollapsed] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
   const handleCollapse = () => setCollapsed((prev) => !prev);
+  const handleSearchClick = () => setIsSearchModalOpen(true);
 
   return (
     <Sidebar
@@ -72,10 +75,21 @@ export default function NewSidebar() {
               />
             </span>
           }
-          component={<Link to="/buscar">Buscar</Link>}
         >
-          Buscar
+          <button
+            onClick={handleSearchClick}
+            className="w-full text-left bg-transparent outline-none cursor-pointer"
+            style={{ padding: 0, margin: 0 }}
+          >
+            Buscar
+          </button>
         </MenuItem>
+        <SearchModal
+          isOpen={isSearchModalOpen}
+          onClose={() => setIsSearchModalOpen(false)}
+          flashcardThemes={flashcardThemes}
+          summaries={summaries}
+        />
         {collapsed ? <div style={{ height: 32 }} /> : <MeuEspacoDivision />}
         <MenuItem
           icon={

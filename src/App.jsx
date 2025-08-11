@@ -1,13 +1,12 @@
 // src/App.jsx
 
-import React, { useState } from "react";
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom"; // Removido useParams, useNavigate daqui
-import SearchModal from "./components/SearchModal"; // Importa o componente de busca
 
 // Importe os layouts e páginas
 import AuthLayout from "./layouts/AuthLayout";
@@ -142,8 +141,6 @@ Os resultados indicaram uma melhoria significativa nas propriedades mecânicas c
     },
   ];
 
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-
   return (
     <Routes>
       {/* Rotas Públicas ou do App Principal */}
@@ -180,12 +177,6 @@ Os resultados indicaram uma melhoria significativa nas propriedades mecânicas c
       {/* Rota raiz que redireciona para a página de login por padrão */}
       <Route path="/" element={<Navigate to="/login" />} />
 
-      <SearchModal 
-              isOpen={isSearchModalOpen}
-              onClose={() => setIsSearchModalOpen(false)}
-              flashcardThemes={meusFlashcardsThemes}
-              summaries={meusResumos}
-            />
     </Routes>
   );
 }
