@@ -19,13 +19,19 @@ function FlashcardPage() {
     setError(null);
     setCurrentCardIdx(0);
 
-    fetch(`${baseUrl}/flashcards/${themeId}`) // Ajuste a URL conforme seu backend
+    fetch(`${baseUrl}/flashcards/by-summary/${themeId}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Erro ao buscar flashcards: ${res.statusText}`);
         return res.json();
       })
       .then((data) => {
-        setCurrentTheme(data);
+        // Ajusta os nomes dos campos do backend para o esperado pelo frontend
+        const flashcards = data.flashcards.map(f => ({
+          ...f,
+          question: f.pergunta,
+          answer: f.resposta
+        }));
+        setCurrentTheme({ ...data, flashcards });
         setLoading(false);
       })
       .catch((err) => {
@@ -34,74 +40,45 @@ function FlashcardPage() {
       });
   }, [themeId]);
 
-  if (loading) {
-    return (
-      <PageHeaderSidebar>
-        <p className="text-center mt-20 text-gray-500">Carregando flashcards...</p>
-      </PageHeaderSidebar>
-    );
-  }
+  if (loading) return <PageHeaderSidebar><p className="text-center mt-20 text-gray-500">Carregando flashcards...</p></PageHeaderSidebar>;
 
-  if (error) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center text-red-600">
-        <p className="text-xl mb-4">{error}</p>
-        <Link to="/flashcards" className="block mt-4 text-blue-600 hover:underline">
-          Voltar para a lista de Temas
-        </Link>
-      </div>
-    );
-  }
+  if (error) return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center text-red-600">
+      <p className="text-xl mb-4">{error}</p>
+      <Link to="/flashcards" className="block mt-4 text-blue-600 hover:underline">Voltar para a lista de Temas</Link>
+    </div>
+  );
 
-  if (!currentTheme) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center text-red-600">
-        <p className="text-xl mb-4">Tema de Flashcard com ID "{themeId}" não encontrado.</p>
-        <Link to="/flashcards" className="block mt-4 text-blue-600 hover:underline">
-          Voltar para a lista de Temas
-        </Link>
-      </div>
-    );
-  }
+  if (!currentTheme) return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center text-red-600">
+      <p className="text-xl mb-4">Tema de Flashcard com ID "{themeId}" não encontrado.</p>
+      <Link to="/flashcards" className="block mt-4 text-blue-600 hover:underline">Voltar para a lista de Temas</Link>
+    </div>
+  );
 
   const flashcardsInTheme = currentTheme.flashcards || [];
   const currentFlashcard = flashcardsInTheme[currentCardIdx];
 
-  if (!currentFlashcard) {
-    return (
-      <PageHeaderSidebar>
-        <PageHeader
-          title={currentTheme.title}
-          icon={Ativo28Icon}
-          breadcrumbs={[
-            { label: 'Início', href: '/', className: 'text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]' },
-            { label: 'Coleção de Flashcards', href: '/flashcards', className: 'text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]' },
-            { label: currentTheme.title, className: 'text-gray-700 text-semibold' },
-          ]}
-        />
-        <div className="flex-grow p-8 overflow-y-auto overflow-x-hidden scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
-          <div className="flex flex-col items-center justify-center h-full">
-            <p className="text-gray-500 text-lg">Nenhum flashcard neste tema. Adicione um!</p>
-            <Link to="/flashcards" className="mt-4 text-blue-600 hover:underline">
-              Voltar para Temas
-            </Link>
-          </div>
-        </div>
-      </PageHeaderSidebar>
-    );
-  }
+  if (!currentFlashcard) return (
+    <PageHeaderSidebar>
+      <PageHeader
+        title={currentTheme.title}
+        icon={Ativo28Icon}
+        breadcrumbs={[
+          { label: 'Início', href: '/', className: 'text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]' },
+          { label: 'Coleção de Flashcards', href: '/flashcards', className: 'text-gray-500 cursor-pointer hover:text-[var(--color-resumeai-blue)]' },
+          { label: currentTheme.title, className: 'text-gray-700 text-semibold' },
+        ]}
+      />
+      <div className="flex-grow p-8 flex flex-col items-center justify-center">
+        <p className="text-gray-500 text-lg">Nenhum flashcard neste tema. Adicione um!</p>
+        <Link to="/flashcards" className="mt-4 text-blue-600 hover:underline">Voltar para Temas</Link>
+      </div>
+    </PageHeaderSidebar>
+  );
 
-  const handleNextCard = () => {
-    if (currentCardIdx < flashcardsInTheme.length - 1) {
-      setCurrentCardIdx((prev) => prev + 1);
-    }
-  };
-
-  const handlePreviousCard = () => {
-    if (currentCardIdx > 0) {
-      setCurrentCardIdx((prev) => prev - 1);
-    }
-  };
+  const handleNextCard = () => currentCardIdx < flashcardsInTheme.length - 1 && setCurrentCardIdx(prev => prev + 1);
+  const handlePreviousCard = () => currentCardIdx > 0 && setCurrentCardIdx(prev => prev - 1);
 
   return (
     <PageHeaderSidebar>
@@ -114,7 +91,6 @@ function FlashcardPage() {
           { label: currentTheme.title, className: 'text-gray-700 text-semibold' },
         ]}
       />
-
       <div className="flex-grow flex items-center justify-center p-8">
         <SingleFlashcardDisplay
           flashcard={currentFlashcard}

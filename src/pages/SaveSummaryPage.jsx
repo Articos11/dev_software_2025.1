@@ -62,56 +62,75 @@ export default function SaveSummaryPage() {
 
   const handleSaveSummaryWithFlashcards = async () => {
     setSalvando(true);
-    setErro(null);
+  setErro(null);
 
-    try {
-      const storedUser = localStorage.getItem("user");
-      if (!storedUser) {
-        setErro("Usuário não autenticado.");
-        setSalvando(false);
-        return;
+  try {
+    const storedUser = localStorage.getItem("user");
+    if (!storedUser) {
+      setErro("Usuário não autenticado.");
+      setSalvando(false);
+      return;
+    }
+    const user = JSON.parse(storedUser);
+
+    let flashcardsParaEnviar = flashcards;
+
+    // Se flashcards estiver vazio, gerar antes de salvar
+    if (!flashcardsParaEnviar || flashcardsParaEnviar.length === 0) {
+      const gerarResponse = await fetch(`${baseUrl}/generate-flashcards`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text: text,
+          quantity: ajustes.flashcards?.quantidade || 3,
+          user_id: user.id
+        }),
+      });
+
+      const gerarData = await gerarResponse.json();
+      if (!gerarResponse.ok) {
+        throw new Error(gerarData.erro || "Falha ao gerar flashcards");
       }
-      const user = JSON.parse(storedUser);
 
-      // Prepara os flashcards para envio
-      const flashcardsParaEnviar = flashcards.map((fc) => ({
-        pergunta: fc.question || fc.pergunta || "",
-        resposta: fc.answer || fc.resposta || "",
+      flashcardsParaEnviar = gerarData.flashcards.map((fc) => ({
+        pergunta: fc.pergunta || fc.question || "",
+        resposta: fc.resposta || fc.answer || ""
       }));
 
-      const response = await fetch(
-        `${baseUrl}/save-summary-with-flashcards`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            user_id: user.id,
-            titulo: ajustes.titulo || "Resumo sem título",
-            texto: text,
-            flashcards: flashcardsParaEnviar,
-            projeto: ajustes.projeto || null,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.erro || "Falha ao salvar resumo e flashcards");
-      }
-
-      const pdfBase64 = gerarPdfBase64();
-      localStorage.setItem(`pdfResumo_${data.summary_id}`, pdfBase64);
-
-      // Salva summary_id para flashcards carregarem depois
-      localStorage.setItem("last_summary_id", data.summary_id);
-
-      navigate("/resumos");
-    } catch (error) {
-      setErro(error.message);
-    } finally {
-      setSalvando(false);
+      setFlashcards(flashcardsParaEnviar); // Atualiza estado para exibição
     }
+
+    // Salvar resumo + flashcards
+    const saveResponse = await fetch(`${baseUrl}/save-summary-with-flashcards`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_id: user.id,
+        titulo: ajustes.titulo || "Resumo sem título",
+        texto: text,
+        flashcards: flashcardsParaEnviar,
+        projeto: ajustes.projeto || null,
+      }),
+    });
+
+    const saveData = await saveResponse.json();
+
+    if (!saveResponse.ok) {
+      throw new Error(saveData.erro || "Falha ao salvar resumo e flashcards");
+    }
+
+    const pdfBase64 = gerarPdfBase64();
+    localStorage.setItem(`pdfResumo_${saveData.summary_id}`, pdfBase64);
+
+    // Salva summary_id para flashcards carregarem depois
+    localStorage.setItem("last_summary_id", saveData.summary_id);
+
+    navigate("/resumos");
+  } catch (error) {
+    setErro(error.message);
+  } finally {
+    setSalvando(false);
+  }
   };
 
   return (

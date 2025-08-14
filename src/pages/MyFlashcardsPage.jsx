@@ -12,41 +12,39 @@ export default function MyFlashcardsPage({ userId }) {
 
   useEffect(() => {
     async function fetchFlashcards() {
-      setLoading(true);
-      setError(null);
+    setLoading(true);
+    setError(null);
 
-      try {
-        // Obtém userId do parâmetro ou do localStorage
-        let uid = userId;
-        if (!uid) {
-          const storedUser = localStorage.getItem("user");
-          if (!storedUser) throw new Error("Usuário não autenticado.");
-          uid = JSON.parse(storedUser).id;
-        }
-
-        // 1. Busca temas (resumos) do usuário
-        const resThemes = await fetch(`${baseUrl}/my-summaries?user_id=${uid}`);
-        if (!resThemes.ok) throw new Error("Falha ao buscar temas de flashcards.");
-        const themesData = await resThemes.json();
-
-        setFlashcardThemes(themesData);
-
-        // 2. Busca flashcards isolados do último summary salvo, se houver
-        const lastSummaryId = localStorage.getItem("last_summary_id");
-        if (lastSummaryId) {
-          const resFlashcards = await fetch(`${baseUrl}/flashcards/by-summary/${lastSummaryId}`);
-          if (!resFlashcards.ok) throw new Error("Falha ao buscar flashcards isolados.");
-          const flashcardsData = await resFlashcards.json();
-          setIsolatedFlashcards(flashcardsData.flashcards || []);
-        } else {
-          setIsolatedFlashcards([]);
-        }
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+    try {
+      let uid = userId;
+      if (!uid) {
+        const storedUser = localStorage.getItem("user");
+        if (!storedUser) throw new Error("Usuário não autenticado.");
+        uid = JSON.parse(storedUser).id;
       }
+
+      // Busca todos os flashcards do usuário de uma vez
+      const res = await fetch(`${baseUrl}/flashcards/by-user/${uid}`);
+      if (!res.ok) throw new Error("Falha ao buscar flashcards.");
+      const data = await res.json();
+
+      // data.summaries contém os summaries e seus flashcards
+      setFlashcardThemes(data.summaries);
+
+      // Se desejar, você pode extrair flashcards isolados do último summary
+      if (data.summaries.length > 0) {
+        const lastSummary = data.summaries[0]; // último salvo
+        setIsolatedFlashcards(lastSummary.flashcards || []);
+      } else {
+        setIsolatedFlashcards([]);
+      }
+
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
+  }
 
     fetchFlashcards();
   }, [userId]);
