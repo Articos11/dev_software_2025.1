@@ -881,3 +881,795 @@ TypeError: 'nome_arquivo' is an invalid keyword argument for Historico
 2025-08-09 22:17:45,973 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:45] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
 2025-08-09 22:17:46,018 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:46] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
 2025-08-09 22:17:46,020 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 22:17:46] "[33mGET /api/flashcards/by-summary/7 HTTP/1.1[0m" 404 -
+2025-08-10 20:49:38,489 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-10 20:49:38,496 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-10 20:51:45,170 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-10 20:51:45,171 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-10 20:54:30,613 - werkzeug - INFO - 127.0.0.1 - - [10/Aug/2025 20:54:30] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-10 20:54:30,770 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NDg3MDA3MCwianRpIjoiNjY2NzI0ZGMtY2RjNi00ZWIyLTkxYzEtNGQ5MDExMTRhNjBlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU0ODcwMDcwLCJjc3JmIjoiZTU1YjY3NDYtODFhNy00NTBlLTk3ZjktYjA1NjhlNTAyOTQ0IiwiZXhwIjoxNzU0ODcwOTcwfQ.dz8Fhqbml8wKs9hwoLMpjFWWyFRTs5RCX77jgjn8qZ0', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-10 20:54:30,771 - werkzeug - INFO - 127.0.0.1 - - [10/Aug/2025 20:54:30] "POST /api/login HTTP/1.1" 200 -
+2025-08-11 10:21:36,311 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-11 10:21:36,318 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 10:21:56,385 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:21:56] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-11 10:21:56,510 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NDkxODUxNiwianRpIjoiMzQxMzk2NDUtMDVhNS00MmQ2LWE4YzMtZjQ3YTdjZjBmNjk3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU0OTE4NTE2LCJjc3JmIjoiY2IxYjdjZTEtZDJlNi00Y2JhLWE1ZTMtN2U2MDJiMzc5MjY4IiwiZXhwIjoxNzU0OTE5NDE2fQ.b8sOzysPEBVA812IZ1UzoQrcQrPZFld2P6QEufIEBQ0', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-11 10:21:56,511 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:21:56] "POST /api/login HTTP/1.1" 200 -
+2025-08-11 10:21:59,922 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:21:59] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:21:59,926 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:21:59] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:22:00,845 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:22:00] "GET /api/summary/7 HTTP/1.1" 200 -
+2025-08-11 10:22:00,848 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:22:00] "GET /api/summary/7 HTTP/1.1" 200 -
+2025-08-11 10:22:01,840 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:22:01] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:22:01,843 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:22:01] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:24:01,490 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:24:01] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:24:01,493 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:24:01] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:25:47,780 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:25:47] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-11 10:25:47,782 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-11 10:25:51,844 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-11 10:25:51,923 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:25:51] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-11 10:25:54,549 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:25:54] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-11 10:25:54,551 - app.routes - INFO - Processando mensagem de chat: 'Este documento explica como criar um bom *pitch* p...'
+2025-08-11 10:25:56,300 - app.routes - INFO - Chat processado com sucesso.
+2025-08-11 10:25:56,394 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:25:56] "POST /api/chat HTTP/1.1" 200 -
+2025-08-11 10:25:58,126 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:25:58] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-11 10:25:58,382 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-11 10:25:58,528 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 8
+2025-08-11 10:25:58,528 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:25:58] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-11 10:26:00,731 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:26:00] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:26:00,734 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:26:00] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:26:02,231 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:26:02] "GET /api/summary/8 HTTP/1.1" 200 -
+2025-08-11 10:26:02,234 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:26:02] "GET /api/summary/8 HTTP/1.1" 200 -
+2025-08-11 10:26:28,729 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:26:28] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-11 10:26:28,996 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-11 10:26:29,083 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 9
+2025-08-11 10:26:29,084 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:26:29] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-11 10:31:17,345 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:31:17] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:31:17,348 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:31:17] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:35:24,971 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:35:24] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:35:24,975 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:35:24] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:35:25,217 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:35:25] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-11 10:35:25,220 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:35:25] "GET /api/summary/6 HTTP/1.1" 200 -
+2025-08-11 10:35:26,855 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:35:26] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:35:26,857 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:35:26] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:36:01,941 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:01] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-11 10:36:01,944 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-11 10:36:05,867 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-11 10:36:05,937 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:05] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-11 10:36:07,232 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:07] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-11 10:36:07,234 - app.routes - INFO - Processando mensagem de chat: 'Este documento ensina como criar um bom *pitch* de...'
+2025-08-11 10:36:08,962 - app.routes - INFO - Chat processado com sucesso.
+2025-08-11 10:36:09,045 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:09] "POST /api/chat HTTP/1.1" 200 -
+2025-08-11 10:36:11,294 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:11] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-11 10:36:11,561 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-11 10:36:11,662 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 10
+2025-08-11 10:36:11,662 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:11] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-11 10:36:12,784 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:12] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:36:12,788 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:12] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:36:19,935 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:19] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-11 10:36:20,248 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-11 10:36:20,319 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 11
+2025-08-11 10:36:20,320 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:20] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-11 10:36:23,307 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:23] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:36:23,310 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:36:23] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:38:53,110 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:38:53] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-11 10:38:53,113 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-11 10:38:57,036 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-11 10:38:57,107 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:38:57] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-11 10:38:59,111 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:38:59] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-11 10:38:59,113 - app.routes - INFO - Processando mensagem de chat: 'Este documento explica como criar e apresentar um ...'
+2025-08-11 10:39:01,188 - app.routes - INFO - Chat processado com sucesso.
+2025-08-11 10:39:01,273 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:39:01] "POST /api/chat HTTP/1.1" 200 -
+2025-08-11 10:41:07,215 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:41:07] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-11 10:41:07,468 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-11 10:41:07,538 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 12
+2025-08-11 10:41:07,539 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:41:07] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-11 10:41:07,563 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:41:07] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:41:07,566 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:41:07] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-11 10:42:35,784 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:42:35] "[33mOPTIONS /api/flashcards/by-summary/9 HTTP/1.1[0m" 404 -
+2025-08-11 10:42:36,051 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:42:36] "[33mGET /api/flashcards/by-summary/9 HTTP/1.1[0m" 404 -
+2025-08-11 10:42:49,779 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:42:49] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-11 10:42:50,087 - app.routes - INFO - Salvando resumo e 0 flashcards para o usuário 1
+2025-08-11 10:42:50,172 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 13
+2025-08-11 10:42:50,172 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:42:50] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-11 10:42:58,101 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:42:58] "[33mOPTIONS /api/flashcards/by-summary/13 HTTP/1.1[0m" 404 -
+2025-08-11 10:42:58,416 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 10:42:58] "[33mGET /api/flashcards/by-summary/13 HTTP/1.1[0m" 404 -
+2025-08-14 17:04:45,615 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:04:45,619 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:11:29,828 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:11:29] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-14 17:11:29,950 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTIwMjI4OSwianRpIjoiZTAzOTYzYjAtZWQ5Yy00MGI0LTk0YzItMDRiNDRiYjQwYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU1MjAyMjg5LCJjc3JmIjoiMTFlYzJjYjYtYmExMi00ZTZmLTk1YTEtNTg4ZGE0NmZmMjYzIiwiZXhwIjoxNzU1MjAzMTg5fQ.X5814qiNSzkqqdzhFhIxMGGm-4XmHxTYzdhTbrfEAL8', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-14 17:11:29,951 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:11:29] "POST /api/login HTTP/1.1" 200 -
+2025-08-14 17:11:53,428 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:11:53] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:11:53,437 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-14 17:12:03,398 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-14 17:12:03,509 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:03] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:12:06,800 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:06] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-14 17:12:06,803 - app.routes - INFO - Processando mensagem de chat: 'Este documento é um exercício escolar sobre estrut...'
+2025-08-14 17:12:22,601 - app.routes - INFO - Chat processado com sucesso.
+2025-08-14 17:12:22,681 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:22] "POST /api/chat HTTP/1.1" 200 -
+2025-08-14 17:12:25,070 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:25] "OPTIONS /api/generate-flashcards HTTP/1.1" 200 -
+2025-08-14 17:12:25,073 - app.routes - INFO - Gerando 1 flashcards para o texto: '1. **Fila com duas pilhas:** Implementar uma fila ...'
+2025-08-14 17:12:32,973 - app.routes - INFO - Flashcards gerados com sucesso.
+2025-08-14 17:12:32,974 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:32] "POST /api/generate-flashcards HTTP/1.1" 200 -
+2025-08-14 17:12:32,978 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:32] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-14 17:12:32,980 - app.routes - INFO - Salvando resumo e 1 flashcards para o usuário 1
+2025-08-14 17:12:32,984 - app.routes - ERROR - Erro ao salvar resumo e flashcards: 'user_id' is an invalid keyword argument for Flashcard
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 308, in save_summary_with_flashcards
+    novo_flashcard = Flashcard(
+        pergunta=pergunta,
+    ...<2 lines>...
+        user_id=user_id
+    )
+  File "<string>", line 4, in __init__
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\state.py", line 571, in _initialize_instance
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 2173, in _declarative_constructor
+    raise TypeError(
+        "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+    )
+TypeError: 'user_id' is an invalid keyword argument for Flashcard
+2025-08-14 17:12:33,039 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:12:33] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 500 -
+2025-08-14 17:14:29,995 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:14:29,996 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:14:42,272 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:14:42] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-14 17:14:42,279 - app - ERROR - Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2522, in get_property
+    return self._props[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'flashcards'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 191, in login
+    usuario = User.query.filter_by(email=email).first()
+              ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+    ~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\interfaces.py", line 589, in init
+    self.do_init()
+    ~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1661, in do_init
+    self._generate_backref()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+    ...<3 lines>...
+    ) from err
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:14:42,352 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:14:42] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+2025-08-14 17:14:45,026 - app - ERROR - Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 191, in login
+    usuario = User.query.filter_by(email=email).first()
+              ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4251, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Flashcard(flashcard)]'. Original exception was: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:14:45,029 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:14:45] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+2025-08-14 17:14:48,594 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:14:48] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-14 17:14:48,596 - app - ERROR - Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 191, in login
+    usuario = User.query.filter_by(email=email).first()
+              ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4251, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Flashcard(flashcard)]'. Original exception was: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:14:48,598 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:14:48] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+2025-08-14 17:14:48,745 - app - ERROR - Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 191, in login
+    usuario = User.query.filter_by(email=email).first()
+              ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4251, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Flashcard(flashcard)]'. Original exception was: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:14:48,748 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:14:48] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+2025-08-14 17:15:10,089 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:15:10] "OPTIONS /api/signup HTTP/1.1" 200 -
+2025-08-14 17:15:10,092 - app - ERROR - Exception on /api/signup [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 167, in signup
+    if User.query.filter_by(email=email).first():
+       ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4251, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Flashcard(flashcard)]'. Original exception was: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:15:10,095 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:15:10] "[35m[1mPOST /api/signup HTTP/1.1[0m" 500 -
+2025-08-14 17:15:26,352 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:15:26,353 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:15:27,194 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:15:27] "OPTIONS /api/signup HTTP/1.1" 200 -
+2025-08-14 17:15:27,388 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:15:27] "[35m[1mPOST /api/signup HTTP/1.1[0m" 201 -
+2025-08-14 17:16:08,249 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:16:08,250 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:16:15,786 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:16:15] "OPTIONS /api/signup HTTP/1.1" 200 -
+2025-08-14 17:16:15,793 - app - ERROR - Exception on /api/signup [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2522, in get_property
+    return self._props[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'flashcards'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 167, in signup
+    if User.query.filter_by(email=email).first():
+       ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+    ~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\interfaces.py", line 589, in init
+    self.do_init()
+    ~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1661, in do_init
+    self._generate_backref()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+    ...<3 lines>...
+    ) from err
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:16:15,801 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:16:15] "[35m[1mPOST /api/signup HTTP/1.1[0m" 500 -
+2025-08-14 17:16:50,254 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:16:50,254 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:16:50,923 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:16:50] "OPTIONS /api/signup HTTP/1.1" 200 -
+2025-08-14 17:16:50,930 - app - ERROR - Exception on /api/signup [POST]
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2522, in get_property
+    return self._props[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'flashcards'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\server\app\routes.py", line 167, in signup
+    if User.query.filter_by(email=email).first():
+       ^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ~~~~~~~~~~~~~~~^
+        cls, session=cls.__fsa__.session()  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+    ~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\interfaces.py", line 589, in init
+    self.do_init()
+    ~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1661, in do_init
+    self._generate_backref()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "E:\Estudos\Faculdade\Projeto DevSoftware\server\.venv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+    ...<3 lines>...
+    ) from err
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[User(user)]' has no property 'flashcards'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-08-14 17:16:50,937 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:16:50] "[35m[1mPOST /api/signup HTTP/1.1[0m" 500 -
+2025-08-14 17:18:02,252 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:18:02,252 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:18:16,259 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:18:16] "OPTIONS /api/signup HTTP/1.1" 200 -
+2025-08-14 17:18:16,513 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:18:16] "[35m[1mPOST /api/signup HTTP/1.1[0m" 201 -
+2025-08-14 17:18:23,072 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:18:23] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-14 17:18:23,194 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTIwMjcwMywianRpIjoiY2QwYTkwYjctMDk2Mi00MWFiLTljNmItZWMwMDY0ZmU5YTAxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU1MjAyNzAzLCJjc3JmIjoiODk0ZmI1ODQtMDIwYS00ZGQ2LTg1NDEtYTRkOGRmMTgzMzcyIiwiZXhwIjoxNzU1MjAzNjAzfQ.96XHCP4N5zLZVjkn2V7hOwtcF-zVSLxeG-SFX0G7DJA', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-14 17:18:23,195 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:18:23] "POST /api/login HTTP/1.1" 200 -
+2025-08-14 17:18:29,206 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:18:29] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:18:29,212 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-14 17:19:00,130 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-14 17:19:00,209 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:19:00] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:20:13,265 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:13] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-14 17:20:13,268 - app.routes - INFO - Processando mensagem de chat: 'Este documento contém um exercício escolar sobre e...'
+2025-08-14 17:20:17,170 - app.routes - INFO - Chat processado com sucesso.
+2025-08-14 17:20:17,245 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:17] "POST /api/chat HTTP/1.1" 200 -
+2025-08-14 17:20:18,835 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:18] "OPTIONS /api/generate-flashcards HTTP/1.1" 200 -
+2025-08-14 17:20:18,837 - app.routes - INFO - Gerando 1 flashcards para o texto: 'Aqui está o texto separado em tópicos, como solici...'
+2025-08-14 17:20:22,623 - app.routes - INFO - Flashcards gerados com sucesso.
+2025-08-14 17:20:22,623 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:22] "POST /api/generate-flashcards HTTP/1.1" 200 -
+2025-08-14 17:20:22,627 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:22] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-14 17:20:22,629 - app.routes - INFO - Salvando resumo e 1 flashcards para o usuário 1
+2025-08-14 17:20:22,712 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 1
+2025-08-14 17:20:22,712 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:22] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-14 17:20:22,737 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:22] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:22,740 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:22] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:26,044 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:26] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:26,047 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:26] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:26,049 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:26] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:20:26,058 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:26] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:20:26,924 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:26] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:26,928 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:26] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:51,149 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:51] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:51,152 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:51] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:20:51,153 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:51] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:20:51,160 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:20:51] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:24:40,516 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:24:40,516 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:24:49,762 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:49] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:24:49,769 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-14 17:24:53,505 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:53] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:24:53,508 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:53] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:24:53,509 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:53] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:24:53,515 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:53] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:24:53,966 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:53] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:24:53,969 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:53] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:24:54,007 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-14 17:24:54,084 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:24:54] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:25:03,057 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:03] "OPTIONS /api/signup HTTP/1.1" 200 -
+2025-08-14 17:25:03,275 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:03] "[35m[1mPOST /api/signup HTTP/1.1[0m" 201 -
+2025-08-14 17:25:11,647 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:11] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-08-14 17:25:11,768 - app.routes - INFO - Resposta /login: {'msg': 'Login realizado com sucesso.', 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTIwMzExMSwianRpIjoiYTBiZDdiODAtNmY4ZC00ZTQ2LWFmN2QtNmQ5MDQwOTkyZjhiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzU1MjAzMTExLCJjc3JmIjoiMjBiYzU2YjQtZDg4My00M2VmLWEwN2ItNDE5ODU4YTMzMDUwIiwiZXhwIjoxNzU1MjA0MDExfQ.32RnDY_8jaRJGiluZgLJ3gt-c8ZpsmGYNlJlbqRjZGI', 'user': {'id': 1, 'email': 'teste@email.com', 'name': 'Vinicius', 'role': 'estudante'}}
+2025-08-14 17:25:11,770 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:11] "POST /api/login HTTP/1.1" 200 -
+2025-08-14 17:25:21,771 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:21] "OPTIONS /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:25:21,778 - app.routes - INFO - Processando análise de PDF com prompt: 'Resuma o conteúdo deste documento para um estudant...'
+2025-08-14 17:25:26,352 - app.routes - INFO - PDF analisado com sucesso.
+2025-08-14 17:25:26,431 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:26] "POST /api/analyze-pdf HTTP/1.1" 200 -
+2025-08-14 17:25:29,063 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:29] "OPTIONS /api/chat HTTP/1.1" 200 -
+2025-08-14 17:25:29,066 - app.routes - INFO - Processando mensagem de chat: 'Este documento é um exercício escolar sobre estrut...'
+2025-08-14 17:25:30,740 - app.routes - INFO - Chat processado com sucesso.
+2025-08-14 17:25:30,823 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:30] "POST /api/chat HTTP/1.1" 200 -
+2025-08-14 17:25:32,758 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:32] "OPTIONS /api/generate-flashcards HTTP/1.1" 200 -
+2025-08-14 17:25:32,760 - app.routes - INFO - Gerando 1 flashcards para o texto: '## Tópicos do Exercício de Estruturas de Dados:
+
+*...'
+2025-08-14 17:25:34,635 - app.routes - INFO - Flashcards gerados com sucesso.
+2025-08-14 17:25:34,635 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:34] "POST /api/generate-flashcards HTTP/1.1" 200 -
+2025-08-14 17:25:34,640 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:34] "OPTIONS /api/save-summary-with-flashcards HTTP/1.1" 200 -
+2025-08-14 17:25:34,643 - app.routes - INFO - Salvando resumo e 1 flashcards para o usuário 1
+2025-08-14 17:25:34,722 - app.routes - INFO - Resumo e flashcards salvos com sucesso. Summary ID: 1
+2025-08-14 17:25:34,722 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:34] "[35m[1mPOST /api/save-summary-with-flashcards HTTP/1.1[0m" 201 -
+2025-08-14 17:25:34,746 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:34] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:25:34,750 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:34] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:25:37,240 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:37] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:25:37,244 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:37] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:25:37,244 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:37] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:25:37,248 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:25:37] "[33mGET /api/flashcards/by-summary/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:28:53,397 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:28:53,398 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:28:56,057 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:56] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:28:56,061 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:56] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:28:56,073 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:56] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:28:56,080 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:56] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:28:57,194 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:57] "[33mGET /api/flashcards/undefined HTTP/1.1[0m" 404 -
+2025-08-14 17:28:57,196 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:57] "[33mGET /api/flashcards/undefined HTTP/1.1[0m" 404 -
+2025-08-14 17:28:59,059 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:59] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:28:59,061 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:59] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:28:59,068 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:59] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:28:59,072 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:28:59] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:29:00,959 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:29:00] "[33mGET /api/flashcards/undefined HTTP/1.1[0m" 404 -
+2025-08-14 17:29:00,961 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:29:00] "[33mGET /api/flashcards/undefined HTTP/1.1[0m" 404 -
+2025-08-14 17:31:07,843 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:31:07] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:31:07,848 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:31:07] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:31:08,641 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:31:08] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:31:08,644 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:31:08] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:32:30,005 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:30] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:32:30,008 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:30] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:32:32,270 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:32] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:32:32,274 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:32] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:32:33,685 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:33] "[33mGET /api/flashcards/undefined HTTP/1.1[0m" 404 -
+2025-08-14 17:32:33,687 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:33] "[33mGET /api/flashcards/undefined HTTP/1.1[0m" 404 -
+2025-08-14 17:32:34,902 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:34] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:32:34,905 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:34] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:32:35,672 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:35] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:32:35,675 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:35] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:32:37,459 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:37] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:32:37,463 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:37] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:32:39,723 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:39] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:32:39,725 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:32:39] "[33mGET /api/flashcards/1 HTTP/1.1[0m" 404 -
+2025-08-14 17:34:53,405 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:34:53,406 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:34:57,118 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:34:57] "GET /api/flashcards/1 HTTP/1.1" 200 -
+2025-08-14 17:34:57,123 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:34:57] "GET /api/flashcards/1 HTTP/1.1" 200 -
+2025-08-14 17:35:02,962 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:35:02] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:35:02,965 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:35:02] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:35:03,748 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:35:03] "GET /api/flashcards/1 HTTP/1.1" 200 -
+2025-08-14 17:35:03,752 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:35:03] "GET /api/flashcards/1 HTTP/1.1" 200 -
+2025-08-14 17:36:49,263 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:36:49] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:36:49,266 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:36:49] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:36:50,320 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:36:50] "GET /api/flashcards/1 HTTP/1.1" 200 -
+2025-08-14 17:36:50,323 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:36:50] "GET /api/flashcards/1 HTTP/1.1" 200 -
+2025-08-14 17:37:06,940 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.32:5000
+2025-08-14 17:37:06,941 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-14 17:38:07,256 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:38:07] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:38:07,261 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:38:07] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:41:19,232 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:41:19] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:41:19,236 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:41:19] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:43:01,496 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:43:01] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:43:01,501 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:43:01] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:43:14,028 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:43:14] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:43:14,031 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:43:14] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:43:15,043 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:43:15] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-14 17:43:15,047 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:43:15] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-14 17:44:07,011 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:07] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:44:07,015 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:07] "GET /api/my-summaries?user_id=1 HTTP/1.1" 200 -
+2025-08-14 17:44:07,740 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:07] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-14 17:44:07,743 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:07] "GET /api/summary/1 HTTP/1.1" 200 -
+2025-08-14 17:44:11,902 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:11] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:44:11,906 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:11] "GET /api/flashcards/by-user/1 HTTP/1.1" 200 -
+2025-08-14 17:44:13,164 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:13] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -
+2025-08-14 17:44:13,168 - werkzeug - INFO - 127.0.0.1 - - [14/Aug/2025 17:44:13] "GET /api/flashcards/by-summary/1 HTTP/1.1" 200 -

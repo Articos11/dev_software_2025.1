@@ -355,19 +355,71 @@ def get_summary(summary_id):
 
 # -- Nova Rota Flashcards -- 
 
-@api_bp.route('/flashcard/<int:flashcard_id>', methods=['GET'])
-def get_flashcard(flashcard_id):
-    flashcard = Flashcard.query.get(flashcard_id)
-    if not flashcard:
-        return jsonify({"erro": "Flashcard não encontrado."}), 404
+@api_bp.route('/flashcards/by-user/<int:user_id>', methods=['GET'])
+def get_flashcards_by_user(user_id):
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"erro": "Usuário não encontrado."}), 404
 
-    return jsonify({
-        "id": flashcard.id,
-        "pergunta": flashcard.pergunta,
-        "resposta": flashcard.resposta,
-        "summary_id": flashcard.summary_id,
-        "user_id": flashcard.user_id
-    }), 200
+    # Monta a lista de summaries com seus flashcards
+    summaries_with_flashcards = []
+    for summary in user.summaries:
+        flashcards_list = [
+            {"id": f.id, "pergunta": f.pergunta, "resposta": f.resposta}
+            for f in summary.flashcards
+        ]
+        summaries_with_flashcards.append({
+            "summary_id": summary.id,
+            "titulo": summary.titulo,
+            "flashcards": flashcards_list
+        })
 
+    return jsonify({"summaries": summaries_with_flashcards}), 200
 
 # -- Fim da rota flashcards --
+
+
+# -- Busca flashcard por ID -- 
+
+@api_bp.route("/api/flashcards/<int:summary_id>", methods=["GET"])
+def get_flashcards(summary_id):
+    # Pega todos os flashcards do summary/tema
+    flashcards = Flashcard.query.filter_by(summary_id=summary_id).all()
+    
+    flashcards_data = [
+        {
+            "id": f.id,
+            "title": f"Flashcard {f.id}",  # se quiser um título genérico
+            "question": f.pergunta,  # campo correto
+            "answer": f.resposta     # campo correto
+        }
+        for f in flashcards
+    ]
+    
+    if not flashcards_data:
+        return jsonify({"flashcards": []}), 404
+    
+    return jsonify({
+        "summary_id": summary_id,
+        "title": f"Tema {summary_id}",
+        "flashcards": flashcards_data
+    })
+
+# -- Fim da rota flashcard ID --
+
+@api_bp.route('/flashcards/by-summary/<int:summary_id>', methods=['GET'])
+def get_flashcards_by_summary(summary_id):
+    summary = Summary.query.get(summary_id)
+    if not summary:
+        return jsonify({"erro": "Resumo/tema não encontrado."}), 404
+
+    flashcards_list = [
+        {"id": f.id, "pergunta": f.pergunta, "resposta": f.resposta}
+        for f in summary.flashcards
+    ]
+
+    return jsonify({
+        "summary_id": summary.id,
+        "title": summary.titulo,
+        "flashcards": flashcards_list
+    }), 200

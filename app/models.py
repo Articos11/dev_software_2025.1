@@ -29,6 +29,8 @@ class Flashcard(db.Model):
     summary_id = db.Column(db.Integer, db.ForeignKey('summary.id'))
     summary = db.relationship('Summary', back_populates='flashcards')
 
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', back_populates='flashcards')
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -36,6 +38,9 @@ class User(db.Model):
     email = db.Column(db.String(150), unique=True, nullable=False)
     role = db.Column(db.String(50), nullable=False, default='estudante')
     password_hash = db.Column(db.String(128), nullable=False)
+
+    # Novo relacionamento
+    flashcards = db.relationship('Flashcard', back_populates='user', cascade="all, delete-orphan")
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
